@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60" fill="none">
+  <defs>
+    <linearGradient id="slmGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="slmGradGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4338CA" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+  </defs>
+
+  <!-- High-Tech Geometric Hex-Core Icon -->
+  <g transform="translate(6, 6)">
+    <!-- Base Glow Plate -->
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="#EEF2FF" />
+    <rect x="0" y="0" width="48" height="48" rx="12" stroke="#C7D2FE" stroke-width="1.5" />
+    
+    <!-- Outer Node Hexagon -->
+    <path d="M24 8 L38 16 L38 32 L24 40 L10 32 L10 16 Z" 
+          stroke="url(#slmGradPrimary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    
+    <!-- Inner Core & Nodes -->
+    <circle cx="24" cy="24" r="5" fill="url(#slmGradPrimary)" />
+    <line x1="24" y1="8" x2="24" y2="19" stroke="url(#slmGradPrimary)" stroke-width="2" stroke-linecap="round" />
+    <line x1="38" y1="32" x2="28.5" y2="26.5" stroke="url(#slmGradPrimary)" stroke-width="2" stroke-linecap="round" />
+    <line x1="10" y1="32" x2="19.5" y2="26.5" stroke="url(#slmGradPrimary)" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Wordmark in Institutional Inter Typography -->
+  <text x="68" y="30" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="19" font-weight="800" letter-spacing="-0.03em" fill="#111827">
+    SALES LEAD <tspan fill="url(#slmGradPrimary)">MACHINE</tspan>
+  </text>
+  <text x="69" y="45" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.18em" fill="#6B7280">
+    REVENUE INTELLIGENCE
+  </text>
+</svg>

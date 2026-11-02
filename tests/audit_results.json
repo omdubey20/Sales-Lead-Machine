@@ -1,0 +1,190 @@
+{
+  "total_tests": 20,
+  "passed": 20,
+  "failed": 0,
+  "blocked": 0,
+  "not_verified": 0,
+  "defects": [],
+  "evidence": [
+    {
+      "test_id": "ISO-001",
+      "category": "Draft Isolation",
+      "feature": "Unauthenticated mode=draft access restriction",
+      "expected": "Forced to published mode",
+      "actual": "Enforced mode='published' successfully",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "ISO-002",
+      "category": "Draft Isolation",
+      "feature": "Public mode=published content delivery",
+      "expected": "Delivers published data",
+      "actual": "Delivered 8 sections (Hero: Locate the appropriate businesses and de)",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "AUTH-001",
+      "category": "Authentication",
+      "feature": "Reverse Proxy Localhost Trust Boundary",
+      "expected": "HTTP 401",
+      "actual": "HTTP 401 Rejected correctly",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "AUTH-002",
+      "category": "Authentication",
+      "feature": "Hardcoded Magic Token Backdoors",
+      "expected": "HTTP 401",
+      "actual": "HTTP 401 Rejected static token correctly",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "AUTH-003",
+      "category": "Authentication",
+      "feature": "Invalid credential rejection",
+      "expected": "Rejected",
+      "actual": "HTTP 401 Rejected",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "AUTH-004",
+      "category": "Authentication",
+      "feature": "Cryptographic HMAC-SHA256 JWT Generation",
+      "expected": "Valid JWT token generated",
+      "actual": "Signed token (260 chars)",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "SQLI-001",
+      "category": "SQL Injection",
+      "feature": "Parameterized SQL across query parameters",
+      "expected": "All queries parameterized",
+      "actual": "No SQL syntax exceptions or leaks across 25 injection vectors",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "XSS-001",
+      "category": "XSS & Sanitization",
+      "feature": "DOM Injection Sanitization",
+      "expected": "Sanitized with sanitizeHtml",
+      "actual": "All innerHTML bindings protected via sanitizeHtml()",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "MED-001",
+      "category": "File Upload",
+      "feature": "Upload File Extension & Size Validation",
+      "expected": "HTTP 400 Bad Request",
+      "actual": "HTTP 400 Rejected malicious extension (.html)",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "UUID-001",
+      "category": "API Validation",
+      "feature": "Malformed UUID path parameter handling",
+      "expected": "HTTP 404 Not Found",
+      "actual": "HTTP 404 returned gracefully across all endpoints without DB crash",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "DATA-001",
+      "category": "Data Sync",
+      "feature": "Team Members Relational vs JSONB Parity",
+      "expected": "Exact match",
+      "actual": "Both sources synchronized at 11 members",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "DATA-002",
+      "category": "Data Sync",
+      "feature": "Client Logos Relational vs JSONB Parity",
+      "expected": "Exact match",
+      "actual": "Both sources synchronized at 12 logos",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "FORM-001",
+      "category": "Form Persistence",
+      "feature": "Secondary Lead Capture Endpoint Persistence",
+      "expected": "Written to PostgreSQL",
+      "actual": "Submission persisted (26 -> 27)",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "UI-001",
+      "category": "Admin UI",
+      "feature": "Initial Stat Counters Dynamic Placeholders",
+      "expected": "Dynamic placeholders (\u2014)",
+      "actual": "Clean dynamic placeholders without hardcoded flash",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "A11Y-001",
+      "category": "Accessibility",
+      "feature": "Visual Studio Interactive Section Keyboard Access",
+      "expected": "tabindex, role, aria-label, keydown handlers",
+      "actual": "All accessible attributes & Enter/Space handlers present",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "ROUTES-ALL",
+      "category": "Public Page Routes",
+      "feature": "31/31 Canonical Routes HTTP & Hydration Check",
+      "expected": "31 routes passed",
+      "actual": "31/31 routes returned HTTP 200 and injected cms-hydrate.js",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "CONC-001",
+      "category": "Database Concurrency",
+      "feature": "10 Concurrent Bulk Section Transactions",
+      "expected": "All succeed without deadlocks",
+      "actual": "10/10 succeeded",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "PERF-/",
+      "category": "Performance",
+      "feature": "Latency for HTML Homepage",
+      "expected": "<50ms average",
+      "actual": "2.48 ms average across 5 calls",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "PERF-/api/page-",
+      "category": "Performance",
+      "feature": "Latency for Public API Page Content",
+      "expected": "<50ms average",
+      "actual": "5.92 ms average across 5 calls",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test_id": "PERF-/cms-hydra",
+      "category": "Performance",
+      "feature": "Latency for Hydration Script Bundle",
+      "expected": "<50ms average",
+      "actual": "2.07 ms average across 5 calls",
+      "status": "PASS",
+      "evidence": {}
+    }
+  ]
+}

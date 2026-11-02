@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Lead Machine | Content Management Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              500: '#4f46e5',
+              600: '#4338ca',
+              700: '#3730a3',
+              900: '#1e1b4b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+    .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-input { background: rgba(31, 41, 55, 0.6); border: 1px solid rgba(255, 255, 255, 0.12); color: #fff; }
+    .glass-input:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+  <!-- AUTH SCREEN (Shown if not logged in) -->
+  <div id="auth-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/90 backdrop-blur-md px-4">
+    <div class="glass-card max-w-md w-full p-8 rounded-2xl shadow-2xl border border-indigo-500/20">
+      <div class="text-center mb-8">
+        <div class="w-14 h-14 bg-indigo-600/20 text-indigo-400 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-indigo-500/30">
+          <i class="fa-solid fa-bolt text-2xl"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-white tracking-tight">Sales Lead Machine</h1>
+        <p class="text-sm text-gray-400 mt-1">Content Management Portal</p>
+      </div>
+
+      <form id="login-form" class="space-y-5" onsubmit="handleLogin(event)">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Admin Email</label>
+          <input type="email" id="login-email" autocomplete="username" required
+                 class="glass-input w-full px-4 py-3 rounded-xl text-sm transition">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Password</label>
+          <input type="password" id="login-password" autocomplete="current-password" required
+                 class="glass-input w-full px-4 py-3 rounded-xl text-sm transition">
+        </div>
+        <button type="submit" id="login-btn"
+                class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-sm shadow-lg shadow-indigo-600/30 transition flex items-center justify-center space-x-2">
+          <span>Sign In to Admin Portal</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAIN APP WRAPPER -->
+  <div id="app-wrapper" class="flex-1 flex overflow-hidden">
+    
+    <!-- SIDEBAR -->
+    <aside class="w-64 glass-card border-r border-white/5 flex flex-col justify-between hidden md:flex">
+      <div>
+        <!-- Brand Header -->
+        <div class="p-6 border-b border-white/5 flex items-center space-x-3">
+          <div class="w-9 h-9 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+            <i class="fa-solid fa-cube text-base"></i>
+          </div>
+          <div>
+            <h2 class="font-bold text-sm text-white tracking-wide leading-tight">Sales Lead Machine</h2>
+            <span class="text-[10px] text-indigo-400 font-medium">PostgreSQL CMS v2.0</span>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="p-4 space-y-1.5">
+          <button onclick="switchTab('dashboard')" id="nav-dashboard"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-white bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 transition">
+            <i class="fa-solid fa-chart-pie w-5"></i>
+            <span>Overview</span>
+          </button>
+          
+          <button onclick="switchTab('team')" id="nav-team"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            <i class="fa-solid fa-users-viewfinder w-5"></i>
+            <span>Team & Leaders</span>
+          </button>
+
+          <button onclick="switchTab('pages')" id="nav-pages"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            <i class="fa-solid fa-layer-group w-5"></i>
+            <span>Pages & Content</span>
+          </button>
+
+          <button onclick="switchTab('company')" id="nav-company"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            <i class="fa-solid fa-building-columns w-5"></i>
+            <span>Company Info</span>
+          </button>
+
+          <button onclick="switchTab('logos')" id="nav-logos"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            <i class="fa-solid fa-images w-5"></i>
+            <span>Partner Logos</span>
+          </button>
+
+          <button onclick="switchTab('leads')" id="nav-leads"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            <i class="fa-solid fa-envelope-open-text w-5"></i>
+            <span>Leads Inbox</span>
+          </button>
+
+          <button onclick="switchTab('blog')" id="nav-blog"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            <i class="fa-solid fa-newspaper w-5"></i>
+            <span>Blog & Articles</span>
+          </button>
+
+          <button onclick="switchTab('media')" id="nav-media"
+                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            <i class="fa-solid fa-photo-film w-5"></i>
+            <span>Media Library</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- User Profile / Sign Out -->
+      <div class="p-4 border-t border-white/5">
+        <div class="flex items-center justify-between p-3 rounded-xl bg-white/[0.03]">
+          <div class="flex items-center space-x-3 truncate">
+            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+              AD
+            </div>
+            <div class="truncate">
+              <p class="text-xs font-semibold text-white truncate" id="user-display-name">Administrator</p>
+              <p class="text-[10px] text-gray-400 truncate">PostgreSQL Active</p>
+            </div>
+          </div>
+          <button onclick="handleLogout()" title="Logout" class="text-gray-400 hover:text-red-400 text-sm transition">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT VIEWPORT -->
+    <main class="flex-1 flex flex-col h-screen overflow-y-auto bg-gray-950">
+      
+      <!-- Top Bar -->
+      <header class="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-gray-900/40 backdrop-blur sticky top-0 z-30">
+        <div class="flex items-center space-x-4">
+          <h2 id="page-title" class="text-lg font-bold text-white">Dashboard Overview</h2>
+          <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center space-x-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Database Connected</span>
+          </span>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <a href="/" target="_blank"
+             class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition flex items-center space-x-2">
+            <span>View Live Site</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Body Container -->
+      <div class="p-8 max-w-7xl w-full mx-auto space-y-8 flex-1">
+
+        <!-- TAB 1: DASHBOARD -->
+        <section id="tab-dashboard" class="tab-pane space-y-8">
+          <!-- Stat Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-5">
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Dynamic Pages</p>
+                <i class="fa-solid fa-file-lines text-indigo-400 text-lg"></i>
+              </div>
+              <h3 id="stat-pages-count" class="text-3xl font-bold text-white mt-3">20</h3>
+              <p class="text-xs text-gray-400 mt-1">Rendered via PostgreSQL</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Team Leaders</p>
+                <i class="fa-solid fa-users text-indigo-400 text-lg"></i>
+              </div>
+              <h3 id="stat-team-count" class="text-3xl font-bold text-white mt-3">—</h3>
+              <p class="text-xs text-gray-400 mt-1">Active higherups on About Us</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Partner Logos</p>
+                <i class="fa-solid fa-shield-halved text-indigo-400 text-lg"></i>
+              </div>
+              <h3 id="stat-logos-count" class="text-3xl font-bold text-white mt-3">—</h3>
+              <p class="text-xs text-gray-400 mt-1">In moving carousel</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Blog Articles</p>
+                <i class="fa-solid fa-newspaper text-indigo-400 text-lg"></i>
+              </div>
+              <h3 id="stat-blog-count" class="text-3xl font-bold text-white mt-3">—</h3>
+              <p class="text-xs text-gray-400 mt-1">Thought leadership posts</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Lead Inquiries</p>
+                <i class="fa-solid fa-inbox text-indigo-400 text-lg"></i>
+              </div>
+              <h3 id="stat-leads-count" class="text-3xl font-bold text-white mt-3">—</h3>
+              <p class="text-xs text-gray-400 mt-1">Form submissions captured</p>
+            </div>
+          </div>
+
+          <!-- Quick Action Card for Mam -->
+          <div class="glass-card p-8 rounded-2xl border border-indigo-500/20 bg-gradient-to-r from-indigo-950/40 to-transparent">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-300 uppercase tracking-wider">
+                  Mam's Quick Actions
+                </span>
+                <h3 class="text-xl font-bold text-white mt-2">Manage Higherups & Company Details</h3>
+                <p class="text-sm text-gray-400 mt-1 max-w-2xl">
+                  Easily replace an employee's photo, name, title, or LinkedIn link without editing code, or update company telephone and email globally.
+                </p>
+              </div>
+              <div class="flex space-x-3">
+                <button onclick="switchTab('team')"
+                        class="px-5 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                  <i class="fa-solid fa-user-plus"></i>
+                  <span>Manage Team</span>
+                </button>
+                <button onclick="switchTab('company')"
+                        class="px-5 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-xl text-xs border border-white/10 transition flex items-center space-x-2">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  <span>Company Info</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: TEAM & LEADERS ("About Us") -->
+        <section id="tab-team" class="tab-pane hidden space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white">Leadership & Team Members</h3>
+              <p class="text-xs text-gray-400 mt-1">Controls the "Meet your team" section on the About Us page</p>
+            </div>
+            <button onclick="openTeamModal()"
+                    class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+              <i class="fa-solid fa-plus"></i>
+              <span>Add Team Member</span>
+            </button>
+          </div>
+
+          <!-- Team Cards Grid -->
+          <div id="team-cards-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Dynamically populated via loadTeam() -->
+          </div>
+        </section>
+
+        <!-- TAB 3: PAGES & CONTENT -->
+        <section id="tab-pages" class="tab-pane hidden space-y-6">
+          <div>
+            <h3 class="text-xl font-bold text-white">Website Pages & Sections</h3>
+            <p class="text-xs text-gray-400 mt-1">Select a page to edit its content, headlines, and dynamic section blocks</p>
+          </div>
+
+          <div id="pages-list" class="glass-card rounded-2xl overflow-hidden divide-y divide-white/5">
+            <!-- Dynamically populated via loadPages() -->
+          </div>
+        </section>
+
+        <!-- TAB 4: COMPANY INFO -->
+        <section id="tab-company" class="tab-pane hidden space-y-6">
+          <div>
+            <h3 class="text-xl font-bold text-white">Global Company Settings</h3>
+            <p class="text-xs text-gray-400 mt-1">Updates propagate across all headers, footers, and contact cards</p>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl max-w-3xl space-y-6">
+            <form id="company-form" onsubmit="saveCompanySettings(event)" class="space-y-5">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Company Name</label>
+                  <input type="text" id="company-name" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Telephone Number</label>
+                  <input type="text" id="company-phone" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Support Email</label>
+                  <input type="email" id="company-email" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Login URL (Buttons)</label>
+                  <input type="url" id="company-login-url" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Office Address</label>
+                <textarea id="company-address" rows="2" class="glass-input w-full px-4 py-3 rounded-xl text-sm"></textarea>
+              </div>
+
+              <div class="pt-4 border-t border-white/5 flex justify-end">
+                <button type="submit"
+                        class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                  <i class="fa-solid fa-floppy-disk"></i>
+                  <span>Save Global Settings</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- TAB 5: PARTNER LOGOS -->
+        <section id="tab-logos" class="tab-pane hidden space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white">Client & Partner Logos</h3>
+              <p class="text-xs text-gray-400 mt-1">Logos displayed in the animated motion carousel on Home, Platform, and About Us</p>
+            </div>
+            <button onclick="openLogoModal()"
+                    class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+              <i class="fa-solid fa-plus"></i>
+              <span>Add Partner Logo</span>
+            </button>
+          </div>
+
+          <div id="logos-grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
+            <!-- Dynamically populated via loadLogos() -->
+          </div>
+        </section>
+
+        <!-- TAB 6: LEADS INBOX -->
+        <section id="tab-leads" class="tab-pane hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-white">Lead Inquiries & Form Submissions</h3>
+              <p class="text-xs text-gray-400 mt-1">Captured securely into PostgreSQL from Demo, Contact, Trial, and Survey forms</p>
+            </div>
+            <div class="flex items-center space-x-3">
+              <button onclick="loadLeads()"
+                      class="px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-300 rounded-xl text-xs border border-white/10 transition flex items-center space-x-2">
+                <i class="fa-solid fa-rotate"></i>
+                <span>Refresh</span>
+              </button>
+              <button onclick="exportLeadsCSV()"
+                      class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-emerald-600/30 transition flex items-center space-x-2">
+                <i class="fa-solid fa-file-csv"></i>
+                <span>Export CSV</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter & Search Bar -->
+          <div class="glass-card p-4 rounded-2xl flex flex-wrap items-center gap-3">
+            <div class="flex items-center space-x-2 flex-1 min-w-[220px]">
+              <i class="fa-solid fa-magnifying-glass text-gray-400 text-xs ml-2"></i>
+              <input type="text" id="lead-filter-search" oninput="debounceLoadLeads()" placeholder="Search by email, response..." class="glass-input w-full px-3 py-2 rounded-xl text-xs">
+            </div>
+            <div class="flex items-center space-x-2">
+              <label class="text-xs text-gray-400 font-medium">Form:</label>
+              <select id="lead-filter-form" onchange="loadLeads()" class="glass-input px-3 py-2 rounded-xl text-xs">
+                <option value="all">All Forms</option>
+              </select>
+            </div>
+            <div class="flex items-center space-x-2">
+              <label class="text-xs text-gray-400 font-medium">Status:</label>
+              <select id="lead-filter-status" onchange="loadLeads()" class="glass-input px-3 py-2 rounded-xl text-xs">
+                <option value="all">All Statuses</option>
+                <option value="new">New</option>
+                <option value="read">Read</option>
+                <option value="replied">Replied</option>
+                <option value="spam">Spam</option>
+                <option value="archived">Archived</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="leads-table-container" class="glass-card rounded-2xl overflow-hidden">
+            <table class="w-full text-left text-sm text-gray-300">
+              <thead class="bg-white/[0.02] text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-white/5">
+                <tr>
+                  <th class="p-4">Contact</th>
+                  <th class="p-4">Form</th>
+                  <th class="p-4">Status</th>
+                  <th class="p-4">Source Page</th>
+                  <th class="p-4">Date</th>
+                  <th class="p-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="leads-tbody" class="divide-y divide-white/5">
+                <!-- Dynamically populated via loadLeads() -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- TAB 7: BLOG & ARTICLES -->
+        <section id="tab-blog" class="tab-pane hidden space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white">Blog & Thought Leadership Articles</h3>
+              <p class="text-xs text-gray-400 mt-1">Manage public articles, intent guides, categories, and SEO metadata</p>
+            </div>
+            <div class="flex space-x-3">
+              <a href="/blog" target="_blank"
+                 class="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-gray-300 rounded-xl text-xs font-semibold border border-white/10 transition flex items-center space-x-2">
+                <span>View Live Blog</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button onclick="openBlogModal()"
+                      class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                <i class="fa-solid fa-plus"></i>
+                <span>New Article</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="blog-table-container" class="glass-card rounded-2xl overflow-hidden">
+            <table class="w-full text-left text-sm text-gray-300">
+              <thead class="bg-white/[0.02] text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-white/5">
+                <tr>
+                  <th class="p-4">Article Title & Slug</th>
+                  <th class="p-4">Category</th>
+                  <th class="p-4">Status</th>
+                  <th class="p-4">Published Date</th>
+                  <th class="p-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="blog-tbody" class="divide-y divide-white/5">
+                <!-- Dynamically populated via loadBlogPosts() -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- TAB 8: MEDIA ASSET LIBRARY -->
+        <section id="tab-media" class="tab-pane hidden space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white">Media Asset Library</h3>
+              <p class="text-xs text-gray-400 mt-1">Upload images with automatic Sharp WebP compression and dimension metadata</p>
+            </div>
+            <div class="flex space-x-3">
+              <button onclick="document.getElementById('media-upload-input').click()"
+                      class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Image Asset</span>
+              </button>
+              <input type="file" id="media-upload-input" accept="image/*" class="hidden" onchange="handleMediaUpload(this)">
+            </div>
+          </div>
+
+          <div id="media-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- Dynamically populated via loadMedia() -->
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: ADD / EDIT TEAM MEMBER -->
+  <div id="team-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
+    <div class="glass-card max-w-xl w-full p-8 rounded-2xl border border-white/10 shadow-2xl space-y-6">
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <h3 id="team-modal-title" class="text-lg font-bold text-white">Edit Team Member</h3>
+        <button onclick="closeTeamModal()" class="text-gray-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="team-form" onsubmit="saveTeamMember(event)" class="space-y-4">
+        <input type="hidden" id="team-member-id">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Full Name</label>
+            <input type="text" id="member-name" required class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Job Title / Role</label>
+            <input type="text" id="member-role" required class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Photo Image</label>
+          <div class="flex items-center space-x-4">
+            <img id="member-photo-preview" src="/wp-content/uploads/2023/03/s.png"
+                 class="w-16 h-16 rounded-xl object-cover border border-white/10 bg-gray-900">
+            <div class="flex-1 space-y-2">
+              <input type="file" id="member-photo-file" accept="image/*" onchange="uploadMemberPhoto(event)"
+                     class="text-xs text-gray-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600/20 file:text-indigo-300 hover:file:bg-indigo-600/30">
+              <input type="text" id="member-photo-url" placeholder="/wp-content/uploads/..."
+                     class="glass-input w-full px-3 py-1.5 rounded-lg text-xs text-gray-300">
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">LinkedIn Profile URL</label>
+            <input type="url" id="member-linkedin" placeholder="https://linkedin.com/in/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Facebook URL</label>
+            <input type="url" id="member-facebook" placeholder="https://facebook.com/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Bio / Profile Description</label>
+          <textarea id="member-bio" rows="3" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm"></textarea>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+          <button type="button" onclick="closeTeamModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: MANAGE PAGE SECTIONS -->
+  <div id="page-sections-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
+    <div class="glass-card max-w-3xl w-full p-8 rounded-2xl border border-white/10 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <div>
+          <h3 id="page-sections-title" class="text-lg font-bold text-white">Manage Page Sections</h3>
+          <p id="page-sections-subtitle" class="text-xs text-gray-400 mt-0.5">Reorder, edit content, or add sections to this page</p>
+        </div>
+        <div class="flex items-center space-x-3">
+          <button onclick="openAddSectionModal()" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-indigo-600/30 transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-plus text-[10px]"></i>
+            <span>Add Section</span>
+          </button>
+          <button onclick="closePageSectionsModal()" class="text-gray-400 hover:text-white text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <input type="hidden" id="current-page-id">
+
+      <!-- Sections List Scroll Area -->
+      <div id="sections-container" class="flex-1 overflow-y-auto space-y-3 pr-1">
+        <!-- Rendered dynamically via renderSectionsList() -->
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-white/5">
+        <a id="current-page-preview-link" href="#" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center space-x-1.5">
+          <span>Preview Live Page</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
+        <button onclick="closePageSectionsModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: EDIT SPECIFIC SECTION CONTENT -->
+  <div id="section-edit-modal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
+    <div class="glass-card max-w-2xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <div>
+          <h3 id="section-edit-modal-title" class="text-lg font-bold text-white">Edit Section Content</h3>
+          <p id="section-edit-modal-type" class="text-xs text-indigo-400 font-mono mt-0.5"></p>
+        </div>
+        <button onclick="closeSectionEditModal()" class="text-gray-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="section-content-form" onsubmit="saveSectionContent(event)" class="space-y-4 flex-1 overflow-y-auto pr-1">
+        <input type="hidden" id="edit-section-id">
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Section Label / Name</label>
+          <input type="text" id="section-label-input" required class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Anchor ID (optional for page jumps)</label>
+          <input type="text" id="section-anchor-input" placeholder="e.g. features, pricing" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm font-mono">
+        </div>
+
+        <!-- Dynamic Fields Container based on section_type -->
+        <div id="section-dynamic-fields" class="space-y-4 pt-2 border-t border-white/5">
+          <!-- Populated by buildSectionFields() -->
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+          <button type="button" onclick="closeSectionEditModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+            Save Section Content
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD / EDIT PARTNER LOGO -->
+  <div id="logo-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
+    <div class="glass-card max-w-md w-full p-8 rounded-2xl border border-white/10 shadow-2xl space-y-6">
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <h3 id="logo-modal-title" class="text-lg font-bold text-white">Add Partner Logo</h3>
+        <button onclick="closeLogoModal()" class="text-gray-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="logo-form" onsubmit="saveLogo(event)" class="space-y-4">
+        <input type="hidden" id="logo-id">
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Partner / Brand Name</label>
+          <input type="text" id="logo-name" required placeholder="e.g. Acme Corp" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Logo Image URL</label>
+          <input type="text" id="logo-url" required placeholder="/wp-content/uploads/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Partner Website Link (optional)</label>
+          <input type="url" id="logo-link" placeholder="https://..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+          <button type="button" onclick="closeLogoModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+            Save Partner Logo
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD / EDIT BLOG POST -->
+  <div id="blog-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
+    <div class="glass-card max-w-3xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <div>
+          <h3 id="blog-modal-title" class="text-lg font-bold text-white">Create New Article</h3>
+          <p class="text-xs text-gray-400 mt-0.5">Publish thought leadership and intent data guides</p>
+        </div>
+        <button onclick="closeBlogModal()" class="text-gray-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="blog-form" onsubmit="saveBlogPost(event)" class="space-y-4 flex-1 overflow-y-auto pr-1">
+        <input type="hidden" id="blog-id">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Article Title</label>
+            <input type="text" id="blog-title" required placeholder="e.g. Modern B2B Outbound in 2026" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm" oninput="autoSlugBlog(this.value)">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">URL Slug</label>
+            <input type="text" id="blog-slug" required placeholder="modern-b2b-outbound-2026" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm font-mono">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Category</label>
+            <select id="blog-category" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+              <!-- Populated via loadBlogCategories() -->
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Publication Status</label>
+            <select id="blog-status" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+              <option value="published">Published (Live)</option>
+              <option value="draft">Draft (Unpublished)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Featured Image URL</label>
+          <input type="text" id="blog-image" placeholder="/wp-content/uploads/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Summary / Excerpt</label>
+          <textarea id="blog-excerpt" rows="2" placeholder="Brief summary of the article..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Article Body Content (HTML allowed)</label>
+          <textarea id="blog-body" rows="9" required placeholder="<p class='lead'>Article introduction...</p>" class="glass-input w-full px-4 py-3 rounded-xl text-xs font-mono leading-relaxed"></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-white/5">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">SEO Meta Title (optional)</label>
+            <input type="text" id="blog-seo-title" placeholder="Meta title..." class="glass-input w-full px-4 py-2 rounded-xl text-xs">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">SEO Description (optional)</label>
+            <input type="text" id="blog-seo-desc" placeholder="Meta description..." class="glass-input w-full px-4 py-2 rounded-xl text-xs">
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+          <button type="button" onclick="closeBlogModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+            Save Article
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: LEAD DETAIL & RESPONSE -->
+  <div id="lead-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
+    <div class="glass-card max-w-2xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <div>
+          <h3 class="text-lg font-bold text-white">Lead Details & Inquiry</h3>
+          <p id="lead-modal-subtitle" class="text-xs text-gray-400 mt-0.5">Submission Details</p>
+        </div>
+        <button onclick="closeLeadModal()" class="text-gray-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 flex-1 overflow-y-auto pr-1">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+            <p class="text-[10px] uppercase font-semibold text-gray-400">Form Captured</p>
+            <p id="lead-detail-form" class="text-sm font-bold text-indigo-400 mt-0.5">-</p>
+          </div>
+          <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+            <p class="text-[10px] uppercase font-semibold text-gray-400">Date & Time</p>
+            <p id="lead-detail-date" class="text-sm font-medium text-gray-300 mt-0.5">-</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-400 font-semibold uppercase">Contact Email</span>
+            <span id="lead-detail-email" class="text-sm font-semibold text-white select-all">-</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-400 font-semibold uppercase">Source URL</span>
+            <span id="lead-detail-source" class="text-xs font-mono text-gray-300 truncate max-w-xs">-</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-400 font-semibold uppercase">Status</span>
+            <select id="lead-detail-status" class="glass-input px-3 py-1.5 rounded-xl text-xs font-semibold">
+              <option value="new">New</option>
+              <option value="read">Read</option>
+              <option value="replied">Replied</option>
+              <option value="spam">Spam</option>
+              <option value="archived">Archived</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Submitted Responses & Fields</h4>
+          <div id="lead-answers-list" class="space-y-2">
+            <!-- Key-value rows dynamically inserted -->
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-white/5">
+        <button type="button" onclick="deleteCurrentLead()" class="px-4 py-2 rounded-xl text-xs font-semibold text-red-400 hover:text-red-300 hover:bg-red-500/10 transition">
+          <i class="fa-solid fa-trash mr-1"></i> Delete Lead
+        </button>
+        <div class="flex items-center space-x-3">
+          <a id="lead-mailto-btn" href="#" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email Lead</span>
+          </a>
+          <button type="button" onclick="saveLeadStatus()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+            Save Status
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    let authToken = localStorage.getItem('slm_auth_token') || '';
+    let currentTab = 'dashboard';
+
+    // Escape all server-controlled values before placing them in HTML templates.
+    function escapeHtml(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[ch]);
+    }
+
+    function safeAdminUrl(raw, kind = 'href') {
+      const value = String(raw == null ? '' : raw).trim();
+      if (!value || /[\u0000-\u001f\u007f]/.test(value) || value.startsWith('//')) return '#';
+      try {
+        const parsed = new URL(value, window.location.origin);
+        const allowed = kind === 'src' ? ['http:', 'https:'] : ['http:', 'https:', 'mailto:', 'tel:'];
+        if (allowed.includes(parsed.protocol) || value.startsWith('#') ||
+            (!/^[a-z][a-z0-9+.-]*:/i.test(value) && !value.startsWith('//'))) return escapeHtml(value);
+      } catch (_) {
+        if (value.startsWith('/') || value.startsWith('#')) return escapeHtml(value);
+      }
+      return '#';
+    }
+
+    // Toast helper
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `px-5 py-3 rounded-xl text-xs font-semibold text-white shadow-xl transition transform translate-y-0 opacity-100 flex items-center space-x-2 ${
+        type === 'success' ? 'bg-indigo-600 border border-indigo-400/30' : 'bg-red-600 border border-red-400/30'
+      }`;
+      toast.innerHTML = `<i class="fa-solid ${type === 'success' ? 'fa-check-circle' : 'fa-triangle-exclamation'}"></i><span>${escapeHtml(message)}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Auth
+    async function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const btn = document.getElementById('login-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i><span>Signing in...</span>';
+
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          authToken = data.token;
+          localStorage.setItem('slm_auth_token', authToken);
+          document.getElementById('auth-screen').classList.add('hidden');
+          showToast('Welcome back, Administrator!');
+          initDashboard();
+        } else {
+          showToast(data.message || 'Login failed', 'error');
+        }
+      } catch (err) {
+        showToast('Connection error to database server', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Sign In to Admin Portal</span><i class="fa-solid fa-arrow-right text-xs"></i>';
+      }
+    }
+
+    function handleLogout() {
+      authToken = '';
+      localStorage.removeItem('slm_auth_token');
+      document.getElementById('auth-screen').classList.remove('hidden');
+    }
+
+    // Switch Tabs
+    function switchTab(tabId) {
+      currentTab = tabId;
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.nav-tab').forEach(el => {
+        el.classList.remove('bg-indigo-600/20', 'text-indigo-300', 'border', 'border-indigo-500/30');
+        el.classList.add('text-gray-400');
+      });
+
+      const activePane = document.getElementById(`tab-${tabId}`);
+      if (activePane) activePane.classList.remove('hidden');
+
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activeNav) {
+        activeNav.classList.add('bg-indigo-600/20', 'text-indigo-300', 'border', 'border-indigo-500/30');
+        activeNav.classList.remove('text-gray-400');
+      }
+
+      const titles = {
+        dashboard: 'Dashboard Overview',
+        team: 'Leadership & Team ("About Us")',
+        pages: 'Pages & Dynamic Content',
+        company: 'Global Company Info',
+        logos: 'Partner Logos (Motion Carousel)',
+        leads: 'Lead Inquiries & Inbox',
+        blog: 'Blog & Thought Leadership',
+        media: 'Media Asset Library'
+      };
+      document.getElementById('page-title').innerText = titles[tabId] || 'Admin Portal';
+
+      if (tabId === 'team') loadTeam();
+      if (tabId === 'pages') loadPages();
+      if (tabId === 'company') loadCompanySettings();
+      if (tabId === 'logos') loadLogos();
+      if (tabId === 'leads') loadLeads();
+      if (tabId === 'blog') { loadBlogCategories(); loadBlogPosts(); }
+      if (tabId === 'media') loadMedia();
+    }
+
+    // Load Team
+    let teamMembersMap = {};
+
+    async function loadTeam() {
+      try {
+        const res = await fetch('/api/admin/team', {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        if (res.status === 401) {
+          handleLogout();
+          return;
+        }
+        const data = await res.json();
+        const grid = document.getElementById('team-cards-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        if (data.success && data.team) {
+          const countEl = document.getElementById('stat-team-count');
+          if (countEl) countEl.innerText = data.team.length;
+
+          if (data.team.length === 0) {
+            grid.innerHTML = '<div class="col-span-full py-12 text-center text-xs text-gray-500">No team members found. Click "Add Team Member" above.</div>';
+            return;
+          }
+
+          teamMembersMap = {};
+          data.team.forEach(member => {
+            teamMembersMap[member.id] = member;
+            const card = document.createElement('div');
+            card.className = 'glass-card p-5 rounded-2xl flex flex-col justify-between border border-white/5 hover:border-indigo-500/30 transition group';
+            card.innerHTML = `
+              <div>
+                <div class="flex items-start space-x-4">
+                  <img src="${safeAdminUrl(member.photo_url || '/wp-content/uploads/2023/03/s.png', 'src')}"
+                       class="w-16 h-16 rounded-xl object-cover border border-white/10 bg-gray-900 shadow">
+                  <div class="flex-1 truncate">
+                    <h4 class="font-bold text-white text-base truncate">${escapeHtml(member.full_name)}</h4>
+                    <p class="text-xs text-indigo-400 font-medium truncate">${escapeHtml(member.job_title || 'Leader')}</p>
+                    <div class="flex items-center space-x-2 mt-2">
+                      ${member.socials?.linkedin ? `<a href="${safeAdminUrl(member.socials.linkedin)}" target="_blank" class="text-gray-400 hover:text-indigo-400 text-xs"><i class="fa-brands fa-linkedin"></i></a>` : ''}
+                      ${member.socials?.facebook ? `<a href="${safeAdminUrl(member.socials.facebook)}" target="_blank" class="text-gray-400 hover:text-indigo-400 text-xs"><i class="fa-brands fa-facebook"></i></a>` : ''}
+                    </div>
+                  </div>
+                </div>
+                <p class="text-xs text-gray-400 mt-4 line-clamp-2 leading-relaxed">${escapeHtml(member.bio || 'No bio provided')}</p>
+              </div>
+
+              <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                <span class="text-[11px] text-gray-500">Order: #${escapeHtml(member.sort_order)}</span>
+                <div class="flex space-x-2">
+                  <button onclick="editTeamMemberById('${escapeHtml(member.id)}')"
+                          class="px-3 py-1.5 rounded-lg bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 text-xs font-semibold transition">
+                    <i class="fa-solid fa-pen mr-1"></i> Edit
+                  </button>
+                  <button onclick="deleteTeamMember('${escapeHtml(member.id)}')"
+                          class="px-3 py-1.5 rounded-lg bg-red-600/10 hover:bg-red-600/20 text-red-400 text-xs font-semibold transition">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+        }
+      } catch (err) {
+        showToast('Failed to load team members', 'error');
+      }
+    }
+
+    function editTeamMemberById(id) {
+      const member = teamMembersMap[id];
+      if (member) editTeamMember(member);
+    }
+
+    // Modal Team Ops
+    function openTeamModal() {
+      document.getElementById('team-modal-title').innerText = 'Add Team Member';
+      document.getElementById('team-member-id').value = '';
+      document.getElementById('member-name').value = '';
+      document.getElementById('member-role').value = '';
+      document.getElementById('member-photo-url').value = '/wp-content/uploads/2023/03/s.png';
+      document.getElementById('member-photo-preview').src = '/wp-content/uploads/2023/03/s.png';
+      document.getElementById('member-linkedin').value = '';
+      document.getElementById('member-facebook').value = '';
+      document.getElementById('member-bio').value = '';
+      document.getElementById('team-modal').classList.remove('hidden');
+    }
+
+    function editTeamMember(member) {
+      document.getElementById('team-modal-title').innerText = 'Edit Team Member';
+      document.getElementById('team-member-id').value = member.id;
+      document.getElementById('member-name').value = member.full_name;
+      document.getElementById('member-role').value = member.job_title || '';
+      document.getElementById('member-photo-url').value = member.photo_url || '';
+      document.getElementById('member-photo-preview').src = member.photo_url || '/wp-content/uploads/2023/03/s.png';
+      document.getElementById('member-linkedin').value = member.socials?.linkedin || '';
+      document.getElementById('member-facebook').value = member.socials?.facebook || '';
+      document.getElementById('member-bio').value = member.bio || '';
+      document.getElementById('team-modal').classList.remove('hidden');
+    }
+
+    function closeTeamModal() {
+      document.getElementById('team-modal').classList.add('hidden');
+    }
+
+    async function uploadMemberPhoto(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const formData = new FormData();
+      formData.append('image', file);
+
+      try {
+        const res = await fetch('/api/admin/media/upload', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${authToken}` },
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('member-photo-url').value = data.url;
+          document.getElementById('member-photo-preview').src = data.url;
+          showToast('Photo uploaded successfully');
+        }
+      } catch (err) {
+        showToast('Image upload failed', 'error');
+      }
+    }
+
+    async function saveTeamMember(e) {
+      e.preventDefault();
+      const id = document.getElementById('team-member-id').value;
+      const payload = {
+        full_name: document.getElementById('member-name').value,
+        job_title: document.getElementById('member-role').value,
+        photo_url: document.getElementById('member-photo-url').value,
+        bio: document.getElementById('member-bio').value,
+        socials: {
+          linkedin: document.getElementById('member-linkedin').value,
+          facebook: document.getElementById('member-facebook').value
+        }
+      };
+
+      const url = id ? `/api/admin/team/${id}` : '/api/admin/team';
+      const method = id ? 'PUT' : 'POST';
+
+      try {
+        const res = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(id ? 'Team member updated' : 'New team member added');
+          closeTeamModal();
+          loadTeam();
+        }
+      } catch (err) {
+        showToast('Failed to save team member', 'error');
+      }
+    }
+
+    async function deleteTeamMember(id) {
+      if (!confirm('Are you sure you want to delete this team member?')) return;
+      try {
+        const res = await fetch(`/api/admin/team/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Member removed');
+          loadTeam();
+        }
+      } catch (err) {
+        showToast('Delete operation failed', 'error');
+      }
+    }
+
+    // Company Settings
+    async function loadCompanySettings() {
+      try {
+        const res = await fetch('/api/settings');
+        const data = await res.json();
+        if (data.success && data.settings?.general) {
+          const g = data.settings.general;
+          document.getElementById('company-name').value = g.company_name || '';
+          document.getElementById('company-phone').value = g.phone || '';
+          document.getElementById('company-email').value = g.email || '';
+          document.getElementById('company-login-url').value = g.login_url || '';
+          document.getElementById('company-address').value = g.address || '';
+        }
+      } catch (err) {
+        showToast('Could not load company settings', 'error');
+      }
+    }
+
+    async function saveCompanySettings(e) {
+      e.preventDefault();
+      const payload = {
+        company_name: document.getElementById('company-name').value,
+        phone: document.getElementById('company-phone').value,
+        email: document.getElementById('company-email').value,
+        login_url: document.getElementById('company-login-url').value,
+        address: document.getElementById('company-address').value
+      };
+
+      try {
+        const res = await fetch('/api/admin/settings/general', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ value: payload })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Global company settings saved');
+        }
+      } catch (err) {
+        showToast('Failed to update company settings', 'error');
+      }
+    }
+
+    // ========================================================================
+    // PARTNER LOGOS MANAGEMENT
+    // ========================================================================
+    let currentLogos = [];
+
+    async function loadLogos() {
+      try {
+        const res = await fetch('/api/admin/logos', {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        if (res.status === 401) {
+          handleLogout();
+          return;
+        }
+        const data = await res.json();
+        const grid = document.getElementById('logos-grid');
+        grid.innerHTML = '';
+        if (data.success && data.logos) {
+          currentLogos = data.logos;
+          document.getElementById('stat-logos-count').innerText = data.logos.length;
+          data.logos.forEach(logo => {
+            const card = document.createElement('div');
+            card.className = 'glass-card p-4 rounded-xl flex flex-col items-center justify-between space-y-3 border border-white/5 relative group';
+            card.innerHTML = `
+              <div class="h-12 w-full flex items-center justify-center p-1">
+                <img src="${safeAdminUrl(logo.logo_url, 'src')}" class="max-h-full max-w-full object-contain filter brightness-90">
+              </div>
+              <span class="text-[11px] font-medium text-gray-300 truncate w-full text-center">${escapeHtml(logo.name)}</span>
+              <div class="flex items-center space-x-2 pt-2 border-t border-white/5 w-full justify-center">
+                <button onclick="editLogo('${escapeHtml(logo.id)}')" class="text-xs text-gray-400 hover:text-indigo-400 p-1" title="Edit">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <button onclick="deleteLogo('${escapeHtml(logo.id)}')" class="text-xs text-gray-400 hover:text-red-400 p-1" title="Delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+        }
+      } catch (err) {
+        showToast('Failed to load partner logos', 'error');
+      }
+    }
+
+    function openLogoModal(logo = null) {
+      document.getElementById('logo-id').value = logo ? logo.id : '';
+      document.getElementById('logo-name').value = logo ? logo.name : '';
+      document.getElementById('logo-url').value = logo ? logo.logo_url : '';
+      document.getElementById('logo-link').value = logo ? (logo.link_url || '') : '';
+      document.getElementById('logo-modal-title').innerText = logo ? 'Edit Partner Logo' : 'Add Partner Logo';
+      document.getElementById('logo-modal').classList.remove('hidden');
+    }
+
+    function closeLogoModal() {
+      document.getElementById('logo-modal').classList.add('hidden');
+    }
+
+    function editLogo(id) {
+      const logo = currentLogos.find(l => l.id === id);
+      if (logo) openLogoModal(logo);
+    }
+
+    async function saveLogo(e) {
+      e.preventDefault();
+      const id = document.getElementById('logo-id').value;
+      const payload = {
+        name: document.getElementById('logo-name').value,
+        logo_url: document.getElementById('logo-url').value,
+        link_url: document.getElementById('logo-link').value || null,
+        is_visible: true,
+        sort_order: id ? undefined : currentLogos.length + 1
+      };
+
+      const url = id ? `/api/admin/logos/${id}` : '/api/admin/logos';
+      const method = id ? 'PUT' : 'POST';
+
+      try {
+        const res = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(id ? 'Logo updated' : 'Partner logo added');
+          closeLogoModal();
+          loadLogos();
+        }
+      } catch (err) {
+        showToast('Failed to save logo', 'error');
+      }
+    }
+
+    async function deleteLogo(id) {
+      if (!confirm('Are you sure you want to delete this partner logo?')) return;
+      try {
+        const res = await fetch(`/api/admin/logos/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Logo deleted');
+          loadLogos();
+        }
+      } catch (err) {
+        showToast('Failed to delete logo', 'error');
+      }
+    }
+
+    // ========================================================================
+    // PAGES & SECTION BUILDER MANAGEMENT
+    // ========================================================================
+    let currentPageId = null;
+    let currentSections = [];
+    let pagesMap = {};
+
+    async function loadPages() {
+      try {
+        const res = await fetch('/api/admin/pages', {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        if (res.status === 401) {
+          handleLogout();
+          return;
+        }
+        const data = await res.json();
+        const list = document.getElementById('pages-list');
+        list.innerHTML = '';
+        if (data.success && data.pages) {
+          document.getElementById('stat-pages-count').innerText = data.pages.length;
+          pagesMap = {};
+          data.pages.forEach(p => {
+            pagesMap[p.id] = p;
+            const hasDraft = (p.draft_changes_count > 0) || (p.status === 'draft');
+            const item = document.createElement('div');
+            item.className = 'p-4 flex items-center justify-between hover:bg-white/[0.02] transition';
+            item.innerHTML = `
+              <div class="flex-1 min-w-0 pr-4">
+                <div class="flex items-center space-x-2">
+                  <h4 class="font-bold text-white text-sm truncate">${escapeHtml(p.title)}</h4>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 uppercase">
+                    ${escapeHtml(p.page_type)}
+                  </span>
+                  ${hasDraft 
+                    ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center space-x-1">
+                         <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                         <span>Draft Changes</span>
+                       </span>`
+                    : `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center space-x-1">
+                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                         <span>Live In Sync</span>
+                       </span>`
+                  }
+                </div>
+                <p class="text-xs text-gray-500 font-mono mt-0.5 truncate">${safeAdminUrl(p.full_path)}</p>
+              </div>
+              <div class="flex items-center space-x-2 flex-shrink-0">
+                <a href="${safeAdminUrl(p.full_path)}?admin=true&studio=true" target="_blank"
+                   class="px-3 py-1.5 bg-gradient-to-r from-indigo-600/30 to-purple-600/30 hover:from-indigo-600 hover:to-purple-600 text-indigo-200 hover:text-white rounded-xl text-xs font-bold border border-indigo-500/30 transition flex items-center space-x-1.5 shadow-sm">
+                  <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
+                  <span>Studio Editor</span>
+                </a>
+                ${hasDraft ? `
+                  <button onclick="publishPageFromAdmin('${escapeHtml(p.id)}')"
+                          class="px-3 py-1.5 bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white rounded-xl text-xs font-semibold border border-emerald-500/30 transition flex items-center space-x-1">
+                    <i class="fa-solid fa-cloud-arrow-up text-[11px]"></i>
+                    <span>Publish</span>
+                  </button>
+                ` : ''}
+                <button onclick="openPageSectionsModalById('${escapeHtml(p.id)}')"
+                        class="px-3 py-1.5 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white rounded-xl text-xs font-semibold border border-white/10 transition flex items-center space-x-1">
+                  <i class="fa-solid fa-sliders text-[11px]"></i>
+                  <span>Sections</span>
+                </button>
+                <a href="${safeAdminUrl(p.full_path)}" target="_blank" class="p-2 text-gray-400 hover:text-white text-xs" title="View live page">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            `;
+            list.appendChild(item);
+          });
+        }
+      } catch (err) {
+        showToast('Failed to load pages', 'error');
+      }
+    }
+
+    async function publishPageFromAdmin(pageId) {
+      try {
+        const res = await fetch(`/api/admin/pages/${pageId}/publish`, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const d = await res.json();
+        if (d.success) {
+          showToast('Page published live successfully!', 'success');
+          loadPages();
+        } else {
+          showToast(d.message || 'Failed to publish page', 'error');
+        }
+      } catch (e) {
+        showToast('Error connecting to server', 'error');
+      }
+    }
+
+    function openPageSectionsModalById(id) {
+      const p = pagesMap[id];
+      if (p) openPageSectionsModal(p.id, p.title, p.full_path);
+    }
+
+    async function openPageSectionsModal(pageId, pageTitle, fullPath) {
+      currentPageId = pageId;
+      document.getElementById('current-page-id').value = pageId;
+      document.getElementById('page-sections-title').innerText = `Manage Sections: ${pageTitle}`;
+      document.getElementById('current-page-preview-link').href = fullPath;
+      document.getElementById('page-sections-modal').classList.remove('hidden');
+
+      await loadPageSections(pageId);
+    }
+
+    function closePageSectionsModal() {
+      document.getElementById('page-sections-modal').classList.add('hidden');
+      currentPageId = null;
+    }
+
+    async function loadPageSections(pageId) {
+      try {
+        const res = await fetch(`/api/admin/pages/${pageId}`, {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          currentSections = data.sections || [];
+          renderSectionsList();
+        }
+      } catch (err) {
+        showToast('Failed to load page sections', 'error');
+      }
+    }
+
+    function renderSectionsList() {
+      const container = document.getElementById('sections-container');
+      container.innerHTML = '';
+
+      if (currentSections.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center text-gray-500 glass-card rounded-xl">
+            <i class="fa-solid fa-layer-group text-3xl mb-3 text-gray-600"></i>
+            <p class="text-sm font-medium">No sections created for this page yet.</p>
+            <p class="text-xs text-gray-600 mt-1">Click "Add Section" above to add hero, card grid, split row, or team blocks.</p>
+          </div>
+        `;
+        return;
+      }
+
+      currentSections.forEach((sec, idx) => {
+        const item = document.createElement('div');
+        item.className = 'glass-card p-4 rounded-xl flex items-center justify-between space-x-4 border border-white/5 hover:border-white/10 transition';
+        item.innerHTML = `
+          <div class="flex items-center space-x-3 min-w-0 flex-1">
+            <div class="flex flex-col space-y-1">
+              <button onclick="moveSection(${idx}, -1)" ${idx === 0 ? 'disabled class="text-gray-700 cursor-not-allowed text-xs"' : 'class="text-gray-400 hover:text-white text-xs"'}>
+                <i class="fa-solid fa-chevron-up"></i>
+              </button>
+              <button onclick="moveSection(${idx}, 1)" ${idx === currentSections.length - 1 ? 'disabled class="text-gray-700 cursor-not-allowed text-xs"' : 'class="text-gray-400 hover:text-white text-xs"'}>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-400 font-bold text-xs flex items-center justify-center flex-shrink-0">
+              ${idx + 1}
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center space-x-2">
+                <h5 class="text-sm font-bold text-white truncate">${escapeHtml(sec.label || 'Untitled Section')}</h5>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 border border-white/10 text-indigo-300">
+                  ${escapeHtml(sec.section_type)}
+                </span>
+                ${sec.anchor_id ? `<span class="text-[10px] text-gray-500 font-mono">#${escapeHtml(sec.anchor_id)}</span>` : ''}
+              </div>
+              <p class="text-[11px] text-gray-400 truncate mt-0.5">
+                ${escapeHtml(sec.data?.title || sec.data?.eyebrow || (sec.data?.html ? 'Raw HTML migration block' : 'Custom configuration'))}
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2 flex-shrink-0">
+            <button onclick="toggleSectionVisibility('${escapeHtml(sec.id)}', ${sec.is_visible})" 
+                    class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition ${sec.is_visible ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-gray-800 text-gray-500 border border-gray-700'}"
+                    title="Toggle Visibility">
+              <i class="fa-solid ${sec.is_visible ? 'fa-eye' : 'fa-eye-slash'}"></i>
+            </button>
+            <button onclick="openEditSectionModal('${escapeHtml(sec.id)}')"
+                    class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-semibold transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-pen-to-square text-[11px]"></i>
+              <span>Edit Content</span>
+            </button>
+            <button onclick="deleteSection('${escapeHtml(sec.id)}')"
+                    class="p-2 text-gray-500 hover:text-red-400 text-xs transition" title="Delete section">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    async function moveSection(index, direction) {
+      const targetIndex = index + direction;
+      if (targetIndex < 0 || targetIndex >= currentSections.length) return;
+
+      const temp = currentSections[index];
+      currentSections[index] = currentSections[targetIndex];
+      currentSections[targetIndex] = temp;
+
+      renderSectionsList();
+
+      const section_ids = currentSections.map(s => s.id);
+      try {
+        await fetch(`/api/admin/pages/${currentPageId}/reorder-sections`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ section_ids })
+        });
+        showToast('Section order saved');
+      } catch (err) {
+        showToast('Failed to save reorder', 'error');
+      }
+    }
+
+    async function toggleSectionVisibility(sectionId, currentStatus) {
+      const sec = currentSections.find(s => s.id === sectionId);
+      if (!sec) return;
+
+      try {
+        const res = await fetch(`/api/admin/sections/${sectionId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({
+            label: sec.label,
+            anchor_id: sec.anchor_id,
+            sort_order: sec.sort_order,
+            is_visible: !currentStatus,
+            data: sec.data
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          sec.is_visible = !currentStatus;
+          renderSectionsList();
+          showToast(`Section ${sec.is_visible ? 'enabled' : 'hidden'}`);
+        }
+      } catch (err) {
+        showToast('Failed to toggle section', 'error');
+      }
+    }
+
+    async function deleteSection(sectionId) {
+      if (!confirm('Are you sure you want to delete this section from the page?')) return;
+      try {
+        const res = await fetch(`/api/admin/sections/${sectionId}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Section deleted');
+          currentSections = currentSections.filter(s => s.id !== sectionId);
+          renderSectionsList();
+        }
+      } catch (err) {
+        showToast('Failed to delete section', 'error');
+      }
+    }
+
+    // ========================================================================
+    // SECTION CONTENT EDITOR MODAL
+    // ========================================================================
+    let editingSection = null;
+
+    function openEditSectionModal(sectionId) {
+      editingSection = currentSections.find(s => s.id === sectionId);
+      if (!editingSection) return;
+
+      document.getElementById('edit-section-id').value = editingSection.id;
+      document.getElementById('section-label-input').value = editingSection.label || '';
+      document.getElementById('section-anchor-input').value = editingSection.anchor_id || '';
+      document.getElementById('section-edit-modal-type').innerText = `Type: ${editingSection.section_type}`;
+
+      buildSectionFields(editingSection);
+      document.getElementById('section-edit-modal').classList.remove('hidden');
+    }
+
+    function closeSectionEditModal() {
+      document.getElementById('section-edit-modal').classList.add('hidden');
+      editingSection = null;
+    }
+
+    function buildSectionFields(sec) {
+      const container = document.getElementById('section-dynamic-fields');
+      container.innerHTML = '';
+      const d = sec.data || {};
+      const type = sec.section_type;
+
+      if (type === 'hero') {
+        container.innerHTML = `
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Headline</label>
+            <input type="text" id="field-hero-title" value="${escapeHtml(d.title || '')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Subtitle / Tagline</label>
+            <textarea id="field-hero-subtitle" rows="3" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">${escapeHtml(d.subtitle || '')}</textarea>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Primary Button Text</label>
+              <input type="text" id="field-hero-cta1-text" value="${escapeHtml(d.cta_primary_text || 'Book Your Demo')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Primary Button URL</label>
+              <input type="text" id="field-hero-cta1-url" value="${safeAdminUrl(d.cta_primary_url || 'https://salesleadmachine.uk/login')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Dashboard / Graphic Image URL</label>
+            <input type="text" id="field-hero-image" value="${safeAdminUrl(d.dashboard_image || d.image_url || '', 'src')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+        `;
+      } else if (type === 'split') {
+        const bulletsText = Array.isArray(d.bullets) ? d.bullets.join('\n') : '';
+        container.innerHTML = `
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Section Title</label>
+            <input type="text" id="field-split-title" value="${escapeHtml(d.title || '')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Description Paragraph</label>
+            <textarea id="field-split-desc" rows="3" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">${escapeHtml(d.description || '')}</textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Bullet Points (one per line)</label>
+            <textarea id="field-split-bullets" rows="4" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm font-mono">${escapeHtml(bulletsText)}</textarea>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Image URL</label>
+              <input type="text" id="field-split-image" value="${safeAdminUrl(d.image || '', 'src')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Image Position</label>
+              <select id="field-split-pos" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+                <option value="right" ${d.image_position === 'right' ? 'selected' : ''}>Right side</option>
+                <option value="left" ${d.image_position === 'left' ? 'selected' : ''}>Left side</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">CTA Button Text</label>
+              <input type="text" id="field-split-cta-text" value="${escapeHtml(d.cta_text || '')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">CTA Button URL</label>
+              <input type="text" id="field-split-cta-url" value="${safeAdminUrl(d.cta_url || '')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+            </div>
+          </div>
+        `;
+      } else if (type === 'raw_html') {
+        container.innerHTML = `
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">HTML Content</label>
+            <textarea id="field-raw-html" rows="12" class="glass-input w-full px-4 py-3 rounded-xl text-xs font-mono leading-relaxed">${escapeHtml(d.html || d.content || '')}</textarea>
+            <p class="text-[11px] text-gray-500 mt-1">Direct HTML markup output safely into the template.</p>
+          </div>
+        `;
+      } else {
+        // Generic JSON editor for card_grid, team, testimonials, pricing, counters, etc.
+        container.innerHTML = `
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Section Title</label>
+            <input type="text" id="field-generic-title" value="${escapeHtml(d.title || '')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Subtitle</label>
+            <input type="text" id="field-generic-subtitle" value="${escapeHtml(d.subtitle || '')}" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Section Data (JSON)</label>
+            <textarea id="field-generic-json" rows="8" class="glass-input w-full px-4 py-3 rounded-xl text-xs font-mono">${escapeHtml(JSON.stringify(d, null, 2))}</textarea>
+          </div>
+        `;
+      }
+    }
+
+    async function saveSectionContent(e) {
+      e.preventDefault();
+      if (!editingSection) return;
+
+      const label = document.getElementById('section-label-input').value;
+      const anchor_id = document.getElementById('section-anchor-input').value || null;
+      let data = { ...editingSection.data };
+      const type = editingSection.section_type;
+
+      if (type === 'hero') {
+        data.title = document.getElementById('field-hero-title').value;
+        data.subtitle = document.getElementById('field-hero-subtitle').value;
+        data.cta_primary_text = document.getElementById('field-hero-cta1-text').value;
+        data.cta_primary_url = document.getElementById('field-hero-cta1-url').value;
+        data.dashboard_image = document.getElementById('field-hero-image').value;
+      } else if (type === 'split') {
+        data.title = document.getElementById('field-split-title').value;
+        data.description = document.getElementById('field-split-desc').value;
+        data.bullets = document.getElementById('field-split-bullets').value.split('\n').filter(b => b.trim());
+        data.image = document.getElementById('field-split-image').value;
+        data.image_position = document.getElementById('field-split-pos').value;
+        data.cta_text = document.getElementById('field-split-cta-text').value;
+        data.cta_url = document.getElementById('field-split-cta-url').value;
+      } else if (type === 'raw_html') {
+        data.html = document.getElementById('field-raw-html').value;
+      } else {
+        const jsonEl = document.getElementById('field-generic-json');
+        if (jsonEl) {
+          try {
+            data = JSON.parse(jsonEl.value);
+            if (document.getElementById('field-generic-title')) {
+              data.title = document.getElementById('field-generic-title').value;
+            }
+            if (document.getElementById('field-generic-subtitle')) {
+              data.subtitle = document.getElementById('field-generic-subtitle').value;
+            }
+          } catch (err) {
+            showToast('Invalid JSON in section data', 'error');
+            return;
+          }
+        }
+      }
+
+      try {
+        const res = await fetch(`/api/admin/sections/${editingSection.id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({
+            label,
+            anchor_id,
+            is_visible: editingSection.is_visible,
+            sort_order: editingSection.sort_order,
+            data
+          })
+        });
+        const resp = await res.json();
+        if (resp.success) {
+          showToast('Section content updated successfully');
+          editingSection.label = label;
+          editingSection.anchor_id = anchor_id;
+          editingSection.data = data;
+          closeSectionEditModal();
+          renderSectionsList();
+        }
+      } catch (err) {
+        showToast('Failed to update section', 'error');
+      }
+    }
+
+    function openAddSectionModal() {
+      const type = prompt('Enter section type to add (hero, split, card_grid, team, logo_wall, testimonials, pricing, contact_info, counters, cta_banner, rich_text, raw_html):', 'split');
+      if (!type) return;
+
+      const label = prompt('Enter section name / label:', `${type.charAt(0).toUpperCase() + type.slice(1)} Section`);
+      if (!label) return;
+
+      addNewSection(type.toLowerCase(), label);
+    }
+
+    async function addNewSection(sectionType, label) {
+      try {
+        const res = await fetch('/api/admin/sections', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({
+            page_id: currentPageId,
+            section_type: sectionType,
+            label,
+            sort_order: currentSections.length + 1,
+            is_visible: true,
+            data: { title: label }
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('New section added');
+          loadPageSections(currentPageId);
+        }
+      } catch (err) {
+        showToast('Failed to add section', 'error');
+      }
+    }
+
+    // ========================================================================
+    // LEADS INBOX & CSV EXPORT
+    // ========================================================================
+    let currentLeads = [];
+    let leadDebounceTimer = null;
+    let selectedLead = null;
+
+    function debounceLoadLeads() {
+      clearTimeout(leadDebounceTimer);
+      leadDebounceTimer = setTimeout(loadLeads, 300);
+    }
+
+    async function loadFormsForFilter() {
+      try {
+        const res = await fetch('/api/admin/forms', {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        const select = document.getElementById('lead-filter-form');
+        if (data.success && data.forms && select) {
+          const currentVal = select.value;
+          select.innerHTML = '<option value="all">All Forms</option>' +
+            data.forms.map(f => `<option value="${escapeHtml(f.key)}">${escapeHtml(f.name)}</option>`).join('');
+          select.value = currentVal;
+        }
+      } catch (err) {}
+    }
+
+    async function loadLeads() {
+      try {
+        const formFilter = document.getElementById('lead-filter-form')?.value || 'all';
+        const statusFilter = document.getElementById('lead-filter-status')?.value || 'all';
+        const searchFilter = document.getElementById('lead-filter-search')?.value || '';
+
+        const params = new URLSearchParams();
+        if (formFilter !== 'all') params.append('form', formFilter);
+        if (statusFilter !== 'all') params.append('status', statusFilter);
+        if (searchFilter.trim()) params.append('search', searchFilter.trim());
+
+        const res = await fetch(`/api/admin/submissions?${params.toString()}`, {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        if (res.status === 401) {
+          handleLogout();
+          return;
+        }
+        const data = await res.json();
+        const tbody = document.getElementById('leads-tbody');
+        tbody.innerHTML = '';
+
+        if (data.success && data.submissions) {
+          currentLeads = data.submissions;
+          const countEl = document.getElementById('stat-leads-count');
+          if (countEl) countEl.innerText = data.submissions.length;
+
+          if (data.submissions.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" class="p-8 text-center text-xs text-gray-500">No leads match the current filters.</td></tr>`;
+            return;
+          }
+
+          data.submissions.forEach(lead => {
+            const row = document.createElement('tr');
+            row.className = 'hover:bg-white/[0.02] transition';
+
+            // Extract primary name if available in answers
+            const ans = lead.answers || {};
+            const leadName = ans.first_name ? `${ans.first_name} ${ans.last_name || ''}`.trim() : (ans.full_name || ans.name || '');
+
+            // Status badge classes
+            const statusStyles = {
+              new: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+              read: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
+              replied: 'bg-purple-500/10 text-purple-400 border-purple-500/30',
+              spam: 'bg-red-500/10 text-red-400 border-red-500/30',
+              archived: 'bg-gray-500/10 text-gray-400 border-gray-500/30'
+            };
+            const badgeClass = statusStyles[lead.status] || 'bg-white/5 text-gray-300 border-white/10';
+
+            row.innerHTML = `
+              <td class="p-4">
+                <div class="font-semibold text-white">${escapeHtml(lead.email || 'Visitor')}</div>
+                ${leadName ? `<div class="text-[11px] text-gray-400 mt-0.5">${escapeHtml(leadName)}</div>` : ''}
+              </td>
+              <td class="p-4">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">
+                  ${escapeHtml(lead.form_name)}
+                </span>
+              </td>
+              <td class="p-4">
+                <span class="px-2 py-0.5 rounded text-[10px] uppercase font-semibold border ${badgeClass}">
+                  ${escapeHtml(lead.status || 'new')}
+                </span>
+              </td>
+              <td class="p-4 text-xs font-mono text-gray-400 truncate max-w-[140px]" title="${escapeHtml(lead.source_page || '/')}">
+                ${escapeHtml(lead.source_page || '/')}
+              </td>
+              <td class="p-4 text-xs text-gray-500">
+                ${new Date(lead.created_at).toLocaleDateString()}
+              </td>
+              <td class="p-4 text-right space-x-2">
+                <button onclick="openLeadModal(${escapeHtml(lead.id)})" class="px-2.5 py-1 rounded-lg text-xs bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/40 border border-indigo-500/30 transition">
+                  <i class="fa-solid fa-eye mr-1"></i> Inspect
+                </button>
+                <button onclick="quickDeleteLead(${escapeHtml(lead.id)})" class="px-2 py-1 rounded-lg text-xs text-red-400 hover:bg-red-500/20 transition" title="Delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            `;
+            tbody.appendChild(row);
+          });
+        }
+      } catch (err) {
+        showToast('Failed to load leads', 'error');
+      }
+    }
+
+    function openLeadModal(leadId) {
+      selectedLead = currentLeads.find(l => l.id === leadId);
+      if (!selectedLead) return;
+
+      document.getElementById('lead-modal-subtitle').innerText = `Lead #${selectedLead.id} • ${escapeHtml(selectedLead.form_name)}`;
+      document.getElementById('lead-detail-form').innerText = selectedLead.form_name;
+      document.getElementById('lead-detail-date').innerText = new Date(selectedLead.created_at).toLocaleString();
+      document.getElementById('lead-detail-email').innerText = selectedLead.email || 'N/A';
+      document.getElementById('lead-detail-source').innerText = selectedLead.source_page || '/';
+      document.getElementById('lead-detail-status').value = selectedLead.status || 'new';
+
+      // Mailto button
+      const mailto = document.getElementById('lead-mailto-btn');
+      if (selectedLead.email) {
+        mailto.href = `mailto:${escapeHtml(selectedLead.email)}?subject=Sales%20Lead%20Machine%20Inquiry%20Response`;
+        mailto.classList.remove('hidden');
+      } else {
+        mailto.classList.add('hidden');
+      }
+
+      // Answers rendering
+      const answersContainer = document.getElementById('lead-answers-list');
+      answersContainer.innerHTML = '';
+      const answers = selectedLead.answers || {};
+      const keys = Object.keys(answers);
+
+      if (keys.length === 0) {
+        answersContainer.innerHTML = '<p class="text-xs text-gray-500 italic">No additional fields submitted.</p>';
+      } else {
+        keys.forEach(k => {
+          let val = answers[k];
+          if (typeof val === 'object') val = JSON.stringify(val);
+          const item = document.createElement('div');
+          item.className = 'p-2.5 rounded-xl bg-white/[0.03] border border-white/5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1';
+          item.innerHTML = `
+            <span class="text-[11px] font-semibold text-gray-400 capitalize">${escapeHtml(k.replace(/_/g, ' '))}:</span>
+            <span class="text-xs text-white font-medium break-all sm:text-right max-w-sm">${escapeHtml(val)}</span>
+          `;
+          answersContainer.appendChild(item);
+        });
+      }
+
+      document.getElementById('lead-modal').classList.remove('hidden');
+    }
+
+    function closeLeadModal() {
+      document.getElementById('lead-modal').classList.add('hidden');
+      selectedLead = null;
+    }
+
+    async function saveLeadStatus() {
+      if (!selectedLead) return;
+      const newStatus = document.getElementById('lead-detail-status').value;
+      try {
+        const res = await fetch(`/api/admin/submissions/${selectedLead.id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ status: newStatus })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Lead status updated');
+          closeLeadModal();
+          loadLeads();
+        }
+      } catch (err) {
+        showToast('Failed to update lead status', 'error');
+      }
+    }
+
+    async function quickDeleteLead(id) {
+      if (!confirm('Are you sure you want to permanently delete this lead submission?')) return;
+      try {
+        const res = await fetch(`/api/admin/submissions/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Lead deleted');
+          loadLeads();
+        }
+      } catch (err) {
+        showToast('Failed to delete lead', 'error');
+      }
+    }
+
+    async function deleteCurrentLead() {
+      if (!selectedLead) return;
+      await quickDeleteLead(selectedLead.id);
+      closeLeadModal();
+    }
+
+    function exportLeadsCSV() {
+      if (!currentLeads || currentLeads.length === 0) {
+        showToast('No leads to export', 'error');
+        return;
+      }
+
+      let csv = 'ID,Email,Form,Status,Source Page,Date,Answers\n';
+      currentLeads.forEach(l => {
+        const email = `"${(l.email || '').replace(/"/g, '""')}"`;
+        const form = `"${(l.form_name || '').replace(/"/g, '""')}"`;
+        const status = `"${(l.status || '').replace(/"/g, '""')}"`;
+        const source = `"${(l.source_page || '').replace(/"/g, '""')}"`;
+        const date = `"${new Date(l.created_at).toISOString()}"`;
+        const answers = `"${JSON.stringify(l.answers || {}).replace(/"/g, '""')}"`;
+        csv += `${l.id},${email},${form},${status},${source},${date},${answers}\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', `salesleadmachine_leads_${Date.now()}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast('Leads CSV downloaded');
+    }
+
+    // ========================================================================
+    // MEDIA LIBRARY MANAGEMENT
+    // ========================================================================
+    let currentMedia = [];
+
+    async function loadMedia() {
+      try {
+        const res = await fetch('/api/admin/media', {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        const container = document.getElementById('media-grid');
+        container.innerHTML = '';
+        if (data.success && data.media) {
+          currentMedia = data.media;
+          if (data.media.length === 0) {
+            container.innerHTML = '<div class="col-span-full py-12 text-center text-xs text-gray-500">No media assets uploaded yet. Click "Upload Image Asset" to add files.</div>';
+            return;
+          }
+
+          data.media.forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'glass-card p-3 rounded-2xl border border-white/5 hover:border-indigo-500/40 transition group flex flex-col justify-between';
+            const sizeKb = m.size_bytes ? Math.round(m.size_bytes / 1024) : '—';
+            card.innerHTML = `
+              <div class="aspect-square w-full rounded-xl bg-gray-900/60 overflow-hidden flex items-center justify-center relative mb-2">
+                <img src="${safeAdminUrl(m.url, 'src')}" alt="${escapeHtml(m.file_name)}" class="object-cover w-full h-full group-hover:scale-105 transition duration-300">
+                <span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[9px] font-semibold bg-black/60 backdrop-blur text-emerald-400 border border-emerald-500/20 uppercase">
+                  WebP
+                </span>
+              </div>
+              <div class="space-y-1">
+                <p class="text-xs font-semibold text-white truncate" title="${escapeHtml(m.file_name)}">${escapeHtml(m.file_name)}</p>
+                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                  <span>${m.width ? `${escapeHtml(m.width)}×${escapeHtml(m.height)}` : '—'}</span>
+                  <span>${escapeHtml(sizeKb)} KB</span>
+                </div>
+              </div>
+              <div class="flex items-center space-x-1.5 mt-3 pt-2 border-t border-white/5">
+                <button onclick="copyMediaUrl('${safeAdminUrl(m.url, 'src')}')" class="flex-1 py-1.5 rounded-lg text-[10px] font-semibold bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition flex items-center justify-center space-x-1">
+                  <i class="fa-regular fa-copy"></i>
+                  <span>Copy URL</span>
+                </button>
+                <button onclick="deleteMedia(${escapeHtml(m.id)})" class="px-2 py-1.5 rounded-lg text-[10px] text-red-400 hover:bg-red-500/20 transition" title="Delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            `;
+            container.appendChild(card);
+          });
+        }
+      } catch (err) {
+        showToast('Failed to load media library', 'error');
+      }
+    }
+
+    async function handleMediaUpload(input) {
+      if (!input.files || input.files.length === 0) return;
+      const file = input.files[0];
+      const formData = new FormData();
+      formData.append('image', file);
+
+      showToast('Optimizing & uploading image with Sharp...', 'success');
+      try {
+        const res = await fetch('/api/admin/media/upload', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${authToken}` },
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Image uploaded and converted to WebP successfully!');
+          input.value = '';
+          loadMedia();
+        } else {
+          showToast(data.error || 'Upload failed', 'error');
+        }
+      } catch (err) {
+        showToast('Failed to upload image', 'error');
+      }
+    }
+
+    function copyMediaUrl(url) {
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Image URL copied: ' + url);
+      }).catch(() => {
+        prompt('Copy Image URL:', url);
+      });
+    }
+
+    async function deleteMedia(id) {
+      if (!confirm('Are you sure you want to delete this media asset?')) return;
+      try {
+        const res = await fetch(`/api/admin/media/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Media item deleted');
+          loadMedia();
+        }
+      } catch (err) {
+        showToast('Failed to delete media item', 'error');
+      }
+    }
+
+    // ========================================================================
+    // BLOG MANAGEMENT
+    // ========================================================================
+    let currentBlogPosts = [];
+    let blogCategories = [];
+
+    async function loadBlogCategories() {
+      try {
+        const res = await fetch('/api/blog/categories');
+        const data = await res.json();
+        if (data.success && data.categories) {
+          blogCategories = data.categories;
+          const select = document.getElementById('blog-category');
+          if (select) {
+            select.innerHTML = blogCategories.map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.name)}</option>`).join('');
+          }
+        }
+      } catch (err) {}
+    }
+
+    async function loadBlogPosts() {
+      try {
+        const res = await fetch('/api/admin/blog/posts', {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        if (res.status === 401) {
+          handleLogout();
+          return;
+        }
+        const data = await res.json();
+        const tbody = document.getElementById('blog-tbody');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+        if (data.success && data.posts) {
+          currentBlogPosts = data.posts;
+          const statEl = document.getElementById('stat-blog-count');
+          if (statEl) statEl.innerText = data.posts.length;
+
+          data.posts.forEach(post => {
+            const row = document.createElement('tr');
+            row.className = 'hover:bg-white/[0.02] transition';
+            const isPub = post.status === 'published';
+            row.innerHTML = `
+              <td class="p-4">
+                <div class="font-bold text-white text-sm">${escapeHtml(post.title)}</div>
+                <div class="text-xs text-gray-500 font-mono mt-0.5">/blog/${safeAdminUrl(`/blog/${escapeHtml(post.slug)}`)}</div>
+              </td>
+              <td class="p-4">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                  ${escapeHtml(post.category_name || 'General')}
+                </span>
+              </td>
+              <td class="p-4">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold ${isPub ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'} uppercase">
+                  ${escapeHtml(post.status)}
+                </span>
+              </td>
+              <td class="p-4 text-xs text-gray-400">
+                ${post.published_at ? new Date(post.published_at).toLocaleDateString() : 'Draft'}
+              </td>
+              <td class="p-4 text-right space-x-2 flex-shrink-0">
+                <a href="/blog/${safeAdminUrl(`/blog/${escapeHtml(post.slug)}`)}" target="_blank" class="p-1.5 text-gray-400 hover:text-white text-xs inline-block" title="View Article">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <button onclick="editBlogPost('${post.id}')" class="p-1.5 text-gray-400 hover:text-indigo-400 text-xs" title="Edit Article">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <button onclick="deleteBlogPost('${post.id}')" class="p-1.5 text-gray-400 hover:text-red-400 text-xs" title="Delete Article">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            `;
+            tbody.appendChild(row);
+          });
+        }
+      } catch (err) {
+        showToast('Failed to load blog posts', 'error');
+      }
+    }
+
+    function autoSlugBlog(val) {
+      const slugInput = document.getElementById('blog-slug');
+      if (slugInput && !document.getElementById('blog-id').value) {
+        slugInput.value = val.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      }
+    }
+
+    function openBlogModal(post = null) {
+      document.getElementById('blog-id').value = post ? post.id : '';
+      document.getElementById('blog-title').value = post ? post.title : '';
+      document.getElementById('blog-slug').value = post ? post.slug : '';
+      document.getElementById('blog-category').value = post?.category_id || (blogCategories[0]?.id || '');
+      document.getElementById('blog-status').value = post ? post.status : 'published';
+      document.getElementById('blog-image').value = post ? (post.featured_image_url || '') : '';
+      document.getElementById('blog-excerpt').value = post ? (post.excerpt || '') : '';
+      document.getElementById('blog-body').value = post ? (post.body_html || '') : '';
+      document.getElementById('blog-seo-title').value = post ? (post.seo_title || '') : '';
+      document.getElementById('blog-seo-desc').value = post ? (post.seo_description || '') : '';
+      document.getElementById('blog-modal-title').innerText = post ? 'Edit Article' : 'Create New Article';
+      document.getElementById('blog-modal').classList.remove('hidden');
+    }
+
+    function closeBlogModal() {
+      document.getElementById('blog-modal').classList.add('hidden');
+    }
+
+    function editBlogPost(id) {
+      const p = currentBlogPosts.find(x => x.id === id);
+      if (p) openBlogModal(p);
+    }
+
+    async function saveBlogPost(e) {
+      e.preventDefault();
+      const id = document.getElementById('blog-id').value;
+      const payload = {
+        title: document.getElementById('blog-title').value,
+        slug: document.getElementById('blog-slug').value,
+        category_id: document.getElementById('blog-category').value || null,
+        status: document.getElementById('blog-status').value,
+        featured_image_url: document.getElementById('blog-image').value || null,
+        excerpt: document.getElementById('blog-excerpt').value,
+        body_html: document.getElementById('blog-body').value,
+        seo_title: document.getElementById('blog-seo-title').value || null,
+        seo_description: document.getElementById('blog-seo-desc').value || null
+      };
+
+      const url = id ? `/api/admin/blog/posts/${id}` : '/api/admin/blog/posts';
+      const method = id ? 'PUT' : 'POST';
+
+      try {
+        const res = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(id ? 'Article updated' : 'Article published');
+          closeBlogModal();
+          loadBlogPosts();
+        }
+      } catch (err) {
+        showToast('Failed to save article', 'error');
+      }
+    }
+
+    async function deleteBlogPost(id) {
+      if (!confirm('Are you sure you want to delete this article?')) return;
+      try {
+        const res = await fetch(`/api/admin/blog/posts/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Article deleted');
+          loadBlogPosts();
+        }
+      } catch (err) {
+        showToast('Failed to delete article', 'error');
+      }
+    }
+
+    // Init
+    function initDashboard() {
+      if (authToken) {
+        document.getElementById('auth-screen').classList.add('hidden');
+        loadTeam();
+        loadLogos();
+        loadPages();
+        loadCompanySettings();
+        loadFormsForFilter();
+        loadLeads();
+        loadBlogCategories();
+        loadBlogPosts();
+        loadMedia();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', initDashboard);
+  </script>
+</body>
+</html>

@@ -164,7 +164,7 @@
       "category": "Performance",
       "feature": "Latency for HTML Homepage",
       "expected": "<50ms average",
-      "actual": "2.48 ms average across 5 calls",
+      "actual": "2.54 ms average across 5 calls",
       "status": "PASS",
       "evidence": {}
     },
@@ -173,7 +173,7 @@
       "category": "Performance",
       "feature": "Latency for Public API Page Content",
       "expected": "<50ms average",
-      "actual": "5.92 ms average across 5 calls",
+      "actual": "5.72 ms average across 5 calls",
       "status": "PASS",
       "evidence": {}
     },
@@ -182,7 +182,7 @@
       "category": "Performance",
       "feature": "Latency for Hydration Script Bundle",
       "expected": "<50ms average",
-      "actual": "2.07 ms average across 5 calls",
+      "actual": "1.71 ms average across 5 calls",
       "status": "PASS",
       "evidence": {}
     }

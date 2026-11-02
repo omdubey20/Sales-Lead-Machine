@@ -232,6 +232,28 @@ async def admin_auth_middleware(request: Request, call_next):
 # --------------------------------------------------------------------------
 # CMS Public API Endpoints
 # --------------------------------------------------------------------------
+@app.get("/api/health")
+@app.get("/health")
+def health_check():
+    """Enterprise Health Check with Live PostgreSQL Connectivity Verification."""
+    conn = get_db()
+    if conn is None:
+        raise HTTPException(status_code=503, detail={"status": "unhealthy", "database": "disconnected"})
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT 1;")
+            cur.fetchone()
+        return {
+            "status": "healthy",
+            "database": "connected",
+            "version": "3.0.0",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+    except Exception as e:
+        raise HTTPException(status_code=503, detail={"status": "unhealthy", "database": "error", "message": str(e)})
+    finally:
+        conn.close()
+
 @app.get("/api/settings")
 def get_site_settings():
     conn = get_db()

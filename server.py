@@ -225,6 +225,12 @@ async def admin_auth_middleware(request: Request, call_next):
                 status_code=401,
                 content={"success": False, "detail": "Unauthorized: Valid admin authentication token required"}
             )
+        # Validate administrator role claim on every protected admin request
+        if payload.get("role") != "admin":
+            return JSONResponse(
+                status_code=403,
+                content={"success": False, "detail": "Forbidden: Administrator privileges required"}
+            )
         request.state.admin_user = payload
 
     return await call_next(request)
@@ -307,16 +313,15 @@ def get_public_logos():
 
 @app.get("/api/page-content")
 def get_public_page_content(request: Request, path: str = "/", mode: str = "published"):
-    """Fetch page sections from PostgreSQL. mode='published' returns live data; mode='draft' requires valid admin token."""
+    """Fetch page sections from PostgreSQL. mode='published' returns live data; mode='draft' requires valid admin token via Authorization header."""
     enforced_mode = "published"
     if mode == "draft":
         auth_header = request.headers.get("Authorization", "")
-        token = ""
-        if auth_header.startswith("Bearer "):
-            token = auth_header[7:].strip()
-        elif "token" in request.query_params:
-            token = request.query_params.get("token", "").strip()
-        if token and verify_token(token):
+        token = auth_header[7:].strip() if auth_header.startswith("Bearer ") else ""
+        # Accept authentication exclusively through Authorization Bearer header.
+        # Query-string tokens never grant draft access.
+        payload = verify_token(token) if token else None
+        if payload and payload.get("role") == "admin":
             enforced_mode = "draft"
         else:
             enforced_mode = "published"
@@ -399,13 +404,19 @@ async def admin_login(request: Request):
                 (email, password)
             )
             user = cur.fetchone()
-            if user and user["is_active"]:
-                token = create_admin_token(str(user["id"]), user["email"], user["role"])
-                return {
-                    "success": True,
-                    "token": token,
-                    "user": {"id": str(user["id"]), "email": user["email"], "name": user["full_name"], "role": user["role"]}
-                }
+            if not user or not user["is_active"]:
+                raise HTTPException(status_code=401, detail="Invalid admin credentials")
+            
+            # Reject users whose database role is not explicitly authorized for administration
+            if user["role"] != "admin":
+                raise HTTPException(status_code=403, detail="Forbidden: Account is not authorized for administration")
+
+            token = create_admin_token(str(user["id"]), user["email"], user["role"])
+            return {
+                "success": True,
+                "token": token,
+                "user": {"id": str(user["id"]), "email": user["email"], "name": user["full_name"], "role": user["role"]}
+            }
     finally:
         conn.close()
 

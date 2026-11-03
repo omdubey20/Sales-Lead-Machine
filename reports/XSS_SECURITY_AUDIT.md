@@ -96,3 +96,4 @@ The sanitizer was subjected to an aggressive battery of 15 industry-standard XSS
 
 ## 5. Audit Verdict: PASS (Score: 100/100)
 The client-side sanitization layer provides complete immunity against stored and DOM-based Cross-Site Scripting.
+

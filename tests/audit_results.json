@@ -18,7 +18,7 @@
         "status_code": 200,
         "enforced_mode": "published",
         "returned_sections_count": 8,
-        "timestamp": "2026-11-03T12:22:35.457824+00:00"
+        "timestamp": "2026-11-03T12:41:58.653046+00:00"
       }
     },
     {
@@ -29,11 +29,11 @@
       "actual": "Enforced mode='published' (Query token ignored)",
       "status": "PASS",
       "evidence": {
-        "url": "http://localhost:8080/api/page-content?path=/&mode=draft&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZTMxNDViMC1kYjJkLTQzMjQtODJhMy1kZmM0MzZlNzI5ZWQiLCJlbWFpbCI6ImFkbWluQHNhbGVzbGVhZG1hY2hpbmUuY28udWsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3OTM3MDg1NTUsImV4cCI6MTc5MzcxMjE1NX0._QvniaZfGf10sAYhceOgsX6U0wnC06moW_Sd9hjCer4",
+        "url": "http://localhost:8080/api/page-content?path=/&mode=draft&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZTMxNDViMC1kYjJkLTQzMjQtODJhMy1kZmM0MzZlNzI5ZWQiLCJlbWFpbCI6ImFkbWluQHNhbGVzbGVhZG1hY2hpbmUuY28udWsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3OTM3MDk3MTgsImV4cCI6MTc5MzcxMzMxOH0.cWX8bUCiykGLMCRU2KHsNIq8F4xF0wLVvbO6LBydEeQ",
         "query_token_used": true,
         "status_code": 200,
         "enforced_mode": "published",
-        "timestamp": "2026-11-03T12:22:35.466363+00:00"
+        "timestamp": "2026-11-03T12:41:58.661476+00:00"
       }
     },
     {
@@ -48,7 +48,7 @@
         "token_role": "viewer",
         "status_code": 200,
         "enforced_mode": "published",
-        "timestamp": "2026-11-03T12:22:35.473531+00:00"
+        "timestamp": "2026-11-03T12:41:58.669113+00:00"
       }
     },
     {
@@ -63,7 +63,7 @@
         "token_role": "admin",
         "status_code": 200,
         "granted_mode": "draft",
-        "timestamp": "2026-11-03T12:22:35.480324+00:00"
+        "timestamp": "2026-11-03T12:41:58.675302+00:00"
       }
     },
     {
@@ -76,14 +76,14 @@
       "evidence": {
         "status_code": 401,
         "headers": {
-          "date": "Tue, 03 Nov 2026 12:22:34 GMT",
+          "date": "Tue, 03 Nov 2026 12:41:58 GMT",
           "server": "uvicorn",
           "content-length": "84",
           "content-type": "application/json",
           "Connection": "close"
         },
         "body": "{\"success\":false,\"detail\":\"Unauthorized: Valid admin authentication token required\"}",
-        "timestamp": "2026-11-03T12:22:35.481306+00:00"
+        "timestamp": "2026-11-03T12:41:58.676322+00:00"
       }
     },
     {
@@ -96,7 +96,7 @@
       "evidence": {
         "status_code": 403,
         "body": "{\"detail\":\"Forbidden: Account is not authorized for administration\"}",
-        "timestamp": "2026-11-03T12:22:35.493581+00:00"
+        "timestamp": "2026-11-03T12:41:58.689896+00:00"
       }
     },
     {
@@ -110,7 +110,7 @@
         "status_code": 403,
         "body": "{\"success\":false,\"detail\":\"Forbidden: Administrator privileges required\"}",
         "role_tested": "viewer",
-        "timestamp": "2026-11-03T12:22:35.494684+00:00"
+        "timestamp": "2026-11-03T12:41:58.690941+00:00"
       }
     },
     {
@@ -123,7 +123,7 @@
       "evidence": {
         "status_code": 401,
         "body": "{\"success\":false,\"detail\":\"Unauthorized: Valid admin authentication token required\"}",
-        "timestamp": "2026-11-03T12:22:35.495373+00:00"
+        "timestamp": "2026-11-03T12:41:58.691719+00:00"
       }
     },
     {
@@ -136,7 +136,7 @@
       "evidence": {
         "status_code": 401,
         "body": "{\"success\":false,\"detail\":\"Unauthorized: Valid admin authentication token required\"}",
-        "timestamp": "2026-11-03T12:22:35.496043+00:00"
+        "timestamp": "2026-11-03T12:41:58.692486+00:00"
       }
     },
     {
@@ -149,7 +149,7 @@
       "evidence": {
         "status_code": 200,
         "pages_count": 31,
-        "timestamp": "2026-11-03T12:22:35.505113+00:00"
+        "timestamp": "2026-11-03T12:41:58.702412+00:00"
       }
     },
     {
@@ -183,7 +183,7 @@
             "status": 200
           }
         ],
-        "timestamp": "2026-11-03T12:22:35.562141+00:00"
+        "timestamp": "2026-11-03T12:41:58.754157+00:00"
       }
     },
     {
@@ -198,7 +198,7 @@
         "has_inert_domparser": true,
         "has_tag_allowlist": true,
         "has_protocol_sanitizer": true,
-        "timestamp": "2026-11-03T12:22:35.562629+00:00"
+        "timestamp": "2026-11-03T12:41:58.754821+00:00"
       }
     },
     {
@@ -211,7 +211,7 @@
       "evidence": {
         "status_code": 400,
         "body": "{\"detail\":\"Unsupported file extension '.html'. Allowed extensions: .jpeg, .jpg, .png, .svg, .webp\"}",
-        "timestamp": "2026-11-03T12:22:35.564808+00:00"
+        "timestamp": "2026-11-03T12:41:58.757006+00:00"
       }
     },
     {
@@ -225,7 +225,7 @@
         "status_code": 403,
         "role_tested": "viewer",
         "body": "{\"success\":false,\"detail\":\"Forbidden: Administrator privileges required\"}",
-        "timestamp": "2026-11-03T12:22:35.566484+00:00"
+        "timestamp": "2026-11-03T12:41:58.757774+00:00"
       }
     },
     {
@@ -239,7 +239,7 @@
         "status_code": 413,
         "payload_size_mb": 11,
         "body": "{\"detail\":\"File exceeds maximum allowed size of 10 MiB\"}",
-        "timestamp": "2026-11-03T12:22:35.614081+00:00"
+        "timestamp": "2026-11-03T12:41:58.804825+00:00"
       }
     },
     {
@@ -257,9 +257,9 @@
           "result": "success"
         },
         "row_found_in_postgres": true,
-        "persisted_id": "5d8341d5-fe51-4103-aee1-78087941b2b7",
+        "persisted_id": "43c07fb8-1113-42b6-a629-8028c56c57c4",
         "ip_hash_length": 0,
-        "timestamp": "2026-11-03T12:22:35.637350+00:00"
+        "timestamp": "2026-11-03T12:41:58.910297+00:00"
       }
     },
     {
@@ -273,7 +273,7 @@
         "checks_res_ok_status": true,
         "resets_form_in_catch": false,
         "restores_submit_button": true,
-        "timestamp": "2026-11-03T12:22:35.637742+00:00"
+        "timestamp": "2026-11-03T12:41:58.910651+00:00"
       }
     },
     {
@@ -313,7 +313,7 @@
             "hydrated": true
           }
         ],
-        "timestamp": "2026-11-03T12:22:35.739127+00:00"
+        "timestamp": "2026-11-03T12:41:59.008238+00:00"
       }
     },
     {
@@ -327,7 +327,7 @@
         "concurrent_threads": 10,
         "successful_requests": 10,
         "endpoint": "/api/admin/overview",
-        "timestamp": "2026-11-03T12:22:35.762607+00:00"
+        "timestamp": "2026-11-03T12:41:59.034124+00:00"
       }
     },
     {
@@ -335,20 +335,20 @@
       "category": "Performance",
       "feature": "Latency for HTML Homepage",
       "expected": "<50ms average",
-      "actual": "2.53 ms average across 5 iterations",
+      "actual": "2.52 ms average across 5 iterations",
       "status": "PASS",
       "evidence": {
         "endpoint": "/",
         "iterations": 5,
-        "average_latency_ms": 2.53,
+        "average_latency_ms": 2.52,
         "durations_ms": [
-          2.67,
-          2.44,
-          2.49,
-          2.56,
-          2.5
+          2.58,
+          2.53,
+          2.47,
+          2.5,
+          2.53
         ],
-        "timestamp": "2026-11-03T12:22:35.775334+00:00"
+        "timestamp": "2026-11-03T12:41:59.046797+00:00"
       }
     },
     {
@@ -356,20 +356,20 @@
       "category": "Performance",
       "feature": "Latency for Public API Page Content",
       "expected": "<50ms average",
-      "actual": "6.27 ms average across 5 iterations",
+      "actual": "6.16 ms average across 5 iterations",
       "status": "PASS",
       "evidence": {
         "endpoint": "/api/page-content?path=/&mode=published",
         "iterations": 5,
-        "average_latency_ms": 6.27,
+        "average_latency_ms": 6.16,
         "durations_ms": [
-          7.52,
-          6.17,
-          5.84,
-          5.79,
-          6.05
+          6.42,
+          5.64,
+          6.13,
+          6.49,
+          6.1
         ],
-        "timestamp": "2026-11-03T12:22:35.806738+00:00"
+        "timestamp": "2026-11-03T12:41:59.077612+00:00"
       }
     },
     {
@@ -377,20 +377,20 @@
       "category": "Performance",
       "feature": "Latency for Hydration Script Bundle",
       "expected": "<50ms average",
-      "actual": "1.84 ms average across 5 iterations",
+      "actual": "1.63 ms average across 5 iterations",
       "status": "PASS",
       "evidence": {
         "endpoint": "/cms-hydrate.js",
         "iterations": 5,
-        "average_latency_ms": 1.84,
+        "average_latency_ms": 1.63,
         "durations_ms": [
-          2.42,
-          1.66,
-          1.77,
-          1.71,
-          1.65
+          1.83,
+          1.51,
+          1.58,
+          1.65,
+          1.56
         ],
-        "timestamp": "2026-11-03T12:22:35.815969+00:00"
+        "timestamp": "2026-11-03T12:41:59.085784+00:00"
       }
     },
     {
@@ -403,7 +403,7 @@
       "evidence": {
         "app_title": "Sales Lead Machine Platform & CMS",
         "fastapi_routes_count": 57,
-        "timestamp": "2026-11-03T12:22:36.049863+00:00"
+        "timestamp": "2026-11-03T12:41:59.324147+00:00"
       }
     }
   ]

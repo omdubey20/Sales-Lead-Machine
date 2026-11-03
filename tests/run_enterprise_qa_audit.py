@@ -38,10 +38,18 @@ DB_PORT = os.getenv("PGPORT", "5432")
 DB_PASSWORD = os.getenv("PGPASSWORD", "")
 
 TEST_ADMIN_EMAIL = os.getenv("TEST_ADMIN_EMAIL", "admin@salesleadmachine.co.uk")
-TEST_ADMIN_PASSWORD = os.getenv("TEST_ADMIN_PASSWORD", "")
+TEST_ADMIN_PASSWORD = os.getenv("TEST_ADMIN_PASSWORD")
+if not TEST_ADMIN_PASSWORD:
+    raise RuntimeError("TEST_ADMIN_PASSWORD environment variable is required to execute QA validation tests.")
+
 TEST_USER_EMAIL = os.getenv("TEST_USER_EMAIL", "regular_user@salesleadmachine.co.uk")
-TEST_USER_PASSWORD = os.getenv("TEST_USER_PASSWORD", "")
-ADMIN_JWT_SECRET = os.getenv("ADMIN_JWT_SECRET", "")
+TEST_USER_PASSWORD = os.getenv("TEST_USER_PASSWORD")
+if not TEST_USER_PASSWORD:
+    raise RuntimeError("TEST_USER_PASSWORD environment variable is required to execute QA validation tests.")
+
+ADMIN_JWT_SECRET = os.getenv("ADMIN_JWT_SECRET")
+if not ADMIN_JWT_SECRET or len(ADMIN_JWT_SECRET.strip()) < 32:
+    raise RuntimeError("ADMIN_JWT_SECRET environment variable is required (>= 32 chars) to execute QA validation tests.")
 
 results = {
     "total_tests": 0,
@@ -257,7 +265,7 @@ def test_authentication_and_rbac():
     # 2.2 Rejection of Non-Admin Role at Login Endpoint
     try:
         login_url = f"{BASE_URL}/api/admin/login"
-        payload = json.dumps({"email": TEST_USER_EMAIL, "password": TEST_USER_PASSWORD or "UserPass2026!"}).encode()
+        payload = json.dumps({"email": TEST_USER_EMAIL, "password": TEST_USER_PASSWORD}).encode()
         req = urllib.request.Request(login_url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
         with urllib.request.urlopen(req) as res:
             record_test("AUTH-002", "RBAC", "Regular User Admin Login Rejection", "HTTP 403 Forbidden", "Allowed non-admin login", "FAIL", {"status": res.status})

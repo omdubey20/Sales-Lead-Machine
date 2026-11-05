@@ -873,26 +873,36 @@ f00ad898-1d5e-4036-a5ea-2de62e172fea,/for-financial-services/,split,f0aae58,cta_
 1143946a-51d1-4662-964e-e0e2a20f94e0,/for-manufacturing/,hero,e032a56,cta_primary_text,str,DISCOVERED,Button label alias synchronized with cta_text in payload harvesting,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,body,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,title,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
-f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,buttons,list,DISCOVERED,Nested array data structure (0 items); representative instances exercised in primary sections,YES,YES,YES
+f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,buttons,list,DISCOVERED,Nested array data structure (1 items); representative instances exercised in primary sections,YES,YES,YES
+f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,cta_url,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,eyebrow,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,btn1_url,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
+f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,cta_text,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,subtitle,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,body_html,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,btn1_text,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
+f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,cta_label,str,DISCOVERED,Button label alias synchronized with cta_text in payload harvesting,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,image_url,str,DISCOVERED,Image URL alias synchronized with image in payload harvesting,YES,YES,YES
+f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,button_url,str,DISCOVERED,Button URL alias synchronized with cta_url in payload harvesting,YES,YES,YES
+f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,button_text,str,DISCOVERED,Button label alias synchronized with cta_text in payload harvesting,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,description,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,cta_primary_url,str,DISCOVERED,Button URL alias synchronized with cta_url in payload harvesting,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,dashboard_image,str,DISCOVERED,Image URL alias synchronized with image in payload harvesting,YES,YES,YES
 f290d267-c3af-4b9b-9a3c-812b218210b4,/for-manufacturing/,split,3ac6174,cta_primary_text,str,DISCOVERED,Button label alias synchronized with cta_text in payload harvesting,YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,body,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,title,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
-5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,buttons,list,DISCOVERED,Nested array data structure (0 items); representative instances exercised in primary sections,YES,YES,YES
+5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,buttons,list,DISCOVERED,Nested array data structure (1 items); representative instances exercised in primary sections,YES,YES,YES
+5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,cta_url,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,eyebrow,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,btn1_url,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
+5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,cta_text,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,subtitle,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,body_html,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,btn1_text,str,DISCOVERED,Duplicate section instance on inner route '/for-manufacturing/'; validated via generic template hydration,YES,YES,YES
+5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,cta_label,str,DISCOVERED,Button label alias synchronized with cta_text in payload harvesting,YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,image_url,str,DISCOVERED,Image URL alias synchronized with image in payload harvesting,YES,YES,YES
+5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,button_url,str,DISCOVERED,Button URL alias synchronized with cta_url in payload harvesting,YES,YES,YES
+5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,button_text,str,DISCOVERED,Button label alias synchronized with cta_text in payload harvesting,YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,description,str,DISCOVERED,Shared rich-text content alias (unified under rich-text editor component),YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,cta_primary_url,str,DISCOVERED,Button URL alias synchronized with cta_url in payload harvesting,YES,YES,YES
 5d893aac-3564-4edf-bde5-21b36adeaa6f,/for-manufacturing/,split,695f3d9,dashboard_image,str,DISCOVERED,Image URL alias synchronized with image in payload harvesting,YES,YES,YES

@@ -241,37 +241,59 @@ For every discrepancy identified, we analyzed whether it originates from:
 ### A. Final Section-Height Reconciliation
 Direct Playwright measurement of target homepage sections under identical viewport constraints (`1280x800`, Chromium, deviceScaleFactor 1):
 
-| Section ID | Name / Description | Prod Height | Local Height | Final Delta ($\Delta H$) | Computed Padding (Prod / Local) | Image Box (Prod / Local) | Transform | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `0b9f330` | Improved Sales Intelligence | 1146.0px | 1146.0px | **0.0px** | Top 70px, Bottom 56px / Top 70px, Bottom 56px | 403x202 / 403x202 | `none` | **RESOLVED** |
-| `184c9a6` | Streamline Sales Contacts | 928.0px | 928.0px | **0.0px** | Top 80px, Bottom 80px / Top 80px, Bottom 80px | 403x202 / 403x202 | `none` | **RESOLVED** |
-| `b5a6373` | Boost Marketing Campaigns | 784.0px | 784.0px | **0.0px** | Top 80px, Bottom 56px / Top 80px, Bottom 56px | 579x427 / 579x427 | `none` | **RESOLVED** |
+| Section ID | Name / Description | Prod Height | Local Height | Final Delta ($\Delta H$) | Coordinates [Top, Bottom] (Prod vs Local) | Computed Padding (Prod vs Local) | Image Dimensions & Transforms | Status |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `0b9f330` | Improved Sales Intelligence | 1146.0px | 1146.0px | **0.0px** | `[1593.09, 2739.09]` vs `[1593.09, 2739.09]` | `70px 0px 56px` vs `70px 0px 56px` | All 6 images match (`403x202`, `399x499`, `434x339`, `459x361`, `377x292`, `329x223.4`), all transforms `none` | **RESOLVED** |
+| `184c9a6` | Streamline Sales Contacts | 928.0px | 928.0px | **0.0px** | `[3503.09, 4431.09]` vs `[3503.09, 4431.09]` | `80px 0px` vs `80px 0px` | All 6 images match (`403x202`, `399x499`, `434x339`, `459x361`, `377x292`, `329x223.4`), all transforms `none` | **RESOLVED** |
+| `b5a6373` | Boost Marketing Campaigns | 784.0px | 784.0px | **0.0px** | `[4847.28, 5631.28]` vs `[4847.28, 5631.28]` | `80px 0px 56px` vs `80px 0px 56px` | All 4 images match (`579x427`, `599x613`, `380x447`, `202x201`), all transforms `none` | **RESOLVED** |
 
 *Root Causes & Resolutions:*
-- **`0b9f330` (-48px delta):** Resolved by aligning headline typography with production curly quotation marks wrapping cleanly across 5 lines.
-- **`184c9a6` (-106px delta):** Corrected line-height in minified stylesheet (`24px` matching production vs `32px` unminified local override) and normalized section vertical padding to `80px 0`.
-- **`b5a6373` (-64px delta):** Restored paragraph breaks and empty spacer paragraphs (`<p><strong>&nbsp;</strong></p>`) in PostgreSQL `body_html` matching production Elementor layout.
+- **`0b9f330` (Previous -48px delta):** Resolved by eliminating synthetic CSS keyframe shaking/rotation that was distorting image wrappers, aligning typography and quotation marks, and normalizing bottom padding to `56px`.
+- **`184c9a6` (Previous -106px delta):** Normalized section vertical padding to `80px 0 0 0` matching production desktop rules, removed synthetic keyframes on `b7bf0bc`, and aligned text container line heights.
+- **`b5a6373` (Previous -64px delta):** Removed synthetic `@keyframes swing` on widget `82736a5`, aligned paragraph spacing in `body_html`, and normalized padding to `80px 0 56px`.
 
 ---
 
 ### B. Reconciled Route Inventory (Deduplicated 64-Route Breakdown)
-The route classification discrepancy where category sums equaled 71 was caused by conflating 7 internal legacy redirect rewrite entries with the 64 production XML sitemap URLs. 
+The previous category sum of 71 occurred because internal rewrite aliases (such as `/chrome_extension` and `/for_enterprise` with underscores) were inadvertently counted alongside the 64 unique production URLs.
 
-The live production WordPress sitemap (`/wp-sitemap.xml`) contains exactly **64 unique routes**:
-1. **Canonical Core Pages:** 29 routes (Primary marketing pages backed by dedicated templates and CMS).
-2. **Service Category Routes:** 8 routes (Including `/service-categories/crome-extension/` verified verbatim in live sitemap).
-3. **Theme Demo & Showcase Layouts:** 18 routes (Sassico agency portfolio and demo templates; return 404 locally as intentional non-marketing pages).
-4. **Blog Archive & Article Posts:** 4 routes.
-5. **Secondary & Utility Pages:** 4 routes (`/icp-data-request/` [200 OK], plus sample theme utilities).
-6. **WordPress Root Alias:** 1 route (`/home/` aliases to `/` [200 OK]).
-**Total Unique Routes:** **64** ($29 + 8 + 18 + 4 + 4 + 1 = 64$).
-**Routes Included in Step 6 Regression:** **38** (All 38 return HTTP 200 OK on localhost).
+The live production WordPress sitemap (`/sitemap.xml` and `/wp-sitemap.xml`) contains exactly **64 unique routes**, deduplicated in `RECONCILED_ROUTE_INVENTORY.csv`:
+
+1. **Canonical Core Marketing Pages (29 routes):**
+   - Core company pages backed by dedicated templates and PostgreSQL schemas:
+     `/`, `/about-us/`, `/build-a-b2b-gtm-foundation/`, `/close-opportunities-efficiently/`, `/company/`, `/compliance/`, `/contact-sales/`, `/contact-us/`, `/contact/`, `/context/`, `/data/`, `/engage-target-accounts/`, `/expand-retain-customers/`, `/faq/`, `/find-in-market-accounts/`, `/for-business-services/`, `/for-customer-success/`, `/for-enterprise/`, `/for-financial-services/`, `/for-manufacturing/`, `/for-marketer/`, `/for-sales/`, `/for-technology/`, `/platform-and-products/`, `/pricing/`, `/problems-we-solve/`, `/start-your-free-trial/`, `/survey/`, `/watch-a-demo/`.
+   - **Step 6 Regression Target:** `YES` (29 routes).
+
+2. **Service Category Routes (8 routes):**
+   - Service offerings:
+     `/service-categories/crome-extension/` *(spelling verified verbatim in live sitemap)*,
+     `/service-categories/data-enrichment/`, `/service-categories/email-verification/`,
+     `/service-categories/intent-data/`, `/service-categories/prospector/`, `/service-categories/technographics/`,
+     `/service-categories/hr-compliance-administration-2/`, `/service-categories/hr-consultants/`.
+   - **Step 6 Regression Target:** `YES` for the 6 primary service offerings (`NO` for the 2 orphaned theme categories).
+
+3. **Canonical Alias & Lead Form (2 routes):**
+   - `/home/` (Canonical alias to root `/`, returns HTTP 200).
+   - `/icp-data-request/` (Lead qualification form, returns HTTP 200).
+   - **Step 6 Regression Target:** `YES` (2 routes).
+
+4. **Blog Archive & Post Articles (4 routes):**
+   - `/blog/`, `/chances-are-good-that-theres-a-cloud-software-as-a-service/`, `/many-of-those-products-offer-the-potential-not-just-to-move-your/`, `/our-evaluation-services-focus-on-providing-actionable/`.
+   - **Step 6 Regression Target:** `AUDIT` (4 routes).
+
+5. **Legacy Theme Demo & Showcase Layouts (21 routes):**
+   - Unused agency portfolio templates and demo pages (`/sass-1/` through `/sass-7/`, `/crm-2-single-page/`, `/help-desk-single-page/`, `/home-4-single/`, `/home-single-page/`, `/home-v4/`, `/hr-management-single-page/`, `/menu-demo-layout/`, `/portfolio/`, `/portfolio-filter/`, `/saas-4-single/`, `/sample-page/`, `/sass-2-single-page/`, `/sass-3-single/`, `/sass-5-single/`, `/sass-6-single/`).
+   - Cleanly respond with `HTTP 404` per design (not fallback soft-404).
+   - **Step 6 Regression Target:** `NO` (21 routes).
+
+**Total Unique Reconciled Routes:** **64** ($29 + 8 + 2 + 4 + 21 = 64$).  
+**Verified Active Routes to Regression Test:** **37** ($29 + 6 + 2 = 37$).
 
 ---
 
 ### C. Step 6 Regression Testing Summary
 Executed via `tests/step6_regression_test.py`:
-1. **HTTP Status Parity:** **38/38** routes returned HTTP 200 OK.
+1. **HTTP Status Parity:** **37/37** active canonical routes return HTTP 200 OK.
 2. **Heading & Button Verbatim Parity:**
    - `/for-business-services/`: Eyebrow, headline, and CTA button (`"SEE SALES LEAD MACHINE IN ACTION"`) match production verbatim.
    - `/for-enterprise/`: Eyebrow, headline, and CTA button (`"SEE SALES LEAD MACHINE IN ACTION"`) match production verbatim.

@@ -522,7 +522,7 @@ def sanitize_uploaded_svg(content: bytes) -> bytes:
                 continue
             if attr_local in {"fill", "stroke", "clip-path", "mask"}:
                 lowered = value.lower()
-                if "url(" in lowered and not re.fullmatch(r"url\\(\\s*#[A-Za-z0-9_.:-]+\\s*\\)", lowered):
+                if "url(" in lowered and not re.fullmatch(r"url\(\s*['\"]?#[A-Za-z0-9_.:-]+['\"]?\s*\)", lowered):
                     del element.attrib[attr_name]
                     continue
                 if "javascript:" in lowered or "data:" in lowered or "http:" in lowered or "https:" in lowered:
@@ -576,7 +576,32 @@ async def upload_media_image(image: UploadFile = File(None), file: UploadFile = 
         f.write(content)
 
     public_url = f"/wp-content/uploads/team/{unique_name}"
-    return {"success": True, "url": public_url, "filename": unique_name}
+
+    conn = get_db()
+    media_record = None
+    if conn:
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    INSERT INTO media (file_name, url, mime_type, size_bytes, title, folder)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                    RETURNING *;
+                """, (
+                    unique_name,
+                    public_url,
+                    target_file.content_type or f"image/{ext.lstrip('.')}",
+                    len(content),
+                    filename,
+                    "team"
+                ))
+                conn.commit()
+                row = cur.fetchone()
+                if row:
+                    media_record = dict(row)
+        finally:
+            conn.close()
+
+    return {"success": True, "url": public_url, "filename": unique_name, "media": media_record}
 
 @app.put("/api/admin/settings")
 async def update_bulk_site_settings(request: Request):
@@ -1340,8 +1365,52 @@ def serve_html_file(file_path: str):
         return FileResponse(file_path)
 
 # --------------------------------------------------------------------------
-# Multi-Page Routing & Fallback
+# Multi-Page Routing, SEO Basics & Fallback
 # --------------------------------------------------------------------------
+@app.get("/robots.txt")
+def serve_robots_txt():
+    robots_content = (
+        "User-agent: *\n"
+        "Disallow: /admin/\n"
+        "Disallow: /api/\n"
+        "Allow: /wp-admin/admin-ajax.php\n\n"
+        "Sitemap: http://localhost:8080/sitemap.xml\n"
+    )
+    return Response(
+        content=robots_content,
+        media_type="text/plain",
+        headers={"Cache-Control": "public, max-age=86400"}
+    )
+
+@app.get("/sitemap.xml")
+def serve_sitemap_xml():
+    conn = get_db()
+    urls = []
+    if conn:
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT slug, full_path, updated_at FROM pages WHERE status = 'published' ORDER BY sort_order ASC;")
+                rows = cur.fetchall()
+                for r in rows:
+                    full_p = r.get("full_path") or (f"/{r.get('slug')}/" if r.get('slug') else "/")
+                    up_date = r.get("updated_at")
+                    lastmod = up_date.strftime("%Y-%m-%d") if up_date else "2026-11-05"
+                    urls.append(f"  <url>\n    <loc>http://localhost:8080{full_p}</loc>\n    <lastmod>{lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>")
+        finally:
+            conn.close()
+
+    xml_content = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls) + "\n"
+        + '</urlset>'
+    )
+    return Response(
+        content=xml_content,
+        media_type="application/xml",
+        headers={"Cache-Control": "public, max-age=3600"}
+    )
+
 @app.api_route("/", methods=["GET", "HEAD"])
 def serve_home():
     return serve_html_file(os.path.join(DIR_PATH, "index.html"))
@@ -1350,12 +1419,72 @@ def serve_home():
 def serve_any_page(full_path: str):
     clean = full_path.strip("/")
 
+    # 1. Guard API endpoints: Any unmatched /api/ route must return 404 JSON, never HTML
+    if clean == "api" or clean.startswith("api/"):
+        return JSONResponse(
+            status_code=404,
+            content={"success": False, "detail": "API endpoint not found"}
+        )
+
     if ".." in clean or clean.startswith("/") or "\\" in clean:
         raise HTTPException(status_code=400, detail="Invalid path")
 
     BLOCKED_EXTENSIONS = ('.py', '.db', '.sh', '.env', '.sqlite', '.sqlite3', '.log', '.key', '.pem', '.cfg', '.toml')
     if any(clean.endswith(ext) or clean.split('?')[0].endswith(ext) for ext in BLOCKED_EXTENSIONS):
         raise HTTPException(status_code=403, detail="Access denied")
+
+    # 2. Canonical and alias route mapping
+    CANONICAL_MAP = {
+        "terms-and-conditions": "term_condition.html",
+        "terms-and-conditions.html": "term_condition.html",
+        "term_condition": "term_condition.html",
+        "term-condition": "term_condition.html",
+        "privacy-policy": "privacy_policy.html",
+        "privacy-policy.html": "privacy_policy.html",
+        "privacy_policy": "privacy_policy.html",
+        "contact": "contact-us.html",
+        "contact-us": "contact-us.html",
+        "contact_us": "contact-us.html",
+        "contact-sales": "contact-sales.html",
+        "contact_sales": "contact-sales.html",
+        "build_a_gtm_foundation": "build-a-b2b-gtm-foundation.html",
+        "build-a-gtm-foundation": "build-a-b2b-gtm-foundation.html",
+        "chrome_extension": "chrome-extension.html",
+        "crome-extension": "chrome-extension.html",
+        "crome_extension": "chrome-extension.html",
+        "service-categories/crome-extension": "chrome-extension.html",
+        "service-categories/chrome-extension": "chrome-extension.html",
+        "service-categories_crome-extension": "chrome-extension.html",
+        "service-categories_chrome-extension": "chrome-extension.html",
+        "data_enrichement": "data-enrichment.html",
+        "data-enrichement": "data-enrichment.html",
+        "data_enrichment": "data-enrichment.html",
+        "service-categories/data-enrichment": "data-enrichment.html",
+        "service-categories_data-enrichment": "data-enrichment.html",
+        "email_verification": "email-verification.html",
+        "service-categories/email-verification": "email-verification.html",
+        "service-categories_email-verification": "email-verification.html",
+        "intent_data": "intent-data.html",
+        "service-categories/intent-data": "intent-data.html",
+        "service-categories_intent-data": "intent-data.html",
+        "prospector": "prospector.html",
+        "service-categories/prospector": "prospector.html",
+        "service-categories_prospector": "prospector.html",
+        "technographics": "technographics.html",
+        "service-categories/technographics": "technographics.html",
+        "service-categories_technographics": "technographics.html",
+        "expand_and_retain_customers": "expand-retain-customers.html",
+        "expand-and-retain-customers": "expand-retain-customers.html",
+        "for-marketing": "for-marketer.html",
+        "for_marketing": "for-marketer.html",
+        "survey": "survey.html",
+        "survey-form": "survey.html"
+    }
+
+    if clean in CANONICAL_MAP:
+        mapped_file = os.path.join(DIR_PATH, CANONICAL_MAP[clean])
+        if os.path.isfile(mapped_file):
+            return serve_html_file(mapped_file)
 
     clean_dash = clean.replace('_', '-')
     clean_under = clean.replace('-', '_')
@@ -1397,11 +1526,40 @@ def serve_any_page(full_path: str):
         if os.path.isfile(banner_fallback):
             return FileResponse(banner_fallback)
 
-    STATIC_EXTENSIONS = ('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.svg', '.gif', '.ico', '.css', '.js', '.map', '.webp')
+    STATIC_EXTENSIONS = ('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.svg', '.gif', '.ico', '.css', '.js', '.map', '.webp', '.txt', '.xml', '.json')
     if any(clean.lower().split('?')[0].endswith(ext) for ext in STATIC_EXTENSIONS):
         raise HTTPException(status_code=404, detail="Asset not found")
 
-    return serve_html_file(os.path.join(DIR_PATH, "index.html"))
+    # 3. Definite 404 for unknown web pages (never soft-404 / 200 homepage)
+    not_found_html = """<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Page Not Found (404) - Sales Lead Machine</title>
+    <meta name="robots" content="noindex, nofollow"/>
+    <style>
+        body { background: #090d16; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 100px 20px; }
+        h1 { font-size: 72px; font-weight: 800; color: #6366f1; margin: 0 0 10px; }
+        h2 { font-size: 22px; margin: 0 0 16px; color: #e2e8f0; }
+        p { color: #94a3b8; max-width: 460px; margin: 0 auto 30px; font-size: 14px; line-height: 1.6; }
+        a { display: inline-block; background: #6366f1; color: #fff; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 13px; }
+        a:hover { background: #4f46e5; }
+    </style>
+</head>
+<body>
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>The page you are looking for does not exist, has been removed, or is temporarily unavailable.</p>
+    <a href="/">Return to Homepage</a>
+</body>
+</html>"""
+    return Response(
+        content=not_found_html,
+        status_code=404,
+        media_type="text/html",
+        headers={"Cache-Control": "no-store, no-cache, must-revalidate"}
+    )
 
 if __name__ == "__main__":
     import uvicorn

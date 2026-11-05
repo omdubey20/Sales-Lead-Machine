@@ -1,0 +1,322 @@
+[
+  {
+    "prod_route": "/",
+    "local_route": "/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/about-us/",
+    "local_route": "/about-us/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/blog/",
+    "local_route": "/blog/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/build-a-b2b-gtm-foundation/",
+    "local_route": "/build-a-b2b-gtm-foundation/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/chances-are-good-that-theres-a-cloud-software-as-a-service/",
+    "local_route": "/chances-are-good-that-theres-a-cloud-software-as-a-service/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/close-opportunities-efficiently/",
+    "local_route": "/close-opportunities-efficiently/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/company/",
+    "local_route": "/company/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/compliance/",
+    "local_route": "/compliance/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/contact-sales/",
+    "local_route": "/contact-sales/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/contact-us/",
+    "local_route": "/contact-us/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/contact/",
+    "local_route": "/contact/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/context/",
+    "local_route": "/context/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/crm-2-single-page/",
+    "local_route": "/crm-2-single-page/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/data/",
+    "local_route": "/data/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/engage-target-accounts/",
+    "local_route": "/engage-target-accounts/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/expand-retain-customers/",
+    "local_route": "/expand-retain-customers/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/faq/",
+    "local_route": "/faq/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/find-in-market-accounts/",
+    "local_route": "/find-in-market-accounts/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-business-services/",
+    "local_route": "/for-business-services/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-customer-success/",
+    "local_route": "/for-customer-success/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-enterprise/",
+    "local_route": "/for-enterprise/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-financial-services/",
+    "local_route": "/for-financial-services/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-manufacturing/",
+    "local_route": "/for-manufacturing/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-marketer/",
+    "local_route": "/for-marketer/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-sales/",
+    "local_route": "/for-sales/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/for-technology/",
+    "local_route": "/for-technology/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/help-desk-single-page/",
+    "local_route": "/help-desk-single-page/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/home-4-single/",
+    "local_route": "/home-4-single/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/home-single-page/",
+    "local_route": "/home-single-page/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/home-v4/",
+    "local_route": "/home-v4/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/home/",
+    "local_route": "/home/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/hr-management-single-page/",
+    "local_route": "/hr-management-single-page/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/icp-data-request/",
+    "local_route": "/icp-data-request/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/many-of-those-products-offer-the-potential-not-just-to-move-your/",
+    "local_route": "/many-of-those-products-offer-the-potential-not-just-to-move-your/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/menu-demo-layout/",
+    "local_route": "/menu-demo-layout/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/our-evaluation-services-focus-on-providing-actionable/",
+    "local_route": "/our-evaluation-services-focus-on-providing-actionable/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/platform-and-products/",
+    "local_route": "/platform-and-products/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/portfolio-filter/",
+    "local_route": "/portfolio-filter/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/portfolio/",
+    "local_route": "/portfolio/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/pricing/",
+    "local_route": "/pricing/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/problems-we-solve/",
+    "local_route": "/problems-we-solve/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/saas-4-single/",
+    "local_route": "/saas-4-single/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sample-page/",
+    "local_route": "/sample-page/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-1/",
+    "local_route": "/sass-1/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-2-single-page/",
+    "local_route": "/sass-2-single-page/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-2/",
+    "local_route": "/sass-2/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-3-single/",
+    "local_route": "/sass-3-single/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-3/",
+    "local_route": "/sass-3/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-4/",
+    "local_route": "/sass-4/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-5-single/",
+    "local_route": "/sass-5-single/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-5/",
+    "local_route": "/sass-5/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-6-single/",
+    "local_route": "/sass-6-single/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/sass-7/",
+    "local_route": "/sass-7/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/crome-extension/",
+    "local_route": "/service-categories/crome-extension/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/data-enrichment/",
+    "local_route": "/service-categories/data-enrichment/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/email-verification/",
+    "local_route": "/service-categories/email-verification/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/hr-compliance-administration-2/",
+    "local_route": "/service-categories/hr-compliance-administration-2/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/hr-consultants/",
+    "local_route": "/service-categories/hr-consultants/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/intent-data/",
+    "local_route": "/service-categories/intent-data/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/prospector/",
+    "local_route": "/service-categories/prospector/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/service-categories/technographics/",
+    "local_route": "/service-categories/technographics/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/start-your-free-trial/",
+    "local_route": "/start-your-free-trial/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/survey/",
+    "local_route": "/survey/",
+    "local_status": 200
+  },
+  {
+    "prod_route": "/watch-a-demo/",
+    "local_route": "/watch-a-demo/",
+    "local_status": 200
+  }
+]

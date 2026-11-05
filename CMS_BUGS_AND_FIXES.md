@@ -115,3 +115,61 @@ All identified defects were isolated with reproduction tests, fixed in source co
 - **Root Cause:** In earlier development iterations, draft edits and test scripts had altered the homepage section `3046460` (displaying "Marketing Machine" in the title and duplicated card descriptions).
 - **Remediation:** Full site-wide verbatim crawl and comparison against live production `https://salesleadmachine.co.uk` verified that canonical templates and database baselines match verbatim (98.16% textual similarity on `/`, 99.2% overall average across 29 routes).
 - **Verification Proof:** Automated `tests/phase7_verbatim_comparison.py` confirmed 29/29 routes passed with zero blocking variances.
+
+---
+
+#### BUG-08: SVG Gradient Stripping via Malformed Regex Pattern
+- **Severity:** HIGH (P1 - Asset Rendering Degradation)
+- **Component:** `server.py` (`sanitize_uploaded_svg`)
+- **Root Cause:** The SVG sanitizer regex `r"url\\(\\s*#[A-Za-z0-9_.:-]+\\s*\\)"` had double-escaped parentheses inside a raw string literal, requiring a literal ASCII backslash before `(`. Furthermore, it failed on quoted identifiers (e.g. `url('#grad1')`). When an SVG containing gradient fills was uploaded, the regex check failed, triggering `del element.attrib[attr_name]` and stripping all gradient attributes.
+- **Remediation:** Updated regex to `r"url\(\s*['\"]?#[A-Za-z0-9_.:-]+['\"]?\s*\)"`.
+- **Verification Proof:** Uploaded standard SVG containing linear gradients; verified that `fill="url(#grad1)"` was preserved verbatim in output.
+
+---
+
+#### BUG-09: Media Uploads Never Recorded in PostgreSQL `media` Table
+- **Severity:** HIGH (P1 - Broken Media Library)
+- **Component:** `server.py` (`upload_media_image` and `get_admin_media`)
+- **Root Cause:** The endpoint `/api/admin/media/upload` saved files to the filesystem (`wp-content/uploads/team/`) but never executed an `INSERT INTO media (...)` SQL transaction. Consequently, `/api/admin/media` (`SELECT * FROM media`) always returned an empty array `[]`, rendering the admin Media Library permanently empty.
+- **Remediation:** Added atomic `INSERT INTO media (file_name, url, mime_type, size_bytes, title, folder) VALUES (...)` on upload completion.
+- **Verification Proof:** Verified via test upload that new media items are stored in PostgreSQL and returned with full metadata by `GET /api/admin/media`.
+
+---
+
+#### BUG-10: Catch-All Router Soft-404 Vulnerability (`robots.txt`, `sitemap.xml`, `/api/*`)
+- **Severity:** HIGH (P1 - SEO & API Architecture Flaw)
+- **Component:** `server.py` (`serve_any_page` catch-all)
+- **Root Cause:** Any URL without an explicitly matched static file extension fell through to `serve_html_file(index.html)` with `HTTP 200`. This resulted in:
+  - `/robots.txt` returning 293KB of HTML homepage content.
+  - `/sitemap.xml` returning HTML homepage content instead of valid XML.
+  - Unmatched `/api/*` endpoints returning HTML with `HTTP 200` instead of JSON `404 Not Found`.
+  - Missing web pages returning `HTTP 200` (soft-404), damaging search engine indexation.
+- **Remediation:**
+  - Added dedicated `@app.get("/robots.txt")` returning valid `text/plain` robots rules.
+  - Added dedicated `@app.get("/sitemap.xml")` generating dynamic `application/xml` sitemaps from published pages in PostgreSQL.
+  - Added strict `/api/*` guard returning `JSONResponse(status_code=404, detail="API endpoint not found")`.
+  - Added true `HTTP 404` HTML response for unknown web pages.
+- **Verification Proof:** Tested via curl: `/robots.txt` $\rightarrow$ 200 text/plain, `/sitemap.xml` $\rightarrow$ 200 application/xml, `/api/invalid` $\rightarrow$ 404 JSON, `/nonexistent` $\rightarrow$ 404 HTML.
+
+---
+
+#### BUG-11: Canonical Link Misconfiguration on Legal Pages
+- **Severity:** MEDIUM (P2 - SEO Canonical Poisoning)
+- **Component:** `term_condition.html` and `privacy_policy.html`
+- **Root Cause:** Both files contained `<link rel="canonical" href="/company/" />`, instructing search crawlers that Terms & Conditions and Privacy Policy were duplicates of the `/company/` page.
+- **Remediation:** Updated canonical tags:
+  - `term_condition.html`: `<link rel="canonical" href="/terms-and-conditions/" />`
+  - `privacy_policy.html`: `<link rel="canonical" href="/privacy-policy/" />`
+- **Verification Proof:** Inspected rendered HTML via curl and verified correct canonical headers.
+
+---
+
+#### BUG-12: Elimination of 33 Redundant Duplicate HTML Files (64 Copies Sync Burden)
+- **Severity:** MEDIUM (P2 - Codebase Maintainability)
+- **Component:** Workspace root HTML files
+- **Root Cause:** Due to a lack of backend routing in legacy static hosting, the codebase contained 33 redundant physical duplicate files (e.g. `chrome-extension.html`, `crome-extension.html`, `chrome_extension.html`, `service-categories_chrome-extension.html`), creating a 64-copy synchronization burden.
+- **Remediation:**
+  - Standardized on clean canonical filenames matching database slugs (`chrome-extension.html`, `data-enrichment.html`, etc.).
+  - Implemented centralized `CANONICAL_MAP` alias routing in `server.py` to route all legacy and underscore URLs to canonical templates.
+  - Safely archived the 33 redundant duplicate files to `legacy/redundant_html_copies/`.
+- **Verification Proof:** Tested all 16 alias and canonical URLs via automated crawler; verified 100% returned `HTTP 200 OK`.

@@ -51,10 +51,17 @@ The following audit deliverables have been produced and verified in the workspac
    - In-depth verbatim comparison of local pages against live production `salesleadmachine.co.uk`.
    - Documents heading parity, paragraph counts, SequenceMatcher similarity ratios, and responsive viewports.
 5. **`CMS_BUGS_AND_FIXES.md`**
-   - Detailed register of identified bugs (image magic byte check, upload field binding, logo creation constraint, jsonb null handling, settings endpoints).
+   - Detailed register of identified bugs (image magic bytes literal escaping, SVG gradient regex stripping, media table insertion bypass, catch-all soft-404, legal canonical links, and redundant HTML file elimination).
    - Documents root causes, applied remediations, and verification proofs.
-6. **`tests/TEST_EVIDENCE/`**
-   - Directory containing 38 page baseline screenshots, responsive studio screenshots (desktop, tablet, mobile), active inspector screenshots, and field-level test JSON evidence.
+6. **`LIVE_SITE_FIDELITY_REPORT.md`**
+   - Exhaustive visual and structural comparison across all 64 discovered live production routes.
+   - Height deltas, pixel-by-pixel Pillow image differencing, Elementor padding variations, and asset scaling analysis.
+7. **`LIVE_SITE_PAGE_COMPARISON.csv`**, **`LIVE_SITE_SECTION_COMPARISON.csv`**, **`LIVE_SITE_ASSET_DIFFERENCES.csv`**
+   - Deep-dive CSV registers tracking all 64 routes, 629 sections, and 1,526 image assets.
+8. **`LIVE_SITE_SCREENSHOTS/`** and **`LIVE_SITE_VISUAL_DIFFS/`**
+   - 126 full-page screenshots and 63 visual diff composites highlighting pixel variances in magenta.
+9. **`tests/TEST_EVIDENCE/`**
+   - Directory containing baseline screenshots, responsive studio screenshots (desktop, tablet, mobile), active inspector screenshots, and field-level test JSON evidence.
 
 ---
 

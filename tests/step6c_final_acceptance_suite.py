@@ -13,7 +13,10 @@ import csv
 import tempfile
 from playwright.async_api import async_playwright
 
-from tests.test_config import (
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from test_config import (
     BASE_URL,
     ADMIN_EMAIL,
     ADMIN_PASSWORD,

@@ -1,6 +1,7 @@
 import os
 import time
 import json
+import logging
 import secrets
 import hmac
 import hashlib
@@ -16,6 +17,9 @@ from fastapi.responses import FileResponse, JSONResponse
 import psycopg2
 from psycopg2.extras import RealDictCursor, Json
 from defusedxml import ElementTree as SafeET
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
+logger = logging.getLogger("server")
 
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -362,13 +366,21 @@ async def admin_login(request: Request):
         body = await request.json()
     except Exception:
         body = {}
-    login_id = body.get("email", "").strip().lower()
+    raw_login_id = body.get("email", "").strip().lower()
     password = body.get("password", "")
+
+    if not raw_login_id or not password:
+        logger.warning("[AUTH] Admin login attempt rejected: missing credentials")
+        raise HTTPException(status_code=401, detail="Invalid admin credentials")
+
+    # Normalize admin username aliases to the canonical administrator email
+    canonical_email = "admin@salesleadmachine.co.uk" if raw_login_id in ("admin", "administrator", "root") else raw_login_id
 
     conn = get_db()
     if conn is None:
         # Fail closed. A database outage must never activate a local/default
         # administrator account or bypass the normal credential store.
+        logger.error("[AUTH] Database unavailable during admin login")
         raise HTTPException(status_code=503, detail="Authentication service temporarily unavailable")
 
     try:
@@ -376,18 +388,26 @@ async def admin_login(request: Request):
             cur.execute(
                 """SELECT id, email, full_name, role, is_active 
                    FROM users 
-                   WHERE (email = %s OR (role = 'admin' AND %s IN ('admin', 'administrator', 'root')))
-                     AND (password_hash = crypt(%s, password_hash) OR %s IN ('admin', 'admin123', 'Admin@123', 'Admin123!', 'password'));""",
-                (login_id, login_id, password, password)
+                   WHERE email = %s
+                     AND password_hash = crypt(%s, password_hash);""",
+                (canonical_email, password)
             )
             user = cur.fetchone()
             if user and user["is_active"]:
+                logger.info("[AUTH] Successful admin login for account: %s", user["email"])
                 token = create_admin_token(str(user["id"]), user["email"], user["role"])
                 return {
                     "success": True,
                     "token": token,
                     "user": {"id": str(user["id"]), "email": user["email"], "name": user["full_name"], "role": user["role"]}
                 }
+            else:
+                logger.warning("[AUTH] Failed admin login for identifier: %s", raw_login_id)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("[AUTH] Unexpected error during admin authentication: %s", e)
+        raise HTTPException(status_code=500, detail="Authentication service error")
     finally:
         conn.close()
 

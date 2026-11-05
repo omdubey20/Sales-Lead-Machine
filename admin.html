@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sales Lead Machine | Content Management Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -30,22 +32,44 @@
     }
   </script>
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
-    .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .glass-input { background: rgba(31, 41, 55, 0.6); border: 1px solid rgba(255, 255, 255, 0.12); color: #fff; }
-    .glass-input:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b0f19;
+      color: #f3f4f6;
+    }
+
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-input {
+      background: rgba(31, 41, 55, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .glass-input:focus {
+      border-color: #6366f1;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
   </style>
 </head>
+
 <body class="min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
 
   <!-- AUTH SCREEN (Shown if not logged in) -->
-  <div id="auth-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/90 backdrop-blur-md px-4">
+  <div id="auth-screen"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/90 backdrop-blur-md px-4">
     <div class="glass-card max-w-md w-full p-8 rounded-2xl shadow-2xl border border-indigo-500/20">
       <div class="text-center mb-8">
-        <div class="w-14 h-14 bg-indigo-600/20 text-indigo-400 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-indigo-500/30">
+        <div
+          class="w-14 h-14 bg-indigo-600/20 text-indigo-400 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-indigo-500/30">
           <i class="fa-solid fa-bolt text-2xl"></i>
         </div>
         <h1 class="text-2xl font-bold text-white tracking-tight">Sales Lead Machine</h1>
@@ -54,17 +78,19 @@
 
       <form id="login-form" class="space-y-5" onsubmit="handleLogin(event)">
         <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Admin Email or Username</label>
-          <input type="text" id="login-email" autocomplete="username" required placeholder="admin@salesleadmachine.co.uk or admin"
-                 class="glass-input w-full px-4 py-3 rounded-xl text-sm transition">
+          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Admin Email or
+            Username</label>
+          <input type="text" id="login-email" autocomplete="username" required
+            placeholder="admin@salesleadmachine.co.uk or admin"
+            class="glass-input w-full px-4 py-3 rounded-xl text-sm transition">
         </div>
         <div>
           <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Password</label>
           <input type="password" id="login-password" autocomplete="current-password" required placeholder="••••••••••••"
-                 class="glass-input w-full px-4 py-3 rounded-xl text-sm transition">
+            class="glass-input w-full px-4 py-3 rounded-xl text-sm transition">
         </div>
         <button type="submit" id="login-btn"
-                class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-sm shadow-lg shadow-indigo-600/30 transition flex items-center justify-center space-x-2">
+          class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-sm shadow-lg shadow-indigo-600/30 transition flex items-center justify-center space-x-2">
           <span>Sign In to Admin Portal</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </button>
@@ -74,13 +100,14 @@
 
   <!-- MAIN APP WRAPPER -->
   <div id="app-wrapper" class="flex-1 flex overflow-hidden">
-    
+
     <!-- SIDEBAR -->
     <aside class="w-64 glass-card border-r border-white/5 flex flex-col justify-between hidden md:flex">
       <div>
         <!-- Brand Header -->
         <div class="p-6 border-b border-white/5 flex items-center space-x-3">
-          <div class="w-9 h-9 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <div
+            class="w-9 h-9 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
             <i class="fa-solid fa-cube text-base"></i>
           </div>
           <div>
@@ -92,49 +119,49 @@
         <!-- Navigation Tabs -->
         <nav class="p-4 space-y-1.5">
           <button onclick="switchTab('dashboard')" id="nav-dashboard"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-white bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-white bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 transition">
             <i class="fa-solid fa-chart-pie w-5"></i>
             <span>Overview</span>
           </button>
-          
+
           <button onclick="switchTab('team')" id="nav-team"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
             <i class="fa-solid fa-users-viewfinder w-5"></i>
             <span>Team & Leaders</span>
           </button>
 
           <button onclick="switchTab('pages')" id="nav-pages"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
             <i class="fa-solid fa-layer-group w-5"></i>
             <span>Pages & Content</span>
           </button>
 
           <button onclick="switchTab('company')" id="nav-company"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
             <i class="fa-solid fa-building-columns w-5"></i>
             <span>Company Info</span>
           </button>
 
           <button onclick="switchTab('logos')" id="nav-logos"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
             <i class="fa-solid fa-images w-5"></i>
             <span>Partner Logos</span>
           </button>
 
           <button onclick="switchTab('leads')" id="nav-leads"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
             <i class="fa-solid fa-envelope-open-text w-5"></i>
             <span>Leads Inbox</span>
           </button>
 
           <button onclick="switchTab('blog')" id="nav-blog"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
             <i class="fa-solid fa-newspaper w-5"></i>
             <span>Blog & Articles</span>
           </button>
 
           <button onclick="switchTab('media')" id="nav-media"
-                  class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
+            class="nav-tab w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition">
             <i class="fa-solid fa-photo-film w-5"></i>
             <span>Media Library</span>
           </button>
@@ -145,7 +172,8 @@
       <div class="p-4 border-t border-white/5">
         <div class="flex items-center justify-between p-3 rounded-xl bg-white/[0.03]">
           <div class="flex items-center space-x-3 truncate">
-            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+            <div
+              class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
               AD
             </div>
             <div class="truncate">
@@ -162,12 +190,14 @@
 
     <!-- CONTENT VIEWPORT -->
     <main class="flex-1 flex flex-col h-screen overflow-y-auto bg-gray-950">
-      
+
       <!-- Top Bar -->
-      <header class="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-gray-900/40 backdrop-blur sticky top-0 z-30">
+      <header
+        class="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-gray-900/40 backdrop-blur sticky top-0 z-30">
         <div class="flex items-center space-x-4">
           <h2 id="page-title" class="text-lg font-bold text-white">Dashboard Overview</h2>
-          <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center space-x-1">
+          <span
+            class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center space-x-1">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>Database Connected</span>
           </span>
@@ -175,7 +205,7 @@
 
         <div class="flex items-center space-x-3">
           <a href="/" target="_blank"
-             class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition flex items-center space-x-2">
+            class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition flex items-center space-x-2">
             <span>View Live Site</span>
             <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </a>
@@ -236,25 +266,28 @@
           </div>
 
           <!-- Quick Action Card for Mam -->
-          <div class="glass-card p-8 rounded-2xl border border-indigo-500/20 bg-gradient-to-r from-indigo-950/40 to-transparent">
+          <div
+            class="glass-card p-8 rounded-2xl border border-indigo-500/20 bg-gradient-to-r from-indigo-950/40 to-transparent">
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div>
-                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-300 uppercase tracking-wider">
+                <span
+                  class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-300 uppercase tracking-wider">
                   Mam's Quick Actions
                 </span>
                 <h3 class="text-xl font-bold text-white mt-2">Manage Higherups & Company Details</h3>
                 <p class="text-sm text-gray-400 mt-1 max-w-2xl">
-                  Easily replace an employee's photo, name, title, or LinkedIn link without editing code, or update company telephone and email globally.
+                  Easily replace an employee's photo, name, title, or LinkedIn link without editing code, or update
+                  company telephone and email globally.
                 </p>
               </div>
               <div class="flex space-x-3">
                 <button onclick="switchTab('team')"
-                        class="px-5 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                  class="px-5 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
                   <i class="fa-solid fa-user-plus"></i>
                   <span>Manage Team</span>
                 </button>
                 <button onclick="switchTab('company')"
-                        class="px-5 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-xl text-xs border border-white/10 transition flex items-center space-x-2">
+                  class="px-5 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-xl text-xs border border-white/10 transition flex items-center space-x-2">
                   <i class="fa-solid fa-pen-to-square"></i>
                   <span>Company Info</span>
                 </button>
@@ -271,7 +304,7 @@
               <p class="text-xs text-gray-400 mt-1">Controls the "Meet your team" section on the About Us page</p>
             </div>
             <button onclick="openTeamModal()"
-                    class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+              class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
               <i class="fa-solid fa-plus"></i>
               <span>Add Team Member</span>
             </button>
@@ -287,7 +320,8 @@
         <section id="tab-pages" class="tab-pane hidden space-y-6">
           <div>
             <h3 class="text-xl font-bold text-white">Website Pages & Sections</h3>
-            <p class="text-xs text-gray-400 mt-1">Select a page to edit its content, headlines, and dynamic section blocks</p>
+            <p class="text-xs text-gray-400 mt-1">Select a page to edit its content, headlines, and dynamic section
+              blocks</p>
           </div>
 
           <div id="pages-list" class="glass-card rounded-2xl overflow-hidden divide-y divide-white/5">
@@ -306,34 +340,40 @@
             <form id="company-form" onsubmit="saveCompanySettings(event)" class="space-y-5">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Company Name</label>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Company
+                    Name</label>
                   <input type="text" id="company-name" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Telephone Number</label>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Telephone
+                    Number</label>
                   <input type="text" id="company-phone" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Support Email</label>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Support
+                    Email</label>
                   <input type="email" id="company-email" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Login URL (Buttons)</label>
+                  <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Login URL
+                    (Buttons)</label>
                   <input type="url" id="company-login-url" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Office Address</label>
-                <textarea id="company-address" rows="2" class="glass-input w-full px-4 py-3 rounded-xl text-sm"></textarea>
+                <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Office
+                  Address</label>
+                <textarea id="company-address" rows="2"
+                  class="glass-input w-full px-4 py-3 rounded-xl text-sm"></textarea>
               </div>
 
               <div class="pt-4 border-t border-white/5 flex justify-end">
                 <button type="submit"
-                        class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                  class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
                   <i class="fa-solid fa-floppy-disk"></i>
                   <span>Save Global Settings</span>
                 </button>
@@ -347,10 +387,11 @@
           <div class="flex items-center justify-between">
             <div>
               <h3 class="text-xl font-bold text-white">Client & Partner Logos</h3>
-              <p class="text-xs text-gray-400 mt-1">Logos displayed in the animated motion carousel on Home, Platform, and About Us</p>
+              <p class="text-xs text-gray-400 mt-1">Logos displayed in the animated motion carousel on Home, Platform,
+                and About Us</p>
             </div>
             <button onclick="openLogoModal()"
-                    class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+              class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
               <i class="fa-solid fa-plus"></i>
               <span>Add Partner Logo</span>
             </button>
@@ -366,16 +407,17 @@
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h3 class="text-xl font-bold text-white">Lead Inquiries & Form Submissions</h3>
-              <p class="text-xs text-gray-400 mt-1">Captured securely into PostgreSQL from Demo, Contact, Trial, and Survey forms</p>
+              <p class="text-xs text-gray-400 mt-1">Captured securely into PostgreSQL from Demo, Contact, Trial, and
+                Survey forms</p>
             </div>
             <div class="flex items-center space-x-3">
               <button onclick="loadLeads()"
-                      class="px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-300 rounded-xl text-xs border border-white/10 transition flex items-center space-x-2">
+                class="px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-300 rounded-xl text-xs border border-white/10 transition flex items-center space-x-2">
                 <i class="fa-solid fa-rotate"></i>
                 <span>Refresh</span>
               </button>
               <button onclick="exportLeadsCSV()"
-                      class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-emerald-600/30 transition flex items-center space-x-2">
+                class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-emerald-600/30 transition flex items-center space-x-2">
                 <i class="fa-solid fa-file-csv"></i>
                 <span>Export CSV</span>
               </button>
@@ -386,7 +428,8 @@
           <div class="glass-card p-4 rounded-2xl flex flex-wrap items-center gap-3">
             <div class="flex items-center space-x-2 flex-1 min-w-[220px]">
               <i class="fa-solid fa-magnifying-glass text-gray-400 text-xs ml-2"></i>
-              <input type="text" id="lead-filter-search" oninput="debounceLoadLeads()" placeholder="Search by email, response..." class="glass-input w-full px-3 py-2 rounded-xl text-xs">
+              <input type="text" id="lead-filter-search" oninput="debounceLoadLeads()"
+                placeholder="Search by email, response..." class="glass-input w-full px-3 py-2 rounded-xl text-xs">
             </div>
             <div class="flex items-center space-x-2">
               <label class="text-xs text-gray-400 font-medium">Form:</label>
@@ -409,7 +452,8 @@
 
           <div id="leads-table-container" class="glass-card rounded-2xl overflow-hidden">
             <table class="w-full text-left text-sm text-gray-300">
-              <thead class="bg-white/[0.02] text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-white/5">
+              <thead
+                class="bg-white/[0.02] text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-white/5">
                 <tr>
                   <th class="p-4">Contact</th>
                   <th class="p-4">Form</th>
@@ -431,16 +475,17 @@
           <div class="flex items-center justify-between">
             <div>
               <h3 class="text-xl font-bold text-white">Blog & Thought Leadership Articles</h3>
-              <p class="text-xs text-gray-400 mt-1">Manage public articles, intent guides, categories, and SEO metadata</p>
+              <p class="text-xs text-gray-400 mt-1">Manage public articles, intent guides, categories, and SEO metadata
+              </p>
             </div>
             <div class="flex space-x-3">
               <a href="/blog" target="_blank"
-                 class="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-gray-300 rounded-xl text-xs font-semibold border border-white/10 transition flex items-center space-x-2">
+                class="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-gray-300 rounded-xl text-xs font-semibold border border-white/10 transition flex items-center space-x-2">
                 <span>View Live Blog</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
               </a>
               <button onclick="openBlogModal()"
-                      class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
                 <i class="fa-solid fa-plus"></i>
                 <span>New Article</span>
               </button>
@@ -449,7 +494,8 @@
 
           <div id="blog-table-container" class="glass-card rounded-2xl overflow-hidden">
             <table class="w-full text-left text-sm text-gray-300">
-              <thead class="bg-white/[0.02] text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-white/5">
+              <thead
+                class="bg-white/[0.02] text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-white/5">
                 <tr>
                   <th class="p-4">Article Title & Slug</th>
                   <th class="p-4">Category</th>
@@ -470,15 +516,17 @@
           <div class="flex items-center justify-between">
             <div>
               <h3 class="text-xl font-bold text-white">Media Asset Library</h3>
-              <p class="text-xs text-gray-400 mt-1">Upload images with automatic Sharp WebP compression and dimension metadata</p>
+              <p class="text-xs text-gray-400 mt-1">Upload images with automatic Sharp WebP compression and dimension
+                metadata</p>
             </div>
             <div class="flex space-x-3">
               <button onclick="document.getElementById('media-upload-input').click()"
-                      class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+                class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
                 <i class="fa-solid fa-cloud-arrow-up"></i>
                 <span>Upload Image Asset</span>
               </button>
-              <input type="file" id="media-upload-input" accept="image/*" class="hidden" onchange="handleMediaUpload(this)">
+              <input type="file" id="media-upload-input" accept="image/*" class="hidden"
+                onchange="handleMediaUpload(this)">
             </div>
           </div>
 
@@ -492,7 +540,8 @@
   </div>
 
   <!-- MODAL: ADD / EDIT TEAM MEMBER -->
-  <div id="team-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
+  <div id="team-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
     <div class="glass-card max-w-xl w-full p-8 rounded-2xl border border-white/10 shadow-2xl space-y-6">
       <div class="flex items-center justify-between border-b border-white/5 pb-4">
         <h3 id="team-modal-title" class="text-lg font-bold text-white">Edit Team Member</h3>
@@ -510,7 +559,8 @@
             <input type="text" id="member-name" required class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Job Title / Role</label>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Job Title /
+              Role</label>
             <input type="text" id="member-role" required class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
           </div>
         </div>
@@ -519,35 +569,41 @@
           <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Photo Image</label>
           <div class="flex items-center space-x-4">
             <img id="member-photo-preview" src="/wp-content/uploads/2023/03/s.png"
-                 class="w-16 h-16 rounded-xl object-cover border border-white/10 bg-gray-900">
+              class="w-16 h-16 rounded-xl object-cover border border-white/10 bg-gray-900">
             <div class="flex-1 space-y-2">
               <input type="file" id="member-photo-file" accept="image/*" onchange="uploadMemberPhoto(event)"
-                     class="text-xs text-gray-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600/20 file:text-indigo-300 hover:file:bg-indigo-600/30">
+                class="text-xs text-gray-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600/20 file:text-indigo-300 hover:file:bg-indigo-600/30">
               <input type="text" id="member-photo-url" placeholder="/wp-content/uploads/..."
-                     class="glass-input w-full px-3 py-1.5 rounded-lg text-xs text-gray-300">
+                class="glass-input w-full px-3 py-1.5 rounded-lg text-xs text-gray-300">
             </div>
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">LinkedIn Profile URL</label>
-            <input type="url" id="member-linkedin" placeholder="https://linkedin.com/in/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">LinkedIn Profile
+              URL</label>
+            <input type="url" id="member-linkedin" placeholder="https://linkedin.com/in/..."
+              class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
           </div>
           <div>
             <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Facebook URL</label>
-            <input type="url" id="member-facebook" placeholder="https://facebook.com/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+            <input type="url" id="member-facebook" placeholder="https://facebook.com/..."
+              class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Bio / Profile Description</label>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Bio / Profile
+            Description</label>
           <textarea id="member-bio" rows="3" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm"></textarea>
         </div>
 
         <div class="flex items-center justify-between pt-4 border-t border-white/5">
-          <button type="button" onclick="closeTeamModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
-          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+          <button type="button" onclick="closeTeamModal()"
+            class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit"
+            class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
             Save Changes
           </button>
         </div>
@@ -556,15 +612,19 @@
   </div>
 
   <!-- MODAL: MANAGE PAGE SECTIONS -->
-  <div id="page-sections-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
-    <div class="glass-card max-w-3xl w-full p-8 rounded-2xl border border-white/10 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+  <div id="page-sections-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
+    <div
+      class="glass-card max-w-3xl w-full p-8 rounded-2xl border border-white/10 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-white/5 pb-4">
         <div>
           <h3 id="page-sections-title" class="text-lg font-bold text-white">Manage Page Sections</h3>
-          <p id="page-sections-subtitle" class="text-xs text-gray-400 mt-0.5">Reorder, edit content, or add sections to this page</p>
+          <p id="page-sections-subtitle" class="text-xs text-gray-400 mt-0.5">Reorder, edit content, or add sections to
+            this page</p>
         </div>
         <div class="flex items-center space-x-3">
-          <button onclick="openAddSectionModal()" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-indigo-600/30 transition flex items-center space-x-1.5">
+          <button onclick="openAddSectionModal()"
+            class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-indigo-600/30 transition flex items-center space-x-1.5">
             <i class="fa-solid fa-plus text-[10px]"></i>
             <span>Add Section</span>
           </button>
@@ -582,11 +642,13 @@
       </div>
 
       <div class="flex items-center justify-between pt-4 border-t border-white/5">
-        <a id="current-page-preview-link" href="#" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center space-x-1.5">
+        <a id="current-page-preview-link" href="#" target="_blank"
+          class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center space-x-1.5">
           <span>Preview Live Page</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
         </a>
-        <button onclick="closePageSectionsModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10">
+        <button onclick="closePageSectionsModal()"
+          class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10">
           Done
         </button>
       </div>
@@ -594,8 +656,10 @@
   </div>
 
   <!-- MODAL: EDIT SPECIFIC SECTION CONTENT -->
-  <div id="section-edit-modal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
-    <div class="glass-card max-w-2xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+  <div id="section-edit-modal"
+    class="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
+    <div
+      class="glass-card max-w-2xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-white/5 pb-4">
         <div>
           <h3 id="section-edit-modal-title" class="text-lg font-bold text-white">Edit Section Content</h3>
@@ -606,17 +670,22 @@
         </button>
       </div>
 
-      <form id="section-content-form" onsubmit="saveSectionContent(event)" class="space-y-4 flex-1 overflow-y-auto pr-1">
+      <form id="section-content-form" onsubmit="saveSectionContent(event)"
+        class="space-y-4 flex-1 overflow-y-auto pr-1">
         <input type="hidden" id="edit-section-id">
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Section Label / Name</label>
-          <input type="text" id="section-label-input" required class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Section Label /
+            Name</label>
+          <input type="text" id="section-label-input" required
+            class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Anchor ID (optional for page jumps)</label>
-          <input type="text" id="section-anchor-input" placeholder="e.g. features, pricing" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm font-mono">
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Anchor ID (optional for
+            page jumps)</label>
+          <input type="text" id="section-anchor-input" placeholder="e.g. features, pricing"
+            class="glass-input w-full px-4 py-2.5 rounded-xl text-sm font-mono">
         </div>
 
         <!-- Dynamic Fields Container based on section_type -->
@@ -625,8 +694,10 @@
         </div>
 
         <div class="flex items-center justify-between pt-4 border-t border-white/5">
-          <button type="button" onclick="closeSectionEditModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
-          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+          <button type="button" onclick="closeSectionEditModal()"
+            class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit"
+            class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
             Save Section Content
           </button>
         </div>
@@ -635,7 +706,8 @@
   </div>
 
   <!-- MODAL: ADD / EDIT PARTNER LOGO -->
-  <div id="logo-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
+  <div id="logo-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 hidden">
     <div class="glass-card max-w-md w-full p-8 rounded-2xl border border-white/10 shadow-2xl space-y-6">
       <div class="flex items-center justify-between border-b border-white/5 pb-4">
         <h3 id="logo-modal-title" class="text-lg font-bold text-white">Add Partner Logo</h3>
@@ -648,23 +720,30 @@
         <input type="hidden" id="logo-id">
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Partner / Brand Name</label>
-          <input type="text" id="logo-name" required placeholder="e.g. Acme Corp" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Partner / Brand
+            Name</label>
+          <input type="text" id="logo-name" required placeholder="e.g. Acme Corp"
+            class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Logo Image URL</label>
-          <input type="text" id="logo-url" required placeholder="/wp-content/uploads/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          <input type="text" id="logo-url" required placeholder="/wp-content/uploads/..."
+            class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Partner Website Link (optional)</label>
-          <input type="url" id="logo-link" placeholder="https://..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Partner Website Link
+            (optional)</label>
+          <input type="url" id="logo-link" placeholder="https://..."
+            class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
         </div>
 
         <div class="flex items-center justify-between pt-4 border-t border-white/5">
-          <button type="button" onclick="closeLogoModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
-          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+          <button type="button" onclick="closeLogoModal()"
+            class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit"
+            class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
             Save Partner Logo
           </button>
         </div>
@@ -673,8 +752,10 @@
   </div>
 
   <!-- MODAL: ADD / EDIT BLOG POST -->
-  <div id="blog-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
-    <div class="glass-card max-w-3xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+  <div id="blog-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
+    <div
+      class="glass-card max-w-3xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-white/5 pb-4">
         <div>
           <h3 id="blog-modal-title" class="text-lg font-bold text-white">Create New Article</h3>
@@ -691,11 +772,13 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Article Title</label>
-            <input type="text" id="blog-title" required placeholder="e.g. Modern B2B Outbound in 2026" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm" oninput="autoSlugBlog(this.value)">
+            <input type="text" id="blog-title" required placeholder="e.g. Modern B2B Outbound in 2026"
+              class="glass-input w-full px-4 py-2.5 rounded-xl text-sm" oninput="autoSlugBlog(this.value)">
           </div>
           <div>
             <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">URL Slug</label>
-            <input type="text" id="blog-slug" required placeholder="modern-b2b-outbound-2026" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm font-mono">
+            <input type="text" id="blog-slug" required placeholder="modern-b2b-outbound-2026"
+              class="glass-input w-full px-4 py-2.5 rounded-xl text-sm font-mono">
           </div>
         </div>
 
@@ -707,7 +790,8 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Publication Status</label>
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Publication
+              Status</label>
             <select id="blog-status" class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
               <option value="published">Published (Live)</option>
               <option value="draft">Draft (Unpublished)</option>
@@ -716,34 +800,46 @@
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Featured Image URL</label>
-          <input type="text" id="blog-image" placeholder="/wp-content/uploads/..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Featured Image
+            URL</label>
+          <input type="text" id="blog-image" placeholder="/wp-content/uploads/..."
+            class="glass-input w-full px-4 py-2.5 rounded-xl text-sm">
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Summary / Excerpt</label>
-          <textarea id="blog-excerpt" rows="2" placeholder="Brief summary of the article..." class="glass-input w-full px-4 py-2.5 rounded-xl text-sm"></textarea>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Summary /
+            Excerpt</label>
+          <textarea id="blog-excerpt" rows="2" placeholder="Brief summary of the article..."
+            class="glass-input w-full px-4 py-2.5 rounded-xl text-sm"></textarea>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Article Body Content (HTML allowed)</label>
-          <textarea id="blog-body" rows="9" required placeholder="<p class='lead'>Article introduction...</p>" class="glass-input w-full px-4 py-3 rounded-xl text-xs font-mono leading-relaxed"></textarea>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Article Body Content
+            (HTML allowed)</label>
+          <textarea id="blog-body" rows="9" required placeholder="<p class='lead'>Article introduction...</p>"
+            class="glass-input w-full px-4 py-3 rounded-xl text-xs font-mono leading-relaxed"></textarea>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-white/5">
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">SEO Meta Title (optional)</label>
-            <input type="text" id="blog-seo-title" placeholder="Meta title..." class="glass-input w-full px-4 py-2 rounded-xl text-xs">
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">SEO Meta Title
+              (optional)</label>
+            <input type="text" id="blog-seo-title" placeholder="Meta title..."
+              class="glass-input w-full px-4 py-2 rounded-xl text-xs">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">SEO Description (optional)</label>
-            <input type="text" id="blog-seo-desc" placeholder="Meta description..." class="glass-input w-full px-4 py-2 rounded-xl text-xs">
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">SEO Description
+              (optional)</label>
+            <input type="text" id="blog-seo-desc" placeholder="Meta description..."
+              class="glass-input w-full px-4 py-2 rounded-xl text-xs">
           </div>
         </div>
 
         <div class="flex items-center justify-between pt-4 border-t border-white/5">
-          <button type="button" onclick="closeBlogModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
-          <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+          <button type="button" onclick="closeBlogModal()"
+            class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white">Cancel</button>
+          <button type="submit"
+            class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
             Save Article
           </button>
         </div>
@@ -752,8 +848,10 @@
   </div>
 
   <!-- MODAL: LEAD DETAIL & RESPONSE -->
-  <div id="lead-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
-    <div class="glass-card max-w-2xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
+  <div id="lead-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md px-4 hidden">
+    <div
+      class="glass-card max-w-2xl w-full p-8 rounded-2xl border border-indigo-500/30 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-white/5 pb-4">
         <div>
           <h3 class="text-lg font-bold text-white">Lead Details & Inquiry</h3>
@@ -806,15 +904,18 @@
       </div>
 
       <div class="flex items-center justify-between pt-4 border-t border-white/5">
-        <button type="button" onclick="deleteCurrentLead()" class="px-4 py-2 rounded-xl text-xs font-semibold text-red-400 hover:text-red-300 hover:bg-red-500/10 transition">
+        <button type="button" onclick="deleteCurrentLead()"
+          class="px-4 py-2 rounded-xl text-xs font-semibold text-red-400 hover:text-red-300 hover:bg-red-500/10 transition">
           <i class="fa-solid fa-trash mr-1"></i> Delete Lead
         </button>
         <div class="flex items-center space-x-3">
-          <a id="lead-mailto-btn" href="#" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition flex items-center space-x-1.5">
+          <a id="lead-mailto-btn" href="#"
+            class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition flex items-center space-x-1.5">
             <i class="fa-solid fa-envelope"></i>
             <span>Email Lead</span>
           </a>
-          <button type="button" onclick="saveLeadStatus()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+          <button type="button" onclick="saveLeadStatus()"
+            class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
             Save Status
           </button>
         </div>
@@ -841,7 +942,7 @@
         const parsed = new URL(value, window.location.origin);
         const allowed = kind === 'src' ? ['http:', 'https:'] : ['http:', 'https:', 'mailto:', 'tel:'];
         if (allowed.includes(parsed.protocol) || value.startsWith('#') ||
-            (!/^[a-z][a-z0-9+.-]*:/i.test(value) && !value.startsWith('//'))) return escapeHtml(value);
+          (!/^[a-z][a-z0-9+.-]*:/i.test(value) && !value.startsWith('//'))) return escapeHtml(value);
       } catch (_) {
         if (value.startsWith('/') || value.startsWith('#')) return escapeHtml(value);
       }
@@ -852,9 +953,8 @@
     function showToast(message, type = 'success') {
       const container = document.getElementById('toast-container');
       const toast = document.createElement('div');
-      toast.className = `px-5 py-3 rounded-xl text-xs font-semibold text-white shadow-xl transition transform translate-y-0 opacity-100 flex items-center space-x-2 ${
-        type === 'success' ? 'bg-indigo-600 border border-indigo-400/30' : 'bg-red-600 border border-red-400/30'
-      }`;
+      toast.className = `px-5 py-3 rounded-xl text-xs font-semibold text-white shadow-xl transition transform translate-y-0 opacity-100 flex items-center space-x-2 ${type === 'success' ? 'bg-indigo-600 border border-indigo-400/30' : 'bg-red-600 border border-red-400/30'
+        }`;
       toast.innerHTML = `<i class="fa-solid ${type === 'success' ? 'fa-check-circle' : 'fa-triangle-exclamation'}"></i><span>${escapeHtml(message)}</span>`;
       container.appendChild(toast);
       setTimeout(() => {
@@ -1319,16 +1419,16 @@
                   <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 uppercase">
                     ${escapeHtml(p.page_type)}
                   </span>
-                  ${hasDraft 
-                    ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center space-x-1">
+                  ${hasDraft
+                ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center space-x-1">
                          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
                          <span>Draft Changes</span>
                        </span>`
-                    : `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center space-x-1">
+                : `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center space-x-1">
                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                          <span>Live In Sync</span>
                        </span>`
-                  }
+              }
                 </div>
                 <p class="text-xs text-gray-500 font-mono mt-0.5 truncate">${safeAdminUrl(p.full_path)}</p>
               </div>
@@ -1809,7 +1909,7 @@
             data.forms.map(f => `<option value="${escapeHtml(f.key)}">${escapeHtml(f.name)}</option>`).join('');
           select.value = currentVal;
         }
-      } catch (err) {}
+      } catch (err) { }
     }
 
     async function loadLeads() {
@@ -2148,7 +2248,7 @@
             select.innerHTML = blogCategories.map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.name)}</option>`).join('');
           }
         }
-      } catch (err) {}
+      } catch (err) { }
     }
 
     async function loadBlogPosts() {
@@ -2316,4 +2416,5 @@
     window.addEventListener('DOMContentLoaded', initDashboard);
   </script>
 </body>
+
 </html>

@@ -356,7 +356,8 @@ function sanitizeHtml(dirty) {
       const studioRequested = (
         urlParams.get('admin') === 'true' || urlParams.get('admin') === '1' ||
         urlParams.get('edit') === 'true' || urlParams.get('edit') === '1' ||
-        urlParams.get('studio') === 'true' || urlParams.get('studio') === '1'
+        urlParams.get('studio') === 'true' || urlParams.get('studio') === '1' ||
+        urlParams.get('mode') === 'draft'
       );
       // URL flags alone must not expose the editor shell to anonymous visitors.
       const isStudio = Boolean(token && token.trim().length > 20 && (studioRequested || token));
@@ -410,27 +411,36 @@ function sanitizeHtml(dirty) {
         // 1. Hero Section Hydration (Preserve Red Pill Badge & Verbatim Copy)
         if (sec.section_type === 'hero') {
           const badgeSpan = container.querySelector('.ekit-heading--title > span, .elementskit-section-title > span');
-          if (badgeSpan) {
-            if (d.eyebrow) badgeSpan.textContent = d.eyebrow;
-          } else {
-            const badgeEl = container.querySelector('.ekit-heading--title, .elementskit-section-title');
-            if (badgeEl && d.eyebrow) {
-              badgeEl.innerHTML = `<span>${d.eyebrow}</span>`;
-            }
-          }
+          const subtitleEl = container.querySelector('.elementskit-section-subtitle, .ekit-heading--subtitle');
+          const titleEl = container.querySelector('.ekit-heading--title, .elementskit-section-title, .elementor-heading-title, h1');
 
-          const subtitleEl = container.querySelector('.ekit-heading--subtitle, .elementskit-section-subtitle');
-          if (subtitleEl && d.title) {
-            subtitleEl.innerHTML = sanitizeHtml(d.title);
-          } else if (!badgeSpan) {
-            const titleEl = container.querySelector('.elementor-heading-title, h1');
-            if (titleEl && d.title) titleEl.innerHTML = sanitizeHtml(d.title);
+          if (badgeSpan && subtitleEl) {
+            if (d.eyebrow) badgeSpan.textContent = d.eyebrow;
+            if (d.title) subtitleEl.innerHTML = sanitizeHtml(d.title);
+          } else if (subtitleEl && titleEl && subtitleEl !== titleEl) {
+            if (d.eyebrow) subtitleEl.textContent = d.eyebrow;
+            if (d.title) titleEl.innerHTML = sanitizeHtml(d.title);
+          } else if (titleEl) {
+            if (d.title) titleEl.innerHTML = sanitizeHtml(d.title);
+          } else if (subtitleEl) {
+            if (d.title) subtitleEl.innerHTML = sanitizeHtml(d.title);
           }
 
           const bodyText = d.body || d.body_html || d.description || d.subtitle;
           if (bodyText) {
-            const p = container.querySelector('.ekit-heading__description p, .elementor-widget-text-editor p, p');
-            if (p) p.innerHTML = sanitizeHtml(bodyText);
+            const descWrapper = container.querySelector('.ekit-heading__description, .elementor-widget-text-editor .elementor-widget-container, .elementor-widget-text-editor');
+            if (descWrapper) {
+              if (bodyText.includes('<p>') || bodyText.includes('<br>') || bodyText.includes('<div>')) {
+                descWrapper.innerHTML = sanitizeHtml(bodyText);
+              } else {
+                const paras = bodyText.split(/\n\n+/).filter(Boolean);
+                if (paras.length > 1) {
+                  descWrapper.innerHTML = paras.map(p => `<p>${sanitizeHtml(p.trim())}</p>`).join('');
+                } else {
+                  descWrapper.innerHTML = `<p>${sanitizeHtml(bodyText.trim())}</p>`;
+                }
+              }
+            }
           }
 
           const allBtns = container.querySelectorAll('.ekit-btn-wraper a, .elementskit-btn');
@@ -554,9 +564,32 @@ function sanitizeHtml(dirty) {
           }
 
           if (d.description || d.body || d.subtitle || d.body_html) {
-            const p = container.querySelector('.ekit-heading__description p, .elementor-widget-text-editor p, p');
-            if (p) p.innerHTML = sanitizeHtml(d.body_html || d.description || d.body || d.subtitle);
+            const rawDesc = d.body_html || d.description || d.body || d.subtitle;
+            const descWrapper = container.querySelector('.ekit-heading__description, .elementor-widget-text-editor .elementor-widget-container, .elementor-widget-text-editor');
+            if (descWrapper) {
+              if (rawDesc.includes('<p>') || rawDesc.includes('<br>') || rawDesc.includes('<div>')) {
+                descWrapper.innerHTML = sanitizeHtml(rawDesc);
+              } else {
+                const paras = rawDesc.split(/\n\n+/).filter(Boolean);
+                if (paras.length > 1) {
+                  descWrapper.innerHTML = paras.map(p => `<p>${sanitizeHtml(p.trim())}</p>`).join('');
+                } else {
+                  descWrapper.innerHTML = `<p>${sanitizeHtml(rawDesc.trim())}</p>`;
+                }
+              }
+            }
           }
+
+          if (Array.isArray(d.bullets) && d.bullets.length > 0) {
+            const bulletEls = container.querySelectorAll('.elementskit-infobox .box-body p, .elementskit-infobox p');
+            bulletEls.forEach((el, idx) => {
+              if (d.bullets[idx]) {
+                const bText = typeof d.bullets[idx] === 'string' ? d.bullets[idx] : d.bullets[idx].text;
+                if (bText) el.textContent = bText;
+              }
+            });
+          }
+
           if (d.btn1_text || d.cta_label || d.cta_text) {
             const btn = container.querySelector('.ekit-btn-wraper a, a.elementor-button, .elementskit-btn');
             if (btn) {
@@ -575,8 +608,15 @@ function sanitizeHtml(dirty) {
             if (h) h.textContent = d.title;
           }
           if (d.subtitle || d.description || d.body || d.body_html) {
-            const p = container.querySelector('.elementor-widget-text-editor p, p');
-            if (p) p.innerHTML = sanitizeHtml(d.body_html || d.subtitle || d.description || d.body);
+            const rawDesc = d.body_html || d.subtitle || d.description || d.body;
+            const descWrapper = container.querySelector('.elementor-widget-text-editor .elementor-widget-container, .elementor-widget-text-editor');
+            if (descWrapper) {
+              if (rawDesc.includes('<p>') || rawDesc.includes('<br>') || rawDesc.includes('<div>')) {
+                descWrapper.innerHTML = sanitizeHtml(rawDesc);
+              } else {
+                descWrapper.innerHTML = `<p>${sanitizeHtml(rawDesc.trim())}</p>`;
+              }
+            }
           }
           if (d.button_text || d.cta_text || d.cta_label) {
             const btn = container.querySelector('.elementor-button, .elementskit-btn, .btn, a');

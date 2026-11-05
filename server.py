@@ -1473,12 +1473,17 @@ def serve_any_page(full_path: str):
         "technographics": "technographics.html",
         "service-categories/technographics": "technographics.html",
         "service-categories_technographics": "technographics.html",
+        "service-categories/hr-compliance-administration-2": "hr-compliance-administration-2.html",
+        "service-categories_hr-compliance-administration-2": "hr-compliance-administration-2.html",
+        "service-categories/hr-consultants": "hr-consultants.html",
+        "service-categories_hr-consultants": "hr-consultants.html",
         "expand_and_retain_customers": "expand-retain-customers.html",
         "expand-and-retain-customers": "expand-retain-customers.html",
         "for-marketing": "for-marketer.html",
         "for_marketing": "for-marketer.html",
         "survey": "survey.html",
-        "survey-form": "survey.html"
+        "survey-form": "survey.html",
+        "home": "index.html"
     }
 
     if clean in CANONICAL_MAP:

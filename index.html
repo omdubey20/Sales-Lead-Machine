@@ -270,39 +270,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=sassico-master-inline-css */
 </style>
 <style id="slm-motion-keyframes">
-@keyframes swing {
-  0% { transform: rotate(0deg) translate3d(0, 0, 0); }
-  20% { transform: rotate(4.5deg) translate3d(10px, -8px, 0); }
-  40% { transform: rotate(-3.5deg) translate3d(-8px, 10px, 0); }
-  60% { transform: rotate(3deg) translate3d(8px, -5px, 0); }
-  80% { transform: rotate(-2deg) translate3d(-5px, 6px, 0); }
-  100% { transform: rotate(0deg) translate3d(0, 0, 0); }
-}
-
-@keyframes shake {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  20% { transform: translate3d(-8px, 6px, 0) rotate(-2deg); }
-  40% { transform: translate3d(8px, -8px, 0) rotate(2deg); }
-  60% { transform: translate3d(-6px, -4px, 0) rotate(-1.5deg); }
-  80% { transform: translate3d(6px, 6px, 0) rotate(1.5deg); }
-}
-
-/* Organic template blob continuous floating animations */
-.elementor-element.elementor-element-82736a5 .elementor-widget-container,
-.elementor-element.elementor-element-82736a5 img {
-  animation: swing 12s ease-in-out infinite alternate !important;
-  transform-origin: 50% 50% !important;
-  will-change: transform !important;
-}
-
-.elementor-element.elementor-element-b7bf0bc .elementor-widget-container,
-.elementor-element.elementor-element-b7bf0bc img,
-.elementor-element.elementor-element-2e4b802 .elementor-widget-container,
-.elementor-element.elementor-element-2e4b802 img {
-  animation: shake 5s ease-in-out infinite alternate !important;
-  transform-origin: 50% 50% !important;
-  will-change: transform !important;
-}
 
 /* Ensure smooth GPU compositing for parallax widgets */
 .elementor-widget-image .elementor-widget-container {

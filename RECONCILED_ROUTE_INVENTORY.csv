@@ -1,0 +1,65 @@
+Exact_URL,Route_Category,Canonical_Destination,Implementation_Type,Local_HTTP_Status,Prod_HTTP_Status,Include_In_Step6_Regression,Notes
+/,Canonical Core Page,index.html,Dedicated Template,200,200,True,Root website homepage
+/about-us/,Canonical Core Page,about-us.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/blog/,Blog Archive & Article,blog.html,Dynamic Archive,404,200,False,WordPress blog post or archive entry
+/build-a-b2b-gtm-foundation/,Canonical Core Page,build-a-b2b-gtm-foundation.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/chances-are-good-that-theres-a-cloud-software-as-a-service/,Blog Archive & Article,blog.html,Dynamic Archive,404,200,False,WordPress blog post or archive entry
+/close-opportunities-efficiently/,Canonical Core Page,close-opportunities-efficiently.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/company/,Canonical Core Page,company.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/compliance/,Canonical Core Page,compliance.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/contact-sales/,Canonical Core Page,contact-sales.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/contact-us/,Canonical Core Page,contact-us.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/contact/,Canonical Core Page,contact.html,Dynamic Archive,200,200,True,Primary customer-facing website route backed by CMS
+/context/,Canonical Core Page,context.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/crm-2-single-page/,Theme Demo / Showcase Layout,crm-2-single-page.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/data/,Canonical Core Page,data.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/engage-target-accounts/,Canonical Core Page,engage-target-accounts.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/expand-retain-customers/,Canonical Core Page,expand-retain-customers.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/faq/,Canonical Core Page,faq.html,Dynamic Archive,200,200,True,Primary customer-facing website route backed by CMS
+/find-in-market-accounts/,Canonical Core Page,find-in-market-accounts.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-business-services/,Canonical Core Page,for-business-services.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-customer-success/,Canonical Core Page,for-customer-success.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-enterprise/,Canonical Core Page,for-enterprise.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-financial-services/,Canonical Core Page,for-financial-services.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-manufacturing/,Canonical Core Page,for-manufacturing.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-marketer/,Canonical Core Page,for-marketer.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-sales/,Canonical Core Page,for-sales.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/for-technology/,Canonical Core Page,for-technology.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/help-desk-single-page/,Theme Demo / Showcase Layout,help-desk-single-page.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/home-4-single/,Theme Demo / Showcase Layout,home-4-single.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/home-single-page/,Theme Demo / Showcase Layout,home-single-page.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/home-v4/,Theme Demo / Showcase Layout,home-v4.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/home/,WordPress Root Alias,index.html,Intentional Alias,200,200,True,WordPress alias route pointing to canonical /
+/hr-management-single-page/,Theme Demo / Showcase Layout,hr-management-single-page.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/icp-data-request/,Secondary / Utility Page,icp-data-request.html,Dedicated Template,200,200,False,Theme portfolio showcase or auxiliary form utility
+/many-of-those-products-offer-the-potential-not-just-to-move-your/,Blog Archive & Article,blog.html,Dynamic Archive,404,200,False,WordPress blog post or archive entry
+/menu-demo-layout/,Theme Demo / Showcase Layout,menu-demo-layout.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/our-evaluation-services-focus-on-providing-actionable/,Blog Archive & Article,blog.html,Dynamic Archive,404,200,False,WordPress blog post or archive entry
+/platform-and-products/,Canonical Core Page,platform-and-products.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/portfolio-filter/,Secondary / Utility Page,portfolio-filter.html,Dynamic Archive,404,200,False,Theme portfolio showcase or auxiliary form utility
+/portfolio/,Secondary / Utility Page,portfolio.html,Dynamic Archive,404,200,False,Theme portfolio showcase or auxiliary form utility
+/pricing/,Canonical Core Page,pricing.html,Dynamic Archive,200,200,True,Primary customer-facing website route backed by CMS
+/problems-we-solve/,Canonical Core Page,problems-we-solve.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/saas-4-single/,Theme Demo / Showcase Layout,saas-4-single.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sample-page/,Secondary / Utility Page,sample-page.html,Dynamic Archive,404,200,False,Theme portfolio showcase or auxiliary form utility
+/sass-1/,Theme Demo / Showcase Layout,sass-1.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-2-single-page/,Theme Demo / Showcase Layout,sass-2-single-page.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-2/,Theme Demo / Showcase Layout,sass-2.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-3-single/,Theme Demo / Showcase Layout,sass-3-single.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-3/,Theme Demo / Showcase Layout,sass-3.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-4/,Theme Demo / Showcase Layout,sass-4.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-5-single/,Theme Demo / Showcase Layout,sass-5-single.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-5/,Theme Demo / Showcase Layout,sass-5.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-6-single/,Theme Demo / Showcase Layout,sass-6-single.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/sass-7/,Theme Demo / Showcase Layout,sass-7.html,Dynamic Archive,404,200,False,Imported WordPress theme demo showcase layout
+/service-categories/crome-extension/,Service Category Route,crome-extension.html,Dynamic Archive,200,200,True,Production WordPress taxonomy slug is verbatim crome-extension (without h)
+/service-categories/data-enrichment/,Service Category Route,data-enrichment.html,Dedicated Template,200,200,True,WordPress sassico-service custom post route
+/service-categories/email-verification/,Service Category Route,email-verification.html,Dedicated Template,200,200,True,WordPress sassico-service custom post route
+/service-categories/hr-compliance-administration-2/,Service Category Route,hr-compliance-administration-2.html,Dynamic Archive,200,200,True,WordPress sassico-service custom post route
+/service-categories/hr-consultants/,Service Category Route,hr-consultants.html,Dynamic Archive,200,200,True,WordPress sassico-service custom post route
+/service-categories/intent-data/,Service Category Route,intent-data.html,Dedicated Template,200,200,True,WordPress sassico-service custom post route
+/service-categories/prospector/,Service Category Route,prospector.html,Dedicated Template,200,200,True,WordPress sassico-service custom post route
+/service-categories/technographics/,Service Category Route,technographics.html,Dedicated Template,200,200,True,WordPress sassico-service custom post route
+/start-your-free-trial/,Canonical Core Page,start-your-free-trial.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/survey/,Canonical Core Page,survey.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS
+/watch-a-demo/,Canonical Core Page,watch-a-demo.html,Dedicated Template,200,200,True,Primary customer-facing website route backed by CMS

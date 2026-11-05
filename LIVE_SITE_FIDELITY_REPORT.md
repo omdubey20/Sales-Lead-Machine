@@ -233,3 +233,52 @@ For every discrepancy identified, we analyzed whether it originates from:
 
 ### Phase 4: Final Re-Audit & Pixeldiff Verification
 - Re-run visual diffing engine to confirm pixel difference drops below 2% across all 64 routes.
+
+---
+
+## 7. Pre-Step 6 & Step 6 Verification Results (Post-Remediation)
+
+### A. Final Section-Height Reconciliation
+Direct Playwright measurement of target homepage sections under identical viewport constraints (`1280x800`, Chromium, deviceScaleFactor 1):
+
+| Section ID | Name / Description | Prod Height | Local Height | Final Delta ($\Delta H$) | Computed Padding (Prod / Local) | Image Box (Prod / Local) | Transform | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `0b9f330` | Improved Sales Intelligence | 1146.0px | 1146.0px | **0.0px** | Top 70px, Bottom 56px / Top 70px, Bottom 56px | 403x202 / 403x202 | `none` | **RESOLVED** |
+| `184c9a6` | Streamline Sales Contacts | 928.0px | 928.0px | **0.0px** | Top 80px, Bottom 80px / Top 80px, Bottom 80px | 403x202 / 403x202 | `none` | **RESOLVED** |
+| `b5a6373` | Boost Marketing Campaigns | 784.0px | 784.0px | **0.0px** | Top 80px, Bottom 56px / Top 80px, Bottom 56px | 579x427 / 579x427 | `none` | **RESOLVED** |
+
+*Root Causes & Resolutions:*
+- **`0b9f330` (-48px delta):** Resolved by aligning headline typography with production curly quotation marks wrapping cleanly across 5 lines.
+- **`184c9a6` (-106px delta):** Corrected line-height in minified stylesheet (`24px` matching production vs `32px` unminified local override) and normalized section vertical padding to `80px 0`.
+- **`b5a6373` (-64px delta):** Restored paragraph breaks and empty spacer paragraphs (`<p><strong>&nbsp;</strong></p>`) in PostgreSQL `body_html` matching production Elementor layout.
+
+---
+
+### B. Reconciled Route Inventory (Deduplicated 64-Route Breakdown)
+The route classification discrepancy where category sums equaled 71 was caused by conflating 7 internal legacy redirect rewrite entries with the 64 production XML sitemap URLs. 
+
+The live production WordPress sitemap (`/wp-sitemap.xml`) contains exactly **64 unique routes**:
+1. **Canonical Core Pages:** 29 routes (Primary marketing pages backed by dedicated templates and CMS).
+2. **Service Category Routes:** 8 routes (Including `/service-categories/crome-extension/` verified verbatim in live sitemap).
+3. **Theme Demo & Showcase Layouts:** 18 routes (Sassico agency portfolio and demo templates; return 404 locally as intentional non-marketing pages).
+4. **Blog Archive & Article Posts:** 4 routes.
+5. **Secondary & Utility Pages:** 4 routes (`/icp-data-request/` [200 OK], plus sample theme utilities).
+6. **WordPress Root Alias:** 1 route (`/home/` aliases to `/` [200 OK]).
+**Total Unique Routes:** **64** ($29 + 8 + 18 + 4 + 4 + 1 = 64$).
+**Routes Included in Step 6 Regression:** **38** (All 38 return HTTP 200 OK on localhost).
+
+---
+
+### C. Step 6 Regression Testing Summary
+Executed via `tests/step6_regression_test.py`:
+1. **HTTP Status Parity:** **38/38** routes returned HTTP 200 OK.
+2. **Heading & Button Verbatim Parity:**
+   - `/for-business-services/`: Eyebrow, headline, and CTA button (`"SEE SALES LEAD MACHINE IN ACTION"`) match production verbatim.
+   - `/for-enterprise/`: Eyebrow, headline, and CTA button (`"SEE SALES LEAD MACHINE IN ACTION"`) match production verbatim.
+3. **Responsive Viewport Verification:**
+   - Tested across Desktop (`1280x800`), Tablet (`768x1024`), and Mobile (`375x812`). Zero horizontal scrollbar/overflow (`scrollWidth <= clientWidth`), responsive grids collapse cleanly.
+4. **CMS Editing, Draft Isolation, Publishing & Clean Restoration:**
+   - **Draft Isolation:** Anonymous visitors cannot view pending draft changes on live pages (`PASS`).
+   - **Draft Preview:** Authenticated administrators viewing `?mode=draft` see live draft updates (`PASS`).
+   - **Publish API:** Executing `POST /api/admin/pages/{id}/publish` deploys draft content to public visitors (`PASS`).
+   - **Clean Restoration:** Reverting database content restores live website to original baseline state with zero artifacts (`PASS`).

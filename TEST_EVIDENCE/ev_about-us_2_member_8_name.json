@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:48Z",
+  "page": "/about-us/",
+  "section_id": "6e939d5c-a791-4e6e-a7f3-dce63000036d",
+  "section_type": "team",
+  "control": "member_8_name",
+  "original_val": "Sara Abel",
+  "test_val": "Sara Abel [TEST:QA_fa311b]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:54Z",
+  "page": "/build-a-b2b-gtm-foundation/",
+  "section_id": "4ca689b9-3e01-4281-9c50-9eabb235a7dd",
+  "section_type": "cta_banner",
+  "control": "eyebrow",
+  "original_val": "GET STARTED",
+  "test_val": "GET STARTED [TEST:QA_b63f2f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

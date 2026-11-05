@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:19Z",
+  "page": "/for-financial-services/",
+  "section_id": "65546427-34b1-4a1b-aaec-c7d7af51f453",
+  "section_type": "split",
+  "control": "btn1_url",
+  "original_val": "",
+  "test_val": "Test Value QA_b031f6",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

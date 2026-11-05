@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:46Z",
+  "page": "/about-us/",
+  "section_id": "392b7ade-6e8b-4366-83f5-bc0aaa4f383a",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "We integrate account intelligence into marketing and sales teams, providing rich, reliable customer insights in advertising, account-based experiences (ABX), sales, and your systems. Faster deals can be closed by identifying opportunities earlier, engaging more intelligently, and engaging more effectively.",
+  "test_val": "We integrate account intelligence into marketing and sales teams, providing rich, reliable customer insights in advertising, account-based experiences (ABX), sales, and your systems. Faster deals can be closed by identifying opportunities earlier, engaging more intelligently, and engaging more effectively. [TEST:QA_22bfde]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

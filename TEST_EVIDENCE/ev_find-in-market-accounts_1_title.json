@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:11Z",
+  "page": "/find-in-market-accounts/",
+  "section_id": "a8c96824-5a6b-4fd9-aea1-7906deb73594",
+  "section_type": "hero",
+  "control": "title",
+  "original_val": "Let's not waste time",
+  "test_val": "Let's not waste time [TEST:QA_3f8019]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,122 @@
+Page,Section,Section type,Control,Original value,Test action,Draft result,Persistence,Published result,Frontend result,Restoration,Evidence,Bug
+/,Sec: 184c9a6,split,title,Streamline sales with phone-verified contacts,Mutated with QA_d8f905,PASS,PASS,PASS,PASS,PASS,ev_128132eb_title.json,None
+/,Sec: 184c9a6,split,subtitle,"Every day, the Sales Lead Machine receives more th",Mutated with QA_689dd7,PASS,PASS,PASS,PASS,PASS,ev_128132eb_subtitle.json,None
+/,Sec: 184c9a6,split,eyebrow,Customer service,Mutated with QA_7838eb,PASS,PASS,PASS,PASS,PASS,ev_128132eb_eyebrow.json,None
+/,Sec: 184c9a6,split,body,"Every day, the Sales Lead Machine receives more th",Mutated with QA_3948ed,PASS,PASS,PASS,PASS,PASS,ev_128132eb_body.json,None
+/,Sec: 184c9a6,split,cta_text,,Mutated with QA_b867fe,PASS,PASS,PASS,PASS,PASS,ev_128132eb_cta_text.json,None
+/,Sec: 184c9a6,split,cta_url,https://salesleadmachine.uk/login,Mutated with QA_7b2cc0,PASS,PASS,PASS,PASS,PASS,ev_128132eb_cta_url.json,None
+/,Sec: 3046460,card_grid,title,Choose Your Platform,Mutated with QA_a09134,PASS,PASS,PASS,PASS,PASS,ev_2e05ee57_title.json,None
+/,Sec: 3046460,card_grid,subtitle,The multiplatform operating system used by revenue,Mutated with QA_98929e,PASS,PASS,PASS,PASS,PASS,ev_2e05ee57_subtitle.json,None
+/,Sec: 3046460,card_grid,body,The multiplatform operating system used by revenue,Mutated with QA_ffd2bc,PASS,PASS,PASS,PASS,PASS,ev_2e05ee57_body.json,None
+/,Sec: 3046460,card_grid,card_0_title,,Mutated with QA_2c97e5,PASS,PASS,PASS,PASS,PASS,ev_2e05ee57_card_0_title.json,None
+/,Sec: 3046460,card_grid,card_0_desc,Effortlessly sales teams can crush quotas with int,Mutated with QA_bd07f5,PASS,PASS,PASS,PASS,PASS,ev_2e05ee57_card_0_desc.json,None
+/,Sec: 3046460,card_grid,card_1_title,,Mutated with QA_aef50b,PASS,PASS,PASS,PASS,PASS,ev_2e05ee57_card_1_title.json,None
+/,Sec: 3046460,card_grid,card_1_desc,Modern marketers are obsessed with converting lead,Mutated with QA_80d84d,PASS,PASS,PASS,PASS,PASS,ev_2e05ee57_card_1_desc.json,None
+/,Sec: 340f770,split,title,Fill out this simple survey and we will donate up ,Mutated with QA_3474da,PASS,PASS,PASS,PASS,PASS,ev_2aeca2f9_title.json,None
+/,Sec: 340f770,split,subtitle,Plus a chance to win a prize,Mutated with QA_f5f8ec,PASS,PASS,PASS,PASS,PASS,ev_2aeca2f9_subtitle.json,None
+/,Sec: 340f770,split,eyebrow,,Mutated with QA_18877a,PASS,PASS,PASS,PASS,PASS,ev_2aeca2f9_eyebrow.json,None
+/,Sec: 340f770,split,body,Plus a chance to win a prize,Mutated with QA_beeec7,PASS,PASS,PASS,PASS,PASS,ev_2aeca2f9_body.json,None
+/,Sec: 340f770,split,cta_text,Click to Know More,Mutated with QA_8ec56c,PASS,PASS,PASS,PASS,PASS,ev_2aeca2f9_cta_text.json,None
+/,Sec: 340f770,split,cta_url,/survey,Mutated with QA_2963b6,PASS,PASS,PASS,PASS,PASS,ev_2aeca2f9_cta_url.json,None
+/,Sec: a26d791,hero,title,Locate the appropriate businesses and decision-mak,Mutated with QA_d17512,PASS,PASS,PASS,PASS,PASS,ev_719fd03b_title.json,None
+/,Sec: a26d791,hero,subtitle,"Obtain the B2B data and software you require, all ",Mutated with QA_b7369f,PASS,PASS,PASS,PASS,PASS,ev_719fd03b_subtitle.json,None
+/,Sec: a26d791,hero,eyebrow,Sales Prospector,Mutated with QA_7accf4,PASS,PASS,PASS,PASS,PASS,ev_719fd03b_eyebrow.json,None
+/,Sec: a26d791,hero,body,"Obtain the B2B data and software you require, all ",Mutated with QA_648df3,PASS,PASS,PASS,PASS,PASS,ev_719fd03b_body.json,None
+/,Sec: a26d791,hero,btn1_text,Login Now,Mutated with QA_b1f2f7,PASS,PASS,PASS,PASS,PASS,ev_719fd03b_btn1_text.json,None
+/,Sec: a26d791,hero,btn1_url,https://salesleadmachine.uk/login,Mutated with QA_1634c9,PASS,PASS,PASS,PASS,PASS,ev_719fd03b_btn1_url.json,None
+/,Sec: ea20ca3,split,title,"25,000+ of the world’s most successful companies w",Mutated with QA_b8994f,PASS,PASS,PASS,PASS,PASS,ev_15ca8616_title.json,None
+/,Sec: ea20ca3,split,eyebrow,We’re working with,Mutated with QA_87ccd3,PASS,PASS,PASS,PASS,PASS,ev_15ca8616_eyebrow.json,None
+/,Sec: ea20ca3,split,cta_text,,Mutated with QA_4ee989,PASS,PASS,PASS,PASS,PASS,ev_15ca8616_cta_text.json,None
+/,Sec: ea20ca3,split,cta_url,https://salesleadmachine.uk/login,Mutated with QA_fccb8c,PASS,PASS,PASS,PASS,PASS,ev_15ca8616_cta_url.json,None
+/,Sec: ea20ca3,split,bullet_0_text,25 K+ Project Completed,Mutated with QA_c0536c,PASS,PASS,PASS,PASS,PASS,ev_15ca8616_bullet_0_text.json,None
+/,Sec: b5a6373,split,title,Boost your marketing campaigns by targeting highly,Mutated with QA_13f700,PASS,PASS,PASS,PASS,PASS,ev_06cc92f2_title.json,None
+/,Sec: b5a6373,split,subtitle,Create qualified audiences in seconds by building ,Mutated with QA_b8cb3e,PASS,PASS,PASS,PASS,PASS,ev_06cc92f2_subtitle.json,None
+/,Sec: b5a6373,split,eyebrow,Customer service,Mutated with QA_ce6408,PASS,PASS,PASS,PASS,PASS,ev_06cc92f2_eyebrow.json,None
+/,Sec: b5a6373,split,body,Create qualified audiences in seconds by building ,Mutated with QA_86179e,PASS,PASS,PASS,PASS,PASS,ev_06cc92f2_body.json,None
+/,Sec: b5a6373,split,cta_text,view more,Mutated with QA_c55cff,PASS,PASS,PASS,PASS,PASS,ev_06cc92f2_cta_text.json,None
+/,Sec: b5a6373,split,cta_url,/platform-and-products/,Mutated with QA_4fd0e8,PASS,PASS,PASS,PASS,PASS,ev_06cc92f2_cta_url.json,None
+/,Sec: f8b676a,logo_wall,title,Trusted by modern revenue teams across the UK & Eu,Mutated with QA_ef5a08,PASS,PASS,PASS,PASS,PASS,ev_3c278158_title.json,None
+/,Sec: f8b676a,logo_wall,logo_0_name,Partner Brand 1,Mutated with QA_c34caa,PASS,PASS,PASS,PASS,PASS,ev_3c278158_logo_0_name.json,None
+/,Sec: 0b9f330,split,title,"Improved sales intelligence is necessary because """,Mutated with QA_f8c805,PASS,PASS,PASS,PASS,PASS,ev_c41296d5_title.json,None
+/,Sec: 0b9f330,split,subtitle,Today's consumers concentrate on the most pertinen,Mutated with QA_8b7b70,PASS,PASS,PASS,PASS,PASS,ev_c41296d5_subtitle.json,None
+/,Sec: 0b9f330,split,eyebrow,Customer service,Mutated with QA_c7bfd5,PASS,PASS,PASS,PASS,PASS,ev_c41296d5_eyebrow.json,None
+/,Sec: 0b9f330,split,body,Today's consumers concentrate on the most pertinen,Mutated with QA_1c0d4f,PASS,PASS,PASS,PASS,PASS,ev_c41296d5_body.json,None
+/,Sec: 0b9f330,split,cta_text,,Mutated with QA_24b43a,PASS,PASS,PASS,PASS,PASS,ev_c41296d5_cta_text.json,None
+/,Sec: 0b9f330,split,cta_url,https://salesleadmachine.uk/login,Mutated with QA_b71ad2,PASS,PASS,PASS,PASS,PASS,ev_c41296d5_cta_url.json,None
+/,Sec: 0b9f330,split,bullet_0_text,Discover several entries in the accounts of your c,Mutated with QA_275b00,PASS,PASS,PASS,PASS,PASS,ev_c41296d5_bullet_0_text.json,None
+/about-us,Sec: 0ec3501,split,title,Sales Lead Machine is all about Smarter Strategy,Mutated with QA_bdc6b1,PASS,PASS,PASS,PASS,PASS,ev_392b7ade_title.json,None
+/about-us,Sec: 0ec3501,split,subtitle,We integrate account intelligence into marketing a,Mutated with QA_63cd7d,PASS,PASS,PASS,PASS,PASS,ev_392b7ade_subtitle.json,None
+/about-us,Sec: 0ec3501,split,eyebrow,About Company,Mutated with QA_54dd2f,PASS,PASS,PASS,PASS,PASS,ev_392b7ade_eyebrow.json,None
+/about-us,Sec: 0ec3501,split,body,We integrate account intelligence into marketing a,Mutated with QA_ca1697,PASS,PASS,PASS,PASS,PASS,ev_392b7ade_body.json,None
+/about-us,Sec: 0ec3501,split,cta_text,Contact Us,Mutated with QA_ffc37e,PASS,PASS,PASS,PASS,PASS,ev_392b7ade_cta_text.json,None
+/about-us,Sec: 0ec3501,split,cta_url,/contact-us/,Mutated with QA_a0bcde,PASS,PASS,PASS,PASS,PASS,ev_392b7ade_cta_url.json,None
+/build-a-b2b-gtm-foundation,Sec: 686210c,split,title,It's the only complete revenue team go-to-market s,Mutated with QA_130070,PASS,PASS,PASS,PASS,PASS,ev_95246189_title.json,None
+/build-a-b2b-gtm-foundation,Sec: 686210c,split,subtitle,There's no need to guess. Sales Lead Machine makes,Mutated with QA_4dee88,PASS,PASS,PASS,PASS,PASS,ev_95246189_subtitle.json,None
+/build-a-b2b-gtm-foundation,Sec: 686210c,split,eyebrow,UNIFIED REVENUE INTELLIGENCE,Mutated with QA_98ed8c,PASS,PASS,PASS,PASS,PASS,ev_95246189_eyebrow.json,None
+/build-a-b2b-gtm-foundation,Sec: 686210c,split,body,There's no need to guess. Sales Lead Machine makes,Mutated with QA_5c8c07,PASS,PASS,PASS,PASS,PASS,ev_95246189_body.json,None
+/build-a-b2b-gtm-foundation,Sec: 686210c,split,cta_text,,Mutated with QA_87027f,PASS,PASS,PASS,PASS,PASS,ev_95246189_cta_text.json,None
+/build-a-b2b-gtm-foundation,Sec: 686210c,split,cta_url,https://salesleadmachine.uk/login,Mutated with QA_49a69d,PASS,PASS,PASS,PASS,PASS,ev_95246189_cta_url.json,None
+/build-a-b2b-gtm-foundation,Sec: 6aff705,split,title,The marketing and sales departments battling again,Mutated with QA_4f0815,PASS,PASS,PASS,PASS,PASS,ev_dc79dbf8_title.json,None
+/build-a-b2b-gtm-foundation,Sec: 6aff705,split,subtitle,Does your marketing team frequently operate from d,Mutated with QA_250ba2,PASS,PASS,PASS,PASS,PASS,ev_dc79dbf8_subtitle.json,None
+/build-a-b2b-gtm-foundation,Sec: 6aff705,split,eyebrow,REVENUE FRICTION,Mutated with QA_adea81,PASS,PASS,PASS,PASS,PASS,ev_dc79dbf8_eyebrow.json,None
+/build-a-b2b-gtm-foundation,Sec: 6aff705,split,body,Does your marketing team frequently operate from d,Mutated with QA_8a1465,PASS,PASS,PASS,PASS,PASS,ev_dc79dbf8_body.json,None
+/build-a-b2b-gtm-foundation,Sec: 6aff705,split,cta_text,,Mutated with QA_72103e,PASS,PASS,PASS,PASS,PASS,ev_dc79dbf8_cta_text.json,None
+/build-a-b2b-gtm-foundation,Sec: 6aff705,split,cta_url,https://salesleadmachine.uk/login,Mutated with QA_c322ad,PASS,PASS,PASS,PASS,PASS,ev_dc79dbf8_cta_url.json,None
+/build-a-b2b-gtm-foundation,Sec: b954174,card_grid,title,What else can you do with Sales Lead Machine Accou,Mutated with QA_ef0cf3,PASS,PASS,PASS,PASS,PASS,ev_25e012a0_title.json,None
+/build-a-b2b-gtm-foundation,Sec: b954174,card_grid,subtitle,Build your go-to-market engine on four interconnec,Mutated with QA_de1123,PASS,PASS,PASS,PASS,PASS,ev_25e012a0_subtitle.json,None
+/build-a-b2b-gtm-foundation,Sec: b954174,card_grid,body,Build your go-to-market engine on four interconnec,Mutated with QA_b89efe,PASS,PASS,PASS,PASS,PASS,ev_25e012a0_body.json,None
+/build-a-b2b-gtm-foundation,Sec: b954174,card_grid,card_0_title,ABX Cloud,Mutated with QA_f01125,PASS,PASS,PASS,PASS,PASS,ev_25e012a0_card_0_title.json,None
+/build-a-b2b-gtm-foundation,Sec: b954174,card_grid,card_0_desc,,Mutated with QA_60b67e,PASS,PASS,PASS,PASS,PASS,ev_25e012a0_card_0_desc.json,None
+/build-a-b2b-gtm-foundation,Sec: b954174,card_grid,card_1_title,Advertising Cloud,Mutated with QA_010734,PASS,PASS,PASS,PASS,PASS,ev_25e012a0_card_1_title.json,None
+/build-a-b2b-gtm-foundation,Sec: b954174,card_grid,card_1_desc,,Mutated with QA_a6544a,PASS,PASS,PASS,PASS,PASS,ev_25e012a0_card_1_desc.json,None
+/close-opportunities-efficiently,Sec: 118b9e1,card_grid,title,What else can you do with Sales Lead Machine Accou,Mutated with QA_b43750,PASS,PASS,PASS,PASS,PASS,ev_3566926a_title.json,None
+/close-opportunities-efficiently,Sec: 118b9e1,card_grid,subtitle,Equip reps with interconnected applications to nav,Mutated with QA_81b035,PASS,PASS,PASS,PASS,PASS,ev_3566926a_subtitle.json,None
+/close-opportunities-efficiently,Sec: 118b9e1,card_grid,body,Equip reps with interconnected applications to nav,Mutated with QA_98ab65,PASS,PASS,PASS,PASS,PASS,ev_3566926a_body.json,None
+/close-opportunities-efficiently,Sec: 118b9e1,card_grid,card_0_title,ABX Cloud,Mutated with QA_cd5311,PASS,PASS,PASS,PASS,PASS,ev_3566926a_card_0_title.json,None
+/close-opportunities-efficiently,Sec: 118b9e1,card_grid,card_0_desc,,Mutated with QA_3f5698,PASS,PASS,PASS,PASS,PASS,ev_3566926a_card_0_desc.json,None
+/close-opportunities-efficiently,Sec: 118b9e1,card_grid,card_1_title,Advertising Cloud,Mutated with QA_b37168,PASS,PASS,PASS,PASS,PASS,ev_3566926a_card_1_title.json,None
+/close-opportunities-efficiently,Sec: 118b9e1,card_grid,card_1_desc,,Mutated with QA_3fe132,PASS,PASS,PASS,PASS,PASS,ev_3566926a_card_1_desc.json,None
+/data,Sec: 9ec0025,card_grid,title,Data that meets high quality standards,Mutated with QA_012015,PASS,PASS,PASS,PASS,PASS,ev_ee7883f5_title.json,None
+/data,Sec: 9ec0025,card_grid,subtitle,Multi-stage telephone and SMTP validation ensures ,Mutated with QA_14fe3c,PASS,PASS,PASS,PASS,PASS,ev_ee7883f5_subtitle.json,None
+/data,Sec: 9ec0025,card_grid,body,You can count on Sales lead Machine to deliver acc,Mutated with QA_d18930,PASS,PASS,PASS,PASS,PASS,ev_ee7883f5_body.json,None
+/build-a-b2b-gtm-foundation,Sec: 770b260,hero,title,It's useless to view accounts fragmented,Mutated with QA_610afd,PASS,PASS,PASS,PASS,PASS,ev_53edcb69_title.json,None
+/build-a-b2b-gtm-foundation,Sec: 770b260,hero,subtitle,A holistic view lights up with insights. Connect f,Mutated with QA_e0a067,PASS,PASS,PASS,PASS,PASS,ev_53edcb69_subtitle.json,None
+/build-a-b2b-gtm-foundation,Sec: 770b260,hero,eyebrow,Set up a foundation based on accountability,Mutated with QA_e0b1ca,PASS,PASS,PASS,PASS,PASS,ev_53edcb69_eyebrow.json,None
+/build-a-b2b-gtm-foundation,Sec: 770b260,hero,body,A holistic view lights up with insights. Connect f,Mutated with QA_196238,PASS,PASS,PASS,PASS,PASS,ev_53edcb69_body.json,None
+/build-a-b2b-gtm-foundation,Sec: 770b260,hero,btn1_text,See It in Action,Mutated with QA_8b0eb8,PASS,PASS,PASS,PASS,PASS,ev_53edcb69_btn1_text.json,None
+/build-a-b2b-gtm-foundation,Sec: 770b260,hero,btn1_url,#,Mutated with QA_bdc19a,PASS,PASS,PASS,PASS,PASS,ev_53edcb69_btn1_url.json,None
+/chrome-extension,Sec: 8683f35,hero,title,Chrome Extension,Mutated with QA_61e86c,PASS,PASS,PASS,PASS,PASS,ev_990bec98_title.json,None
+/chrome-extension,Sec: 8683f35,hero,subtitle,Reveal verified direct dials and corporate emails ,Mutated with QA_fb5817,PASS,PASS,PASS,PASS,PASS,ev_990bec98_subtitle.json,None
+/chrome-extension,Sec: 8683f35,hero,eyebrow,Instant Browser Prospecting,Mutated with QA_91e82f,PASS,PASS,PASS,PASS,PASS,ev_990bec98_eyebrow.json,None
+/chrome-extension,Sec: 8683f35,hero,body,Home / Platform and Products / Chrome Extension,Mutated with QA_d79c25,PASS,PASS,PASS,PASS,PASS,ev_990bec98_body.json,None
+/close-opportunities-efficiently,Sec: 00d6f23,hero,title,Friction Kills Deals. Account Insights Grease the ,Mutated with QA_dd11a1,PASS,PASS,PASS,PASS,PASS,ev_9c406999_title.json,None
+/close-opportunities-efficiently,Sec: 00d6f23,hero,subtitle,Close Opportunities Efficiently With Account Insig,Mutated with QA_8e0c0a,PASS,PASS,PASS,PASS,PASS,ev_9c406999_subtitle.json,None
+/close-opportunities-efficiently,Sec: 00d6f23,hero,eyebrow,Close Opportunities Efficiently With Account Insig,Mutated with QA_010650,PASS,PASS,PASS,PASS,PASS,ev_9c406999_eyebrow.json,None
+/close-opportunities-efficiently,Sec: 00d6f23,hero,body,Close Opportunities Efficiently With Account Insig,Mutated with QA_b3d212,PASS,PASS,PASS,PASS,PASS,ev_9c406999_body.json,None
+/close-opportunities-efficiently,Sec: 00d6f23,hero,btn1_text,See It in Action,Mutated with QA_e20357,PASS,PASS,PASS,PASS,PASS,ev_9c406999_btn1_text.json,None
+/close-opportunities-efficiently,Sec: 00d6f23,hero,btn1_url,#,Mutated with QA_0c8927,PASS,PASS,PASS,PASS,PASS,ev_9c406999_btn1_url.json,None
+/about-us,Sec: 0f7f56b,logo_wall,title,"25,000+ of the world’s most successful companies w",Mutated with QA_310000,PASS,PASS,PASS,PASS,PASS,ev_f9a128bc_title.json,None
+/about-us,Sec: 0f7f56b,logo_wall,logo_0_name,Partner,Mutated with QA_b0e987,PASS,PASS,PASS,PASS,PASS,ev_f9a128bc_logo_0_name.json,None
+/platform-and-products,Sec: 8edec3c,logo_wall,title,"25,000+ of the world’s most successful companies w",Mutated with QA_181684,PASS,PASS,PASS,PASS,PASS,ev_6d1f29cd_title.json,None
+/about-us,Sec: db423c8,team,title,Meet your team,Mutated with QA_ca681b,PASS,PASS,PASS,PASS,PASS,ev_6e939d5c_title.json,None
+/about-us,Sec: db423c8,team,subtitle,The visionary leaders and engineering experts driv,Mutated with QA_ab3fe9,PASS,PASS,PASS,PASS,PASS,ev_6e939d5c_subtitle.json,None
+/about-us,Sec: db423c8,team,member_0_name,Santosh Kumar,Mutated with QA_6f0310,PASS,PASS,PASS,PASS,PASS,ev_6e939d5c_member_0_name.json,None
+/about-us,Sec: db423c8,team,member_0_role,CEO,Mutated with QA_5f1560,PASS,PASS,PASS,PASS,PASS,ev_6e939d5c_member_0_role.json,None
+/build-a-b2b-gtm-foundation,Sec: 91f0840,cta_banner,title,Where you are is the perfect place to start,Mutated with QA_9f890d,PASS,PASS,PASS,PASS,PASS,ev_4ca689b9_title.json,None
+/build-a-b2b-gtm-foundation,Sec: 91f0840,cta_banner,subtitle,We’re here to help manufacturers get better by get,Mutated with QA_7cad39,PASS,PASS,PASS,PASS,PASS,ev_4ca689b9_subtitle.json,None
+/build-a-b2b-gtm-foundation,Sec: 91f0840,cta_banner,body,We’re here to help manufacturers get better by get,Mutated with QA_2a3c97,PASS,PASS,PASS,PASS,PASS,ev_4ca689b9_body.json,None
+/build-a-b2b-gtm-foundation,Sec: 91f0840,cta_banner,cta_text,Talk to a GTM Expert,Mutated with QA_3b79d0,PASS,PASS,PASS,PASS,PASS,ev_4ca689b9_cta_text.json,None
+/build-a-b2b-gtm-foundation,Sec: 91f0840,cta_banner,cta_url,/contact-us/,Mutated with QA_7483c0,PASS,PASS,PASS,PASS,PASS,ev_4ca689b9_cta_url.json,None
+/chrome-extension,Sec: 72989033,cta_banner,title,Contact us for a free review of your needs,Mutated with QA_dff839,PASS,PASS,PASS,PASS,PASS,ev_5e75a16d_title.json,None
+/chrome-extension,Sec: 72989033,cta_banner,subtitle,Equip your sales and recruiting teams with our one,Mutated with QA_a8fbb9,PASS,PASS,PASS,PASS,PASS,ev_5e75a16d_subtitle.json,None
+/close-opportunities-efficiently,Sec: 7a80220,cta_banner,title,In a hurry?,Mutated with QA_463bf6,PASS,PASS,PASS,PASS,PASS,ev_38463f25_title.json,None
+/close-opportunities-efficiently,Sec: 7a80220,cta_banner,subtitle,No problem. We’ve got an on-demand demo,Mutated with QA_cc91ec,PASS,PASS,PASS,PASS,PASS,ev_38463f25_subtitle.json,None
+/close-opportunities-efficiently,Sec: 7a80220,cta_banner,body,No problem. We’ve got an on-demand demo,Mutated with QA_c636fa,PASS,PASS,PASS,PASS,PASS,ev_38463f25_body.json,None
+/close-opportunities-efficiently,Sec: 7a80220,cta_banner,cta_text,Contact Us,Mutated with QA_ac727a,PASS,PASS,PASS,PASS,PASS,ev_38463f25_cta_text.json,None
+/close-opportunities-efficiently,Sec: 7a80220,cta_banner,cta_url,/contact-us/,Mutated with QA_b64641,PASS,PASS,PASS,PASS,PASS,ev_38463f25_cta_url.json,None
+/privacy-policy,Sec: slm-privacy-content,rich_text,title,Privacy Policy,Mutated with QA_780103,PASS,PASS,PASS,PASS,PASS,ev_ec06ff4c_title.json,None
+/privacy-policy,Sec: slm-privacy-content,rich_text,body_html,"<p><strong>Effective Date:</strong> January 1, 202",Mutated with QA_86a8dd,PASS,PASS,PASS,PASS,PASS,ev_ec06ff4c_body_html.json,None
+/privacy-policy,Sec: slm-privacy-content,rich_text,body,"<p><strong>Effective Date:</strong> January 1, 202",Mutated with QA_498f49,PASS,PASS,PASS,PASS,PASS,ev_ec06ff4c_body.json,None
+/terms-and-conditions,Sec: slm-terms-content,rich_text,title,1. Permitted Use & Licensing,Mutated with QA_5021e7,PASS,PASS,PASS,PASS,PASS,ev_98a84af3_title.json,None
+/terms-and-conditions,Sec: slm-terms-content,rich_text,body_html,"<p><strong>Effective Date:</strong> January 1, 202",Mutated with QA_0dffeb,PASS,PASS,PASS,PASS,PASS,ev_98a84af3_body_html.json,None
+/terms-and-conditions,Sec: slm-terms-content,rich_text,body,"<p><strong>Effective Date:</strong> January 1, 202",Mutated with QA_603dd6,PASS,PASS,PASS,PASS,PASS,ev_98a84af3_body.json,None

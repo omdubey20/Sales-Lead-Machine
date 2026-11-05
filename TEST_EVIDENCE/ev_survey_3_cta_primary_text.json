@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:38Z",
+  "page": "/survey/",
+  "section_id": "b3635281-5153-4ff7-823a-34f5db0e7dc4",
+  "section_type": "split",
+  "control": "cta_primary_text",
+  "original_val": "TAKE SURVEY NOW",
+  "test_val": "TAKE SURVEY NOW [TEST:QA_a624c9]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

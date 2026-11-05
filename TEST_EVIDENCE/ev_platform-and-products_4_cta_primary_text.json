@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:31Z",
+  "page": "/platform-and-products/",
+  "section_id": "8f7a10b4-43e4-4d37-b961-02857d1e0628",
+  "section_type": "cta_banner",
+  "control": "cta_primary_text",
+  "original_val": "Book Your Demo",
+  "test_val": "Book Your Demo [TEST:QA_831fa0]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

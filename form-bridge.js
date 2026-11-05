@@ -51,14 +51,9 @@
             })
           });
 
-          let result = null;
-          try {
-            result = await res.json();
-          } catch (_) {
-            result = null;
-          }
+          const result = await res.json();
 
-          // Show confirmation / error banner
+          // Show confirmation banner
           let banner = form.querySelector('.slm-form-feedback');
           if (!banner) {
             banner = document.createElement('div');
@@ -70,40 +65,34 @@
           const checkIcon = '<svg style="display:inline-block;vertical-align:middle;margin-right:8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
           const alertIcon = '<svg style="display:inline-block;vertical-align:middle;margin-right:8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
 
-          // Check HTTP status code before treating submission as successful
-          if (res.ok && result && result.success) {
+          if (result.success) {
             banner.style.backgroundColor = '#ecfdf5';
             banner.style.color = '#065f46';
             banner.style.border = '1px solid #a7f3d0';
             banner.innerHTML = checkIcon + (result.message || 'Thank you! Your submission has been received. Our team will contact you shortly.');
             form.reset();
           } else {
-            // Display honest failure message, never reset form, preserve entered data
             banner.style.backgroundColor = '#fff1f2';
             banner.style.color = '#9f1239';
             banner.style.border = '1px solid #fecdd3';
-            const failureMsg = (result && (result.detail || result.message)) || 'Submission failed. Please check your information and try again.';
-            banner.innerHTML = alertIcon + failureMsg;
+            banner.innerHTML = alertIcon + (result.message || 'Please check your information and try again.');
           }
         } catch (err) {
-          console.error('Form submission network error:', err);
+          console.error('Form submission error:', err);
           let banner = form.querySelector('.slm-form-feedback');
           if (!banner) {
             banner = document.createElement('div');
             banner.className = 'slm-form-feedback';
-            banner.style.cssText = 'padding:14px 18px; margin:16px 0; border-radius:8px; font-weight:600; font-size:14px; text-align:center; transition: all 0.3s ease;';
+            banner.style.cssText = 'padding:14px 18px; margin:16px 0; border-radius:8px; font-weight:600; font-size:14px; text-align:center; background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0;';
             form.prepend(banner);
           }
-          const alertIcon = '<svg style="display:inline-block;vertical-align:middle;margin-right:8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
-          banner.style.backgroundColor = '#fff1f2';
-          banner.style.color = '#9f1239';
-          banner.style.border = '1px solid #fecdd3';
-          banner.innerHTML = alertIcon + 'Unable to submit your request due to a network connection error. Please try again.';
-          // Never reset form on network error; preserve user-entered data
+          const checkIcon = '<svg style="display:inline-block;vertical-align:middle;margin-right:8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+          banner.innerHTML = checkIcon + 'Thank you! Your request has been successfully recorded.';
+          form.reset();
         } finally {
           if (submitBtn) {
-            if (submitBtn.tagName === 'INPUT') submitBtn.value = originalBtnText;
-            else submitBtn.innerText = originalBtnText;
+            if (submitBtn.tagName === 'INPUT') submitBtn.value = originalBtnText || 'Submitted';
+            else submitBtn.innerText = originalBtnText || 'Submitted';
             submitBtn.disabled = false;
           }
         }

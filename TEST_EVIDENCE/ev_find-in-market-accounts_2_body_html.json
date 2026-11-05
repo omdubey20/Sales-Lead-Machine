@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:11Z",
+  "page": "/find-in-market-accounts/",
+  "section_id": "a25bc94f-a404-47e3-ac88-eec653338e2e",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Sales orgs face a visibility problem: prospects are well on their way to a decision before you know they\u2019re even in the market. And the fallout is brutal. You miss active, engaged buyers, and sales and marketing prioritize the wrong accounts.",
+  "test_val": "Sales orgs face a visibility problem: prospects are well on their way to a decision before you know they\u2019re even in the market. And the fallout is brutal. You miss active, engaged buyers, and sales and marketing prioritize the wrong accounts. [TEST:QA_670d93]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:37Z",
+  "page": "/start-your-free-trial/",
+  "section_id": "e75ab907-4115-4859-9d04-56968ad4fe2d",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg",
+  "test_val": "/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg [TEST:QA_2af3be]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

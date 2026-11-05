@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:38Z",
+  "page": "/survey/",
+  "section_id": "b3635281-5153-4ff7-823a-34f5db0e7dc4",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "We have joined with a number of trusted partners to offer a whole range of vouchers for different services. From Wills and legal advice to mortgage brokers and life insurance companies. From website designers to graphic designer and everything in between. You could win \u00a3250, \u00a3500 or \u00a31000 worth of vouchers for all sorts of products and services. So complete the survey and enter the draw for the main prize and all these consolation prizes too.",
+  "test_val": "We have joined with a number of trusted partners to offer a whole range of vouchers for different services. From Wills and legal advice to mortgage brokers and life insurance companies. From website designers to graphic designer and everything in between. You could win \u00a3250, \u00a3500 or \u00a31000 worth of vouchers for all sorts of products and services. So complete the survey and enter the draw for the main prize and all these consolation prizes too. [TEST:QA_4219c2]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:00Z",
+  "page": "/contact-us/",
+  "section_id": "8dac2e60-4ed9-486b-bac6-27e15c30cee3",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2019/09/vector_man.png",
+  "test_val": "/wp-content/uploads/2019/09/vector_man.png [TEST:QA_99bf5f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

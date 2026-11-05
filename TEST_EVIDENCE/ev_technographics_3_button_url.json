@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:36Z",
+  "page": "/service-categories/technographics/",
+  "section_id": "ddf158cf-f342-4198-aec5-6ebfdf107450",
+  "section_type": "cta_banner",
+  "control": "button_url",
+  "original_val": "/contact-us/",
+  "test_val": "/contact-us/ [TEST:QA_bd0d78]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

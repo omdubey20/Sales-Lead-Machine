@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:31Z",
+  "page": "/privacy-policy/",
+  "section_id": "ec06ff4c-9b57-43b4-83c5-b5c6ecf1f965",
+  "section_type": "rich_text",
+  "control": "title",
+  "original_val": "Privacy Policy",
+  "test_val": "Privacy Policy [TEST:QA_237529]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

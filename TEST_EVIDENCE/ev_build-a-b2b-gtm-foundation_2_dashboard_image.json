@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:53Z",
+  "page": "/build-a-b2b-gtm-foundation/",
+  "section_id": "dc79dbf8-78a5-443a-b334-243c272c4c9b",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/03/image_2023_03_06T10_07_50_507Z.png",
+  "test_val": "/wp-content/uploads/2023/03/image_2023_03_06T10_07_50_507Z.png [TEST:QA_d7623a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

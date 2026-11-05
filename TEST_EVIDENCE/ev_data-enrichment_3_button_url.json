@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:01Z",
+  "page": "/data-enrichment/",
+  "section_id": "aea0fdd2-cc24-4a96-a659-df7cd4670d06",
+  "section_type": "cta_banner",
+  "control": "button_url",
+  "original_val": "/contact-us/",
+  "test_val": "/contact-us/ [TEST:QA_7e4549]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

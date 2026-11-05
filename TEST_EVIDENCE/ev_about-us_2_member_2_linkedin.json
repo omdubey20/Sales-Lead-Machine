@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:47Z",
+  "page": "/about-us/",
+  "section_id": "6e939d5c-a791-4e6e-a7f3-dce63000036d",
+  "section_type": "team",
+  "control": "member_2_linkedin",
+  "original_val": "https://www.linkedin.com/in/sanjeev-mishra/",
+  "test_val": "https://www.linkedin.com/in/sanjeev-mishra/ [TEST:QA_bfaf2e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

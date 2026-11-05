@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:36Z",
+  "page": "/service-categories/technographics/",
+  "section_id": "8d269d90-e957-4430-a01b-695472b67d86",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2019/09/QUALIFYING-LEAD.jpg",
+  "test_val": "/wp-content/uploads/2019/09/QUALIFYING-LEAD.jpg [TEST:QA_3d25bf]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

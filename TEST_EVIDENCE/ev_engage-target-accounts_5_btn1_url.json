@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:08Z",
+  "page": "/engage-target-accounts/",
+  "section_id": "8e90dde5-39d6-4de3-845d-1120bf426164",
+  "section_type": "cta_banner",
+  "control": "btn1_url",
+  "original_val": "/watch-a-demo/",
+  "test_val": "/watch-a-demo/ [TEST:QA_53b02e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

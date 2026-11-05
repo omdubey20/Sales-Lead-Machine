@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:07Z",
+  "page": "/engage-target-accounts/",
+  "section_id": "09c68f43-88f1-4379-b1c0-7dbe8af21d87",
+  "section_type": "card_grid",
+  "control": "card_2_title",
+  "original_val": "Sales Intelligence Cloud",
+  "test_val": "Sales Intelligence Cloud [TEST:QA_877ec2]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

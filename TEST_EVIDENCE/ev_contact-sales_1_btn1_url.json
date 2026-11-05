@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:59Z",
+  "page": "/contact-sales/",
+  "section_id": "6f3e883e-8930-4cc9-925c-43e4b40df777",
+  "section_type": "hero",
+  "control": "btn1_url",
+  "original_val": "https://salesleadmachine.uk/login",
+  "test_val": "https://salesleadmachine.uk/login [TEST:QA_6aa4d1]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

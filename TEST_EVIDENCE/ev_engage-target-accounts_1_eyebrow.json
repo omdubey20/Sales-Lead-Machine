@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:05Z",
+  "page": "/engage-target-accounts/",
+  "section_id": "26c309d1-c249-40be-860e-40b46651355a",
+  "section_type": "hero",
+  "control": "eyebrow",
+  "original_val": "Engage Your Target Accounts",
+  "test_val": "Engage Your Target Accounts [TEST:QA_0c113f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

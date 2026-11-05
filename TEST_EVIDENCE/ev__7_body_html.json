@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:45Z",
+  "page": "/",
+  "section_id": "06cc92f2-2395-4d4e-990b-d0422156bd60",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Create qualified audiences in seconds by building personas. Increase webinar signups by using verified emails and segment your audience across multiple channels by using 90%+ match rates. Once you've increased marketing's contribution to pipeline, you'll secure your seat at the revenue table by serving your ads to people most likely to respond to your campaign.",
+  "test_val": "Create qualified audiences in seconds by building personas. Increase webinar signups by using verified emails and segment your audience across multiple channels by using 90%+ match rates. Once you've increased marketing's contribution to pipeline, you'll secure your seat at the revenue table by serving your ads to people most likely to respond to your campaign. [TEST:QA_8f711a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

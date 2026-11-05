@@ -352,11 +352,11 @@ function sanitizeHtml(dirty) {
   async function syncPageSections() {
     try {
       const urlParams = new URLSearchParams(window.location.search);
-      const token = localStorage.getItem('slm_auth_token') || '';
+      const token = localStorage.getItem('slm_auth_token') || localStorage.getItem('admin_token') || '';
       const studioRequested = (
-        urlParams.get('admin') === 'true' ||
-        urlParams.get('edit') === 'true' ||
-        urlParams.get('studio') === 'true'
+        urlParams.get('admin') === 'true' || urlParams.get('admin') === '1' ||
+        urlParams.get('edit') === 'true' || urlParams.get('edit') === '1' ||
+        urlParams.get('studio') === 'true' || urlParams.get('studio') === '1'
       );
       // URL flags alone must not expose the editor shell to anonymous visitors.
       const isStudio = Boolean(token && token.trim().length > 20 && (studioRequested || token));

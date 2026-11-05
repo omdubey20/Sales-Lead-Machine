@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "2aeca2f9-7c42-458b-9810-66faec4b80b5",
+  "anchor_id": "340f770",
+  "control": "title",
+  "original_value": "Fill out this simple survey and we will donate up to \u00a315 to your charity.",
+  "test_tag": "QA_3474da",
+  "mutated_value": "Fill out this simple survey and we will donate up to \u00a315 to your charity. [QA_3474da]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:39Z"
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:34Z",
+  "page": "/problems-we-solve/",
+  "section_id": "42940fb1-2390-480e-a5ce-87ef735a6f33",
+  "section_type": "cta_banner",
+  "control": "cta_primary_url",
+  "original_val": "/start-your-free-trial/",
+  "test_val": "/start-your-free-trial/ [TEST:QA_a6a94e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

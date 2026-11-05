@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "128132eb-0766-478f-ac25-be1275d6812f",
+  "anchor_id": "184c9a6",
+  "control": "title",
+  "original_value": "Streamline sales with phone-verified contacts",
+  "test_tag": "QA_d8f905",
+  "mutated_value": "Streamline sales with phone-verified contacts [QA_d8f905]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:39Z"
+}

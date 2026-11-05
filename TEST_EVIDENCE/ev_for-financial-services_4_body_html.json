@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:20Z",
+  "page": "/for-financial-services/",
+  "section_id": "20ec49c6-371c-4e80-ba04-3ef53fbe380c",
+  "section_type": "cta_banner",
+  "control": "body_html",
+  "original_val": "fight off rivals. appeal to customers that prefer digital. and prosper in a digital age.",
+  "test_val": "fight off rivals. appeal to customers that prefer digital. and prosper in a digital age. [TEST:QA_215431]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

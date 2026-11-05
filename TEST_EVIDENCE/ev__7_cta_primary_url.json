@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:45Z",
+  "page": "/",
+  "section_id": "06cc92f2-2395-4d4e-990b-d0422156bd60",
+  "section_type": "split",
+  "control": "cta_primary_url",
+  "original_val": "/platform-and-products/",
+  "test_val": "/platform-and-products/ [TEST:QA_31df5a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:15Z",
+  "page": "/for-customer-success/",
+  "section_id": "5c9192f4-384b-4dc1-81f2-18d0c92be316",
+  "section_type": "split",
+  "control": "eyebrow",
+  "original_val": "RENEWAL ACCURACY",
+  "test_val": "RENEWAL ACCURACY [TEST:QA_00ac7e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

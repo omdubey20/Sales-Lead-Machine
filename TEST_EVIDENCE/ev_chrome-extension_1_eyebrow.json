@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:54Z",
+  "page": "/chrome-extension/",
+  "section_id": "990bec98-6925-4576-bf82-5ed0f67348df",
+  "section_type": "hero",
+  "control": "eyebrow",
+  "original_val": "Instant Browser Prospecting",
+  "test_val": "Instant Browser Prospecting [TEST:QA_9c7f00]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

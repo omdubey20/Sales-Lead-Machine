@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:37Z",
+  "page": "/survey/",
+  "section_id": "623a1bfc-c233-44e9-8707-4ad5592f4edb",
+  "section_type": "hero",
+  "control": "eyebrow",
+  "original_val": "Charity Survey & Pledge",
+  "test_val": "Charity Survey & Pledge [TEST:QA_a40141]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

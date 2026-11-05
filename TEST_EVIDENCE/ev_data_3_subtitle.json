@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:02Z",
+  "page": "/data/",
+  "section_id": "646b500f-2f71-4120-bca1-49dc29c4b8cf",
+  "section_type": "card_grid",
+  "control": "subtitle",
+  "original_val": "Contact records, global firmographics, active technologies, and guaranteed accuracy.",
+  "test_val": "Contact records, global firmographics, active technologies, and guaranteed accuracy. [TEST:QA_c2a112]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

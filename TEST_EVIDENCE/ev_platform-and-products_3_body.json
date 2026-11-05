@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:31Z",
+  "page": "/platform-and-products/",
+  "section_id": "6d1f29cd-b2d9-4032-8ea7-570d004304b1",
+  "section_type": "logo_wall",
+  "control": "body",
+  "original_val": "",
+  "test_val": "Test Value QA_a821fa",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

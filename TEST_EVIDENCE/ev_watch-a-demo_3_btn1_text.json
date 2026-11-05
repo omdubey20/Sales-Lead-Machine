@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:39Z",
+  "page": "/watch-a-demo/",
+  "section_id": "603a5dc4-9150-472e-a70b-a92e24f6f514",
+  "section_type": "cta_banner",
+  "control": "btn1_text",
+  "original_val": "Book It Now",
+  "test_val": "Book It Now [TEST:QA_6c619e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

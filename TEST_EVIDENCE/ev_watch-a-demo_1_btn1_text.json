@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:38Z",
+  "page": "/watch-a-demo/",
+  "section_id": "341a72d7-9c1f-46f2-9d1b-fb4fbf6a2014",
+  "section_type": "hero",
+  "control": "btn1_text",
+  "original_val": "Watch Now",
+  "test_val": "Watch Now [TEST:QA_017842]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

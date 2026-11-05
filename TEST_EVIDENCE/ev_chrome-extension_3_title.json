@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:55Z",
+  "page": "/chrome-extension/",
+  "section_id": "5e75a16d-8b3b-4498-851d-26146c245053",
+  "section_type": "cta_banner",
+  "control": "title",
+  "original_val": "Contact us for a free review of your needs",
+  "test_val": "Contact us for a free review of your needs [TEST:QA_9167a1]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

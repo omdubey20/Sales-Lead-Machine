@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:21Z",
+  "page": "/for-manufacturing/",
+  "section_id": "f290d267-c3af-4b9b-9a3c-812b218210b4",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Modern technology has changed your factory, your entire supply chain, and the way your distributors and dealers shop. Today, face-to-face events are rare or non-existent. In secret, your customers browse your website and conduct online research based on their needs. No need to worry, there is good news for you! Our team can help you take advantage of all that digital activity to grow your book of business and your account. cales ABM with data-driven personalization",
+  "test_val": "Modern technology has changed your factory, your entire supply chain, and the way your distributors and dealers shop. Today, face-to-face events are rare or non-existent. In secret, your customers browse your website and conduct online research based on their needs. No need to worry, there is good news for you! Our team can help you take advantage of all that digital activity to grow your book of business and your account. cales ABM with data-driven personalization [TEST:QA_3951fa]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,15 @@
+{
+  "page": "/build-a-b2b-gtm-foundation",
+  "section_id": "4ca689b9-3e01-4281-9c50-9eabb235a7dd",
+  "anchor_id": "91f0840",
+  "control": "cta_url",
+  "original_value": "/contact-us/",
+  "test_tag": "QA_7483c0",
+  "mutated_value": "/contact-us/ [QA_7483c0]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:44Z"
+}

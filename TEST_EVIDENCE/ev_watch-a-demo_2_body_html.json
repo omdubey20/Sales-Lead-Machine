@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:39Z",
+  "page": "/watch-a-demo/",
+  "section_id": "345f759a-d740-476b-b7d0-d90e94ae59c9",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "The fragmentation of GTM systems, account blind spots, and data silos force marketers and sales representatives to send irrelevant messages to buyers and rely on hunch-based tactics without meaningful insight. It\u2019s time to stop this madness.",
+  "test_val": "The fragmentation of GTM systems, account blind spots, and data silos force marketers and sales representatives to send irrelevant messages to buyers and rely on hunch-based tactics without meaningful insight. It\u2019s time to stop this madness. [TEST:QA_55ea5a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

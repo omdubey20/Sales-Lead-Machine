@@ -1,0 +1,15 @@
+{
+  "page": "/build-a-b2b-gtm-foundation",
+  "section_id": "4ca689b9-3e01-4281-9c50-9eabb235a7dd",
+  "anchor_id": "91f0840",
+  "control": "body",
+  "original_value": "We\u2019re here to help manufacturers get better by getting smarter. No matter the complexity of your business, we\u2019re here to help marketing and sales collaborate faster, share insights across business lines, and grow revenue farther. Ready to learn more about how we can help?",
+  "test_tag": "QA_2a3c97",
+  "mutated_value": "We\u2019re here to help manufacturers get better by getting smarter. No matter the complexity of your business, we\u2019re here to help marketing and sales collaborate faster, share insights across business lines, and grow revenue farther. Ready to learn more about how we can help? [QA_2a3c97]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:44Z"
+}

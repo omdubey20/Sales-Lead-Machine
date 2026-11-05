@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:09Z",
+  "page": "/expand-retain-customers/",
+  "section_id": "ca26db33-c8d5-43cb-b99e-b76466f6e454",
+  "section_type": "split",
+  "control": "btn1_text",
+  "original_val": "",
+  "test_val": "Test Value QA_2df51b",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

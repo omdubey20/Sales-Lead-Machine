@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "06cc92f2-2395-4d4e-990b-d0422156bd60",
+  "anchor_id": "b5a6373",
+  "control": "eyebrow",
+  "original_value": "Customer service",
+  "test_tag": "QA_ce6408",
+  "mutated_value": "Customer service [QA_ce6408]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:40Z"
+}

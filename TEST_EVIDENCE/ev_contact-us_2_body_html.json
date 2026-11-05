@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:00Z",
+  "page": "/contact-us/",
+  "section_id": "8dac2e60-4ed9-486b-bac6-27e15c30cee3",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "No matter what your requirements are, whether you need a complete product, consultation, technological investments, or an extended team, our experts will assist you in finding the best solutions.",
+  "test_val": "No matter what your requirements are, whether you need a complete product, consultation, technological investments, or an extended team, our experts will assist you in finding the best solutions. [TEST:QA_2300fe]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

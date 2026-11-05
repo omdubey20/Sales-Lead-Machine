@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:18Z",
+  "page": "/for-financial-services/",
+  "section_id": "cd4645e7-f803-4541-90c5-f25fcfaf0bd8",
+  "section_type": "hero",
+  "control": "body_html",
+  "original_val": "Transform client acquisition and retention across banking, insurance, and wealth management with real-time account intelligence.",
+  "test_val": "Transform client acquisition and retention across banking, insurance, and wealth management with real-time account intelligence. [TEST:QA_805128]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

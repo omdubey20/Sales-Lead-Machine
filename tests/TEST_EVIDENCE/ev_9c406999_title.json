@@ -1,0 +1,15 @@
+{
+  "page": "/close-opportunities-efficiently",
+  "section_id": "9c406999-b55a-4244-b937-4f1d3ccb8be1",
+  "anchor_id": "00d6f23",
+  "control": "title",
+  "original_value": "Friction Kills Deals. Account Insights Grease the Way to Faster Wins.",
+  "test_tag": "QA_dd11a1",
+  "mutated_value": "Friction Kills Deals. Account Insights Grease the Way to Faster Wins. [QA_dd11a1]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:43Z"
+}

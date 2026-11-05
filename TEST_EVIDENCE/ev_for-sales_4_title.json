@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:25Z",
+  "page": "/for-sales/",
+  "section_id": "f83644a4-e329-48c7-8ea6-714ed71339b4",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Let's close the deal",
+  "test_val": "Let's close the deal [TEST:QA_11ce21]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

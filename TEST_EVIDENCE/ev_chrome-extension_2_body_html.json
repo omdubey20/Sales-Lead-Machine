@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:55Z",
+  "page": "/chrome-extension/",
+  "section_id": "b6dcfc3a-d619-4327-a6fc-72da4ce091f8",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Get verified contact information for your prospects from LinkedIn. Without having to open a new tab, you can get all the information you need about them",
+  "test_val": "Get verified contact information for your prospects from LinkedIn. Without having to open a new tab, you can get all the information you need about them [TEST:QA_2d81af]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

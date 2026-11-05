@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:44Z",
+  "page": "/",
+  "section_id": "c41296d5-9e97-417e-8fdc-496c13141d98",
+  "section_type": "split",
+  "control": "cta_primary_url",
+  "original_val": "https://salesleadmachine.uk/login",
+  "test_val": "https://salesleadmachine.uk/login [TEST:QA_d8e064]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

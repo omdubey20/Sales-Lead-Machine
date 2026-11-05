@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:26Z",
+  "page": "/for-sales/",
+  "section_id": "9554b897-ce75-42f2-bda6-35fb91a23f93",
+  "section_type": "cta_banner",
+  "control": "subtitle",
+  "original_val": "Explore how Sales Lead Machine aligns both marketing and customer success teams with revenue intelligence.",
+  "test_val": "Explore how Sales Lead Machine aligns both marketing and customer success teams with revenue intelligence. [TEST:QA_1d3ccf]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

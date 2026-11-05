@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:49Z",
+  "page": "/about-us/",
+  "section_id": "f9a128bc-5812-4d22-b5ef-89a1c900e123",
+  "section_type": "logo_wall",
+  "control": "title",
+  "original_val": "25,000+ of the world\u2019s most successful companies with trust",
+  "test_val": "25,000+ of the world\u2019s most successful companies with trust [TEST:QA_1f1142]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

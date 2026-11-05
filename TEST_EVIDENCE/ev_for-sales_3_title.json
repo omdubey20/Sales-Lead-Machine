@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:25Z",
+  "page": "/for-sales/",
+  "section_id": "ad8fb744-9b9d-4ba8-8065-ccfc1c277f80",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Search for in-market accounts",
+  "test_val": "Search for in-market accounts [TEST:QA_e21c57]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

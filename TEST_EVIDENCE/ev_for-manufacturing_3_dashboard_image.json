@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:21Z",
+  "page": "/for-manufacturing/",
+  "section_id": "5d893aac-3564-4edf-bde5-21b36adeaa6f",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "",
+  "test_val": "Test Value QA_c28cbd",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

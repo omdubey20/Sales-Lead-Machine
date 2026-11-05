@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:11Z",
+  "page": "/find-in-market-accounts/",
+  "section_id": "a25bc94f-a404-47e3-ac88-eec653338e2e",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/03/image_2023_03_06T10_07_50_507Z.png",
+  "test_val": "/wp-content/uploads/2023/03/image_2023_03_06T10_07_50_507Z.png [TEST:QA_4a5b0f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,15 @@
+{
+  "page": "/about-us",
+  "section_id": "f9a128bc-5812-4d22-b5ef-89a1c900e123",
+  "anchor_id": "0f7f56b",
+  "control": "logo_0_name",
+  "original_value": "Partner",
+  "test_tag": "QA_b0e987",
+  "mutated_value": "Partner [QA_b0e987]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:44Z"
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:37Z",
+  "page": "/survey/",
+  "section_id": "623a1bfc-c233-44e9-8707-4ad5592f4edb",
+  "section_type": "hero",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/04/undraw_gifts_0ceh-1.png",
+  "test_val": "/wp-content/uploads/2023/04/undraw_gifts_0ceh-1.png [TEST:QA_495bb0]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

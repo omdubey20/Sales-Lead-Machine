@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:05Z",
+  "page": "/engage-target-accounts/",
+  "section_id": "262d45ce-5854-4b3c-88cf-dbec55728c23",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Stop spamming and get relevant with Smarter Strategy.",
+  "test_val": "Stop spamming and get relevant with Smarter Strategy. [TEST:QA_87802c]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

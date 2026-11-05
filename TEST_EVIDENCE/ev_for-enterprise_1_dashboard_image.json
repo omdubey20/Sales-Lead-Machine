@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:16Z",
+  "page": "/for-enterprise/",
+  "section_id": "879a4137-936b-4867-ba0f-d1692a09ef91",
+  "section_type": "hero",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/03/Group-156.jpg",
+  "test_val": "/wp-content/uploads/2023/03/Group-156.jpg [TEST:QA_903664]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

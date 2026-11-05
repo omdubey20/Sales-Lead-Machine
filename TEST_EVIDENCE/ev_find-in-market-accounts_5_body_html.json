@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:13Z",
+  "page": "/find-in-market-accounts/",
+  "section_id": "0efa60bb-35da-4d09-b00b-e43b6f96b1b1",
+  "section_type": "cta_banner",
+  "control": "body_html",
+  "original_val": "We\u2019re here to help manufacturers get better by getting smarter. No matter the complexity of your business, we\u2019re here to help marketing and sales collaborate faster, share insights across business lines, and grow revenue farther. Ready to learn more about how we can help?",
+  "test_val": "We\u2019re here to help manufacturers get better by getting smarter. No matter the complexity of your business, we\u2019re here to help marketing and sales collaborate faster, share insights across business lines, and grow revenue farther. Ready to learn more about how we can help? [TEST:QA_6185c0]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

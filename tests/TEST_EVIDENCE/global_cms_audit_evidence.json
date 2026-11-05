@@ -1,0 +1,8 @@
+{
+  "team_module": "PASS",
+  "logos_module": "PASS",
+  "settings_module": "PASS",
+  "valid_media_upload": "PASS",
+  "malicious_upload_rejection": "PASS",
+  "form_persistence": "PASS"
+}

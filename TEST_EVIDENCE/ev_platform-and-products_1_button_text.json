@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:29Z",
+  "page": "/platform-and-products/",
+  "section_id": "8810b614-5b70-4311-9560-b6de1d9f2f9a",
+  "section_type": "hero",
+  "control": "button_text",
+  "original_val": "",
+  "test_val": "Test Value QA_15af05",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

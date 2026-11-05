@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:27Z",
+  "page": "/for-technology/",
+  "section_id": "e3cb0038-5fd5-4077-b7eb-541a172a2a05",
+  "section_type": "card_grid",
+  "control": "body_html",
+  "original_val": "A seamless buying journey is expected of today\u2019s busy, informed buyers. Making the right impression can make a difference between you and the competition. To deliver a seamless customer experience, we can orchestrate all your marketing and sales activities. With the right message, you\u2019ll connect with the right audience at the right time. You will identify anonymous website visitors and send the right content to them. Plus, AI-powered account selection will let you target the right accounts. Orchestrate the buyer journey with ABX Cloud",
+  "test_val": "A seamless buying journey is expected of today\u2019s busy, informed buyers. Making the right impression can make a difference between you and the competition. To deliver a seamless customer experience, we can orchestrate all your marketing and sales activities. With the right message, you\u2019ll connect with the right audience at the right time. You will identify anonymous website visitors and send the right content to them. Plus, AI-powered account selection will let you target the right accounts. Orchestrate the buyer journey with ABX Cloud [TEST:QA_58ef37]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

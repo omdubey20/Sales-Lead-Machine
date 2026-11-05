@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:24Z",
+  "page": "/for-marketer/",
+  "section_id": "a83b0ed0-edad-4134-a0de-3f92a143777c",
+  "section_type": "cta_banner",
+  "control": "body_html",
+  "original_val": "Having a single, clear view of your accounts would enable you to accomplish what you want? Don\u2019t spam buyers with irrelevant and unwanted messages with hunch-based marketing. Let\u2019s improve Strategy by making it smarter.",
+  "test_val": "Having a single, clear view of your accounts would enable you to accomplish what you want? Don\u2019t spam buyers with irrelevant and unwanted messages with hunch-based marketing. Let\u2019s improve Strategy by making it smarter. [TEST:QA_a41181]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

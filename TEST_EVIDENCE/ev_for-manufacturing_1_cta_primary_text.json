@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:21Z",
+  "page": "/for-manufacturing/",
+  "section_id": "1143946a-51d1-4662-964e-e0e2a20f94e0",
+  "section_type": "hero",
+  "control": "cta_primary_text",
+  "original_val": "Discover How",
+  "test_val": "Discover How [TEST:QA_ff6eae]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

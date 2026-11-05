@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:23Z",
+  "page": "/for-marketer/",
+  "section_id": "5045aff4-68f9-45fb-828a-e8612a573aee",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Get visibility at every touch point of the buying journey with a Strategy platform that injects Account Intelligence. It will be easier for you to spot in-market opportunities. Make them progress faster. Every quarter, reach your pipeline goals",
+  "test_val": "Get visibility at every touch point of the buying journey with a Strategy platform that injects Account Intelligence. It will be easier for you to spot in-market opportunities. Make them progress faster. Every quarter, reach your pipeline goals [TEST:QA_38b48f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

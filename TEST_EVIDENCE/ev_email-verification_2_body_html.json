@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:04Z",
+  "page": "/email-verification/",
+  "section_id": "ca3d5fa5-c0ca-4d1b-bbcc-637a8f18b20b",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Our real-time verification ensures that every email you receive is accurate from the moment you click on it.",
+  "test_val": "Our real-time verification ensures that every email you receive is accurate from the moment you click on it. [TEST:QA_15cd66]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

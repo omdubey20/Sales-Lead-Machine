@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:25Z",
+  "page": "/for-sales/",
+  "section_id": "f83644a4-e329-48c7-8ea6-714ed71339b4",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Engage the entire buying committee to minimize lost and unknown opportunities. Deliver the right message based on key players' interests. Each and every time.",
+  "test_val": "Engage the entire buying committee to minimize lost and unknown opportunities. Deliver the right message based on key players' interests. Each and every time. [TEST:QA_7bcbc2]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

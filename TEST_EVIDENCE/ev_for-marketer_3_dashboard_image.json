@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:23Z",
+  "page": "/for-marketer/",
+  "section_id": "5045aff4-68f9-45fb-828a-e8612a573aee",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/03/exclamation-boom.png",
+  "test_val": "/wp-content/uploads/2023/03/exclamation-boom.png [TEST:QA_45c8f0]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

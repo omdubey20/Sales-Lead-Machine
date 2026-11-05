@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:14Z",
+  "page": "/for-business-services/",
+  "section_id": "58a4e215-d98a-45a4-aa89-a03cc0695fe1",
+  "section_type": "cta_banner",
+  "control": "title",
+  "original_val": "Bad data causes the average American company to lose 12% of its sales, right?",
+  "test_val": "Bad data causes the average American company to lose 12% of its sales, right? [TEST:QA_4a8a48]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

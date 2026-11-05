@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:36Z",
+  "page": "/start-your-free-trial/",
+  "section_id": "1ebbb1bd-647d-454b-b883-265c09fb835f",
+  "section_type": "hero",
+  "control": "dashboard_image",
+  "original_val": "",
+  "test_val": "Test Value QA_f01914",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

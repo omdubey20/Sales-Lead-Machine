@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:36Z",
+  "page": "/start-your-free-trial/",
+  "section_id": "e75ab907-4115-4859-9d04-56968ad4fe2d",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "<p>Gain immediate access to verified revenue intelligence:</p><ul><li>Department-level Org Charts</li><li>Verified Corporate Email Addresses</li><li>Comprehensive firmographic and technographic details</li><li>Direct-dial Phone Numbers</li><li>Buying Signals & Intent Data</li><li>In-depth job responsibilities and functions</li></ul>",
+  "test_val": "<p>Gain immediate access to verified revenue intelligence:</p><ul><li>Department-level Org Charts</li><li>Verified Corporate Email Addresses</li><li>Comprehensive firmographic and technographic details</li><li>Direct-dial Phone Numbers</li><li>Buying Signals & Intent Data</li><li>In-depth job responsibilities and functions</li></ul> [TEST:QA_f5553d]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

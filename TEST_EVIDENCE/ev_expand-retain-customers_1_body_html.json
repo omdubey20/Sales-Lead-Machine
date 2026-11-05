@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:08Z",
+  "page": "/expand-retain-customers/",
+  "section_id": "aa9b952b-8179-410b-9561-e74108ba0865",
+  "section_type": "hero",
+  "control": "body_html",
+  "original_val": "Don\u2019t give them a choice but to love you. Detect churn risks before they happen and uncover expansion pipeline with account intelligence.",
+  "test_val": "Don\u2019t give them a choice but to love you. Detect churn risks before they happen and uncover expansion pipeline with account intelligence. [TEST:QA_199137]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

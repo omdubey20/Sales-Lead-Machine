@@ -1,0 +1,14 @@
+{
+  "studio_topbar_visible": true,
+  "page_selector_count": 31,
+  "tablet_mode_clicked": true,
+  "mobile_mode_clicked": true,
+  "desktop_mode_restored": true,
+  "canvas_click_to_select": true,
+  "inspector_visible": true,
+  "inspector_card_present": true,
+  "inspector_scrollable": true,
+  "btn_save_draft": true,
+  "btn_publish": true,
+  "btn_inspector_toggle": true
+}

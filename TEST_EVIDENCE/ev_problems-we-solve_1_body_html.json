@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:31Z",
+  "page": "/problems-we-solve/",
+  "section_id": "b0ba9a38-905a-4033-aa24-8c4e74795670",
+  "section_type": "hero",
+  "control": "body_html",
+  "original_val": "Using Sales lead Machine, you can create one holistic view of your customers through the integration of your first-party data with our third-party data and behavioral intent data. It's called Account Intelligence.",
+  "test_val": "Using Sales lead Machine, you can create one holistic view of your customers through the integration of your first-party data with our third-party data and behavioral intent data. It's called Account Intelligence. [TEST:QA_3f9b6a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

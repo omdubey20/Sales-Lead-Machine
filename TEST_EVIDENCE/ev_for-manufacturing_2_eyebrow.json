@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:21Z",
+  "page": "/for-manufacturing/",
+  "section_id": "f290d267-c3af-4b9b-9a3c-812b218210b4",
+  "section_type": "split",
+  "control": "eyebrow",
+  "original_val": "DIGITAL RELATIONSHIPS",
+  "test_val": "DIGITAL RELATIONSHIPS [TEST:QA_2b49fa]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:21Z",
+  "page": "/for-manufacturing/",
+  "section_id": "8c3f4aa9-32d4-495d-89d3-968253ec7990",
+  "section_type": "card_grid",
+  "control": "eyebrow",
+  "original_val": "GO-TO-MARKET ALIGNMENT",
+  "test_val": "GO-TO-MARKET ALIGNMENT [TEST:QA_3841ff]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

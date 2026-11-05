@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:24Z",
+  "page": "/for-marketer/",
+  "section_id": "4220d4ce-2416-446c-86d0-1e2f06b881e8",
+  "section_type": "card_grid",
+  "control": "card_1_title",
+  "original_val": "Problems we solve for customer success",
+  "test_val": "Problems we solve for customer success [TEST:QA_7b12b1]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

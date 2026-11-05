@@ -1,0 +1,15 @@
+{
+  "page": "/build-a-b2b-gtm-foundation",
+  "section_id": "53edcb69-67d0-4823-a0f1-a365cdcbf613",
+  "anchor_id": "770b260",
+  "control": "subtitle",
+  "original_value": "A holistic view lights up with insights. Connect first-party, third-party, and behavioral data into a single source of truth for your entire revenue team.",
+  "test_tag": "QA_e0a067",
+  "mutated_value": "A holistic view lights up with insights. Connect first-party, third-party, and behavioral data into a single source of truth for your entire revenue team. [QA_e0a067]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:43Z"
+}

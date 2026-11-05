@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:38Z",
+  "page": "/terms-and-conditions/",
+  "section_id": "98a84af3-4c69-403e-9f91-7a78f80413c0",
+  "section_type": "rich_text",
+  "control": "title",
+  "original_val": "1. Permitted Use & Licensing",
+  "test_val": "1. Permitted Use & Licensing [TEST:QA_c725a2]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:57Z",
+  "page": "/close-opportunities-efficiently/",
+  "section_id": "3566926a-ab5c-4a84-b8cc-130d5cfdcc3b",
+  "section_type": "card_grid",
+  "control": "title",
+  "original_val": "What else can you do with Sales Lead Machine Account Intelligence?",
+  "test_val": "What else can you do with Sales Lead Machine Account Intelligence? [TEST:QA_90a526]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

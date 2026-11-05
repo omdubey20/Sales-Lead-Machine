@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:16Z",
+  "page": "/for-customer-success/",
+  "section_id": "23157dd7-14cd-4373-9821-2c191cc5c68a",
+  "section_type": "card_grid",
+  "control": "body_html",
+  "original_val": "You\u2019re not the only one we care about. We\u2019ve got a soft spot for your colleagues, too.",
+  "test_val": "You\u2019re not the only one we care about. We\u2019ve got a soft spot for your colleagues, too. [TEST:QA_8de92a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

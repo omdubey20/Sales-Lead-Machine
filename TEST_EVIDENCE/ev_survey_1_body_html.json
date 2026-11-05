@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:37Z",
+  "page": "/survey/",
+  "section_id": "623a1bfc-c233-44e9-8707-4ad5592f4edb",
+  "section_type": "hero",
+  "control": "body_html",
+  "original_val": "Plus a chance to win a prize",
+  "test_val": "Plus a chance to win a prize [TEST:QA_5fe718]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

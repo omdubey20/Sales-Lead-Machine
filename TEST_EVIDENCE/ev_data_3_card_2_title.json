@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:02Z",
+  "page": "/data/",
+  "section_id": "646b500f-2f71-4120-bca1-49dc29c4b8cf",
+  "section_type": "card_grid",
+  "control": "card_2_title",
+  "original_val": "Technologies Tracked",
+  "test_val": "Technologies Tracked [TEST:QA_8caeee]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

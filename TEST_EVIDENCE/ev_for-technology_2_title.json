@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:26Z",
+  "page": "/for-technology/",
+  "section_id": "bfe973f2-2ae3-41a6-9f4f-7c727dc950aa",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Achieve your goals by utilizing the best technology. That's what your customers do.",
+  "test_val": "Achieve your goals by utilizing the best technology. That's what your customers do. [TEST:QA_b78bb5]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

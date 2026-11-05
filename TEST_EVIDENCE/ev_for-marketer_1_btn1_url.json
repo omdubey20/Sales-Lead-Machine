@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:23Z",
+  "page": "/for-marketer/",
+  "section_id": "ce1eb4e6-cfa7-4e5f-9bf2-19ba52a16a1f",
+  "section_type": "hero",
+  "control": "btn1_url",
+  "original_val": "",
+  "test_val": "Test Value QA_d532b3",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

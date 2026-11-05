@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:59Z",
+  "page": "/contact-us/",
+  "section_id": "699c4e9a-da9b-4150-b422-102b8a03dd0f",
+  "section_type": "hero",
+  "control": "title",
+  "original_val": "Get in Touch",
+  "test_val": "Get in Touch [TEST:QA_078c9e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -17,3 +17,8 @@ Thumbs.db
 legacy/
 *.bak
 
+
+# Database
+*.db
+*.sqlite*
+

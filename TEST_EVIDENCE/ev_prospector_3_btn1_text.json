@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:35Z",
+  "page": "/prospector/",
+  "section_id": "52e6f926-ef69-4c66-9b5c-a14e67c827ad",
+  "section_type": "cta_banner",
+  "control": "btn1_text",
+  "original_val": "",
+  "test_val": "Test Value QA_e74736",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

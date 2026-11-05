@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:58Z",
+  "page": "/close-opportunities-efficiently/",
+  "section_id": "38463f25-8af0-4bd1-9ce9-fa737e09e28a",
+  "section_type": "cta_banner",
+  "control": "title",
+  "original_val": "In a hurry?",
+  "test_val": "In a hurry? [TEST:QA_94f976]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

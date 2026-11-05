@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:34Z",
+  "page": "/prospector/",
+  "section_id": "d613457b-e793-4dd3-bbf4-e26526d4f269",
+  "section_type": "split",
+  "control": "cta_primary_url",
+  "original_val": "https://salesleadmachine.uk/login",
+  "test_val": "https://salesleadmachine.uk/login [TEST:QA_7b911d]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

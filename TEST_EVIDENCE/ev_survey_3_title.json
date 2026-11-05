@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:38Z",
+  "page": "/survey/",
+  "section_id": "b3635281-5153-4ff7-823a-34f5db0e7dc4",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "WIN THOUSANDS OF POUNDS WORTH OF GIFT VOUCHERS",
+  "test_val": "WIN THOUSANDS OF POUNDS WORTH OF GIFT VOUCHERS [TEST:QA_30865f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

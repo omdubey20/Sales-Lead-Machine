@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:26Z",
+  "page": "/for-technology/",
+  "section_id": "6d30b875-3e4f-44ee-a972-c768924aaf10",
+  "section_type": "hero",
+  "control": "title",
+  "original_val": "Our go-to-market strategy will transform your business. Your customers' world will be transformed by you.",
+  "test_val": "Our go-to-market strategy will transform your business. Your customers' world will be transformed by you. [TEST:QA_6a9678]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

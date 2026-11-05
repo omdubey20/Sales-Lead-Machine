@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:13Z",
+  "page": "/for-business-services/",
+  "section_id": "bdbb563e-8943-4eb6-91ef-8022a5c064af",
+  "section_type": "hero",
+  "control": "btn1_text",
+  "original_val": "",
+  "test_val": "Test Value QA_81651a",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

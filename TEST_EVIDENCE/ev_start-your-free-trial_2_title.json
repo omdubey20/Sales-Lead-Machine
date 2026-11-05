@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:36Z",
+  "page": "/start-your-free-trial/",
+  "section_id": "e75ab907-4115-4859-9d04-56968ad4fe2d",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Here\u2019s what you can expect to see:",
+  "test_val": "Here\u2019s what you can expect to see: [TEST:QA_1d73f3]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

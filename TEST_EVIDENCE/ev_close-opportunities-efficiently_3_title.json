@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:56Z",
+  "page": "/close-opportunities-efficiently/",
+  "section_id": "47f72aa7-08d9-4229-8a57-bdec23555e3e",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "The cure is relevance: precisely tailoring each conversation to the prospect\u2019s need",
+  "test_val": "The cure is relevance: precisely tailoring each conversation to the prospect\u2019s need [TEST:QA_edd869]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

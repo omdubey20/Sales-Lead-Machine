@@ -1,0 +1,15 @@
+{
+  "page": "/build-a-b2b-gtm-foundation",
+  "section_id": "dc79dbf8-78a5-443a-b334-243c272c4c9b",
+  "anchor_id": "6aff705",
+  "control": "body",
+  "original_value": "Does your marketing team frequently operate from different systems, unaware of what your sales team is doing? It\u2019s difficult to track actions and communications within an account when revenue teams work in silos.",
+  "test_tag": "QA_8a1465",
+  "mutated_value": "Does your marketing team frequently operate from different systems, unaware of what your sales team is doing? It\u2019s difficult to track actions and communications within an account when revenue teams work in silos. [QA_8a1465]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:42Z"
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:27Z",
+  "page": "/for-technology/",
+  "section_id": "a153f40a-c996-4705-b104-5a1cea11a3d0",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "*Source: https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/the-changing-face-b2b-marketing/",
+  "test_val": "*Source: https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/the-changing-face-b2b-marketing/ [TEST:QA_fe96b6]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:39Z",
+  "page": "/watch-a-demo/",
+  "section_id": "603a5dc4-9150-472e-a70b-a92e24f6f514",
+  "section_type": "cta_banner",
+  "control": "eyebrow",
+  "original_val": "PERSONALIZED WALKTHROUGH",
+  "test_val": "PERSONALIZED WALKTHROUGH [TEST:QA_048004]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

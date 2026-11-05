@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "c41296d5-9e97-417e-8fdc-496c13141d98",
+  "anchor_id": "0b9f330",
+  "control": "bullet_0_text",
+  "original_value": "Discover several entries in the accounts of your choice.",
+  "test_tag": "QA_275b00",
+  "mutated_value": "Discover several entries in the accounts of your choice. [QA_275b00]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:41Z"
+}

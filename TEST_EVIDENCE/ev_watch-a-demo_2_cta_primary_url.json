@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:39Z",
+  "page": "/watch-a-demo/",
+  "section_id": "345f759a-d740-476b-b7d0-d90e94ae59c9",
+  "section_type": "split",
+  "control": "cta_primary_url",
+  "original_val": "",
+  "test_val": "Test Value QA_b95bd7",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

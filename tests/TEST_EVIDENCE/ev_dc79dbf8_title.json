@@ -1,0 +1,15 @@
+{
+  "page": "/build-a-b2b-gtm-foundation",
+  "section_id": "dc79dbf8-78a5-443a-b334-243c272c4c9b",
+  "anchor_id": "6aff705",
+  "control": "title",
+  "original_value": "The marketing and sales departments battling against each other makes it hard to win",
+  "test_tag": "QA_4f0815",
+  "mutated_value": "The marketing and sales departments battling against each other makes it hard to win [QA_4f0815]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:41Z"
+}

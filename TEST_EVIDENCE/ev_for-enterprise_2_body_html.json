@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:17Z",
+  "page": "/for-enterprise/",
+  "section_id": "a1bdedd6-3010-41e0-b0be-085ba4f523da",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "The issue with B2B go-to-market (Strategy) is that buyers and boards demand more from the revenue teams. Like being aware of your target market, which should be accounts and the individuals that work there rather than leads. Conventional lead generation marketing is no longer effective. You require an enterprise solution you can rely on that enables you to concentrate your time and efforts on the clients who matter while scaling with your business.",
+  "test_val": "The issue with B2B go-to-market (Strategy) is that buyers and boards demand more from the revenue teams. Like being aware of your target market, which should be accounts and the individuals that work there rather than leads. Conventional lead generation marketing is no longer effective. You require an enterprise solution you can rely on that enables you to concentrate your time and efforts on the clients who matter while scaling with your business. [TEST:QA_9c6fab]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:30Z",
+  "page": "/platform-and-products/",
+  "section_id": "108cfbfc-761f-42eb-87a2-58f58a3a7219",
+  "section_type": "card_grid",
+  "control": "card_4_description",
+  "original_val": "Identify the exact tech stack software products used by target accounts.",
+  "test_val": "Identify the exact tech stack software products used by target accounts. [TEST:QA_06d552]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

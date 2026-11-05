@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:15Z",
+  "page": "/for-customer-success/",
+  "section_id": "37d39b6b-3dd9-4de5-b6c8-2ca619d9c1f1",
+  "section_type": "cta_banner",
+  "control": "title",
+  "original_val": "Smarter Strategy ensures reliable renewals and expansions",
+  "test_val": "Smarter Strategy ensures reliable renewals and expansions [TEST:QA_4dc8ba]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

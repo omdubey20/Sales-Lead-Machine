@@ -1,0 +1,15 @@
+{
+  "page": "/build-a-b2b-gtm-foundation",
+  "section_id": "53edcb69-67d0-4823-a0f1-a365cdcbf613",
+  "anchor_id": "770b260",
+  "control": "title",
+  "original_value": "It's useless to view accounts fragmented",
+  "test_tag": "QA_610afd",
+  "mutated_value": "It's useless to view accounts fragmented [QA_610afd]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:43Z"
+}

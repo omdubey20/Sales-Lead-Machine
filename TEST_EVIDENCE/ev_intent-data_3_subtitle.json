@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:29Z",
+  "page": "/intent-data/",
+  "section_id": "efabcb98-9870-4cee-b440-c1732866c7d0",
+  "section_type": "cta_banner",
+  "control": "subtitle",
+  "original_val": "Discover your addressable market based on real-time intent signals and decision-maker contact data.",
+  "test_val": "Discover your addressable market based on real-time intent signals and decision-maker contact data. [TEST:QA_ecb392]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

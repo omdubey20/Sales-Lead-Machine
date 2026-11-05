@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:44Z",
+  "page": "/",
+  "section_id": "c41296d5-9e97-417e-8fdc-496c13141d98",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2019/11/01.png",
+  "test_val": "/wp-content/uploads/2019/11/01.png [TEST:QA_686514]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

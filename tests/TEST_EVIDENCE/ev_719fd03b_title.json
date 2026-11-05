@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "719fd03b-560d-45f6-b716-af2ffc70af4c",
+  "anchor_id": "a26d791",
+  "control": "title",
+  "original_value": "Locate the appropriate businesses and decision-makers, almost immediately.",
+  "test_tag": "QA_d17512",
+  "mutated_value": "Locate the appropriate businesses and decision-makers, almost immediately. [QA_d17512]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:40Z"
+}

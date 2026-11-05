@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:26Z",
+  "page": "/for-technology/",
+  "section_id": "bfe973f2-2ae3-41a6-9f4f-7c727dc950aa",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Our world is becoming increasingly digital. It shouldn\u2019t come as a surprise to you. As a leader in the transformation, you are on the front line. Your products \u2013 and how your prospects buy them \u2013 are affected by this shift to all things digital. Before making up their minds, they conceal their intentions. Are you frustrated? Don\u2019t be afraid. No matter what your tech stack is, we\u2019ve got the right tool for it. By introducing Account Intelligence into every step of the buyer\u2019s journey, Sales Lead Machine helps you uncover anonymous visitors, spot opportunities earlier, and move deals forward. It\u2019s called Smarter Strategy.",
+  "test_val": "Our world is becoming increasingly digital. It shouldn\u2019t come as a surprise to you. As a leader in the transformation, you are on the front line. Your products \u2013 and how your prospects buy them \u2013 are affected by this shift to all things digital. Before making up their minds, they conceal their intentions. Are you frustrated? Don\u2019t be afraid. No matter what your tech stack is, we\u2019ve got the right tool for it. By introducing Account Intelligence into every step of the buyer\u2019s journey, Sales Lead Machine helps you uncover anonymous visitors, spot opportunities earlier, and move deals forward. It\u2019s called Smarter Strategy. [TEST:QA_1e312a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:46Z",
+  "page": "/",
+  "section_id": "15ca8616-9d59-42c1-8e0f-df6754e6c6ed",
+  "section_type": "split",
+  "control": "eyebrow",
+  "original_val": "We\u2019re working with",
+  "test_val": "We\u2019re working with [TEST:QA_40a0ac]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

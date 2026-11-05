@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:13Z",
+  "page": "/find-in-market-accounts/",
+  "section_id": "52757169-320d-452b-a9ca-4affb4dd50ff",
+  "section_type": "card_grid",
+  "control": "card_3_title",
+  "original_val": "Data Cloud",
+  "test_val": "Data Cloud [TEST:QA_6e4e29]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

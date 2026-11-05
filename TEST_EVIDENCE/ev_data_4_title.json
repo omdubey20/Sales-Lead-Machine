@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:03Z",
+  "page": "/data/",
+  "section_id": "033f0348-392e-4754-951f-a19db9365740",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Proprietary Methods for Data Collection",
+  "test_val": "Proprietary Methods for Data Collection [TEST:QA_32d51e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

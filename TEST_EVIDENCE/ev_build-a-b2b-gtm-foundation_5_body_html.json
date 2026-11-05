@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:54Z",
+  "page": "/build-a-b2b-gtm-foundation/",
+  "section_id": "4ca689b9-3e01-4281-9c50-9eabb235a7dd",
+  "section_type": "cta_banner",
+  "control": "body_html",
+  "original_val": "We\u2019re here to help manufacturers get better by getting smarter. No matter the complexity of your business, we\u2019re here to help marketing and sales collaborate faster, share insights across business lines, and grow revenue farther. Ready to learn more about how we can help?",
+  "test_val": "We\u2019re here to help manufacturers get better by getting smarter. No matter the complexity of your business, we\u2019re here to help marketing and sales collaborate faster, share insights across business lines, and grow revenue farther. Ready to learn more about how we can help? [TEST:QA_05d846]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

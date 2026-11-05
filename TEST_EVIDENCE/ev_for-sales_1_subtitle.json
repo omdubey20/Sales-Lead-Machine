@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:24Z",
+  "page": "/for-sales/",
+  "section_id": "821c611e-eed4-4a63-a086-7bdb8996cb37",
+  "section_type": "hero",
+  "control": "subtitle",
+  "original_val": "You can discover pipeline, identify buyer interest, and connect with accounts ready to buy using account intelligence.",
+  "test_val": "You can discover pipeline, identify buyer interest, and connect with accounts ready to buy using account intelligence. [TEST:QA_ed7ee7]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

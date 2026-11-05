@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:17Z",
+  "page": "/for-enterprise/",
+  "section_id": "f3393d09-148e-4bea-bfee-c3b940db0176",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Sales Lead is Smarter Strategy",
+  "test_val": "Sales Lead is Smarter Strategy [TEST:QA_afcbb4]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

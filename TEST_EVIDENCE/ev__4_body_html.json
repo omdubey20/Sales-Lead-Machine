@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:44Z",
+  "page": "/",
+  "section_id": "c41296d5-9e97-417e-8fdc-496c13141d98",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Today's consumers concentrate on the most pertinent message. Find out WHEN great-fit accounts are in-market, WHO to call, and WHAT to say by using Sales Lead Machine\u2019s sales prospector. Use firmographics, technographics, and buyer intent signals in combination to fully comprehend your target audience and put your pertinent message in front of them.",
+  "test_val": "Today's consumers concentrate on the most pertinent message. Find out WHEN great-fit accounts are in-market, WHO to call, and WHAT to say by using Sales Lead Machine\u2019s sales prospector. Use firmographics, technographics, and buyer intent signals in combination to fully comprehend your target audience and put your pertinent message in front of them. [TEST:QA_4cb44f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

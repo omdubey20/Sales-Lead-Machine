@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:23Z",
+  "page": "/for-marketer/",
+  "section_id": "5045aff4-68f9-45fb-828a-e8612a573aee",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "It's good that we can shine a light on the path",
+  "test_val": "It's good that we can shine a light on the path [TEST:QA_289233]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

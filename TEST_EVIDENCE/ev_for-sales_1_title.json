@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:24Z",
+  "page": "/for-sales/",
+  "section_id": "821c611e-eed4-4a63-a086-7bdb8996cb37",
+  "section_type": "hero",
+  "control": "title",
+  "original_val": "Spamming buyers and hunch-based selling won't get you to the President's Club",
+  "test_val": "Spamming buyers and hunch-based selling won't get you to the President's Club [TEST:QA_67e4fe]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:02Z",
+  "page": "/data/",
+  "section_id": "ee7883f5-ea2b-43d6-a9e5-89bd2be7df52",
+  "section_type": "card_grid",
+  "control": "body_html",
+  "original_val": "You can count on Sales lead Machine to deliver accurate and up-to-date data because we\u2019re committed to providing you with high quality data. The real-time email verification feature we have in place serves as a final gatekeeper in addition to our rigorous data collection and verification process. Our platform verifies a lead\u2019s email address immediately before releasing contact details to you when you want to unlock their information on Sales lead Machine. When you download bulk leads, the Sales lead machine also verifies their email addresses in real-time before you download their information.",
+  "test_val": "You can count on Sales lead Machine to deliver accurate and up-to-date data because we\u2019re committed to providing you with high quality data. The real-time email verification feature we have in place serves as a final gatekeeper in addition to our rigorous data collection and verification process. Our platform verifies a lead\u2019s email address immediately before releasing contact details to you when you want to unlock their information on Sales lead Machine. When you download bulk leads, the Sales lead machine also verifies their email addresses in real-time before you download their information. [TEST:QA_efd823]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

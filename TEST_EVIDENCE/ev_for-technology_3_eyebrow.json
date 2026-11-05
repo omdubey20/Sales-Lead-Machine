@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:27Z",
+  "page": "/for-technology/",
+  "section_id": "a153f40a-c996-4705-b104-5a1cea11a3d0",
+  "section_type": "split",
+  "control": "eyebrow",
+  "original_val": "BUYER BEHAVIOR",
+  "test_val": "BUYER BEHAVIOR [TEST:QA_82bad8]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

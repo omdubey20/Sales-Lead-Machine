@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:03Z",
+  "page": "/data/",
+  "section_id": "033f0348-392e-4754-951f-a19db9365740",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Our initial layer of data is derived from community-sourced information, which is contributed by our members. They grant us permission to match the contact details stored in their signature blocks to the business professionals listed in our database.",
+  "test_val": "Our initial layer of data is derived from community-sourced information, which is contributed by our members. They grant us permission to match the contact details stored in their signature blocks to the business professionals listed in our database. [TEST:QA_fa189e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

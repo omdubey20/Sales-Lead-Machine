@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:27Z",
+  "page": "/for-technology/",
+  "section_id": "a153f40a-c996-4705-b104-5a1cea11a3d0",
+  "section_type": "split",
+  "control": "btn1_text",
+  "original_val": "",
+  "test_val": "Test Value QA_0ee632",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

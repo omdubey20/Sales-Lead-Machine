@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:10Z",
+  "page": "/expand-retain-customers/",
+  "section_id": "c638dc63-24c0-4e56-88d1-ad36b5e32502",
+  "section_type": "card_grid",
+  "control": "card_2_url",
+  "original_val": "#",
+  "test_val": "# [TEST:QA_4da076]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

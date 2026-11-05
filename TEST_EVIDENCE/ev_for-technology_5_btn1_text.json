@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:28Z",
+  "page": "/for-technology/",
+  "section_id": "932f1af6-8395-4d1b-aa1d-e58267f3c48b",
+  "section_type": "cta_banner",
+  "control": "btn1_text",
+  "original_val": "",
+  "test_val": "Test Value QA_e59b72",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

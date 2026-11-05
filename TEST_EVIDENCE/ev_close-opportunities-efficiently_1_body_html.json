@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:56Z",
+  "page": "/close-opportunities-efficiently/",
+  "section_id": "9c406999-b55a-4244-b937-4f1d3ccb8be1",
+  "section_type": "hero",
+  "control": "body_html",
+  "original_val": "Close Opportunities Efficiently With Account Insights",
+  "test_val": "Close Opportunities Efficiently With Account Insights [TEST:QA_d51ac1]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

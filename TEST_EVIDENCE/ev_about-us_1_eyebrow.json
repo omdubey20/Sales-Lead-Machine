@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:46Z",
+  "page": "/about-us/",
+  "section_id": "392b7ade-6e8b-4366-83f5-bc0aaa4f383a",
+  "section_type": "split",
+  "control": "eyebrow",
+  "original_val": "About Company",
+  "test_val": "About Company [TEST:QA_fa8c81]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

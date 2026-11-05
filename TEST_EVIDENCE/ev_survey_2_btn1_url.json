@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:38Z",
+  "page": "/survey/",
+  "section_id": "82f835f0-dbdf-4b3d-a76a-93591348e5af",
+  "section_type": "split",
+  "control": "btn1_url",
+  "original_val": "",
+  "test_val": "Test Value QA_075ed4",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

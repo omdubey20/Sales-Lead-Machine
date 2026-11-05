@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:02Z",
+  "page": "/data/",
+  "section_id": "646b500f-2f71-4120-bca1-49dc29c4b8cf",
+  "section_type": "card_grid",
+  "control": "card_3_title",
+  "original_val": "Accuracy Guarantee",
+  "test_val": "Accuracy Guarantee [TEST:QA_3818a2]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

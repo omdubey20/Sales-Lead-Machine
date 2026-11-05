@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:24Z",
+  "page": "/for-marketer/",
+  "section_id": "4220d4ce-2416-446c-86d0-1e2f06b881e8",
+  "section_type": "card_grid",
+  "control": "card_0_description",
+  "original_val": "Help reps focus on in-market accounts and close opportunities faster.",
+  "test_val": "Help reps focus on in-market accounts and close opportunities faster. [TEST:QA_5398a0]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

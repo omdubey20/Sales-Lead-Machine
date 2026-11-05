@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:06Z",
+  "page": "/engage-target-accounts/",
+  "section_id": "02abc008-f888-417e-8520-58f2aa65d376",
+  "section_type": "split",
+  "control": "btn1_text",
+  "original_val": "",
+  "test_val": "Test Value QA_96ba03",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

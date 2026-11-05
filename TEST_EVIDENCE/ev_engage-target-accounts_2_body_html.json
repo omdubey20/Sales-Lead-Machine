@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:05Z",
+  "page": "/engage-target-accounts/",
+  "section_id": "262d45ce-5854-4b3c-88cf-dbec55728c23",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Spam isn\u2019t just unwanted email. It\u2019s any uninformed, irrelevant interaction. It wastes your time and money. And annoys the heck out of buyers you were hoping to impress. You can do better. Demandbase Account Intelligence injects relevance into every step of the buyer journey, so you can spot the ripest accounts, target the whole buying team, orchestrate personalized experiences, and focus your advertising and campaign dollars on the channels and messages that will find their mark. Oh, and measure the impact too. No waste. No frustration. Just low-friction, Smarter Strategy.",
+  "test_val": "Spam isn\u2019t just unwanted email. It\u2019s any uninformed, irrelevant interaction. It wastes your time and money. And annoys the heck out of buyers you were hoping to impress. You can do better. Demandbase Account Intelligence injects relevance into every step of the buyer journey, so you can spot the ripest accounts, target the whole buying team, orchestrate personalized experiences, and focus your advertising and campaign dollars on the channels and messages that will find their mark. Oh, and measure the impact too. No waste. No frustration. Just low-friction, Smarter Strategy. [TEST:QA_eb84e4]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

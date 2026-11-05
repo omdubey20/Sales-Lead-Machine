@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "3c278158-99c5-4796-b590-53429241196e",
+  "anchor_id": "f8b676a",
+  "control": "title",
+  "original_value": "Trusted by modern revenue teams across the UK & Europe",
+  "test_tag": "QA_ef5a08",
+  "mutated_value": "Trusted by modern revenue teams across the UK & Europe [QA_ef5a08]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:41Z"
+}

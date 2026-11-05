@@ -1,0 +1,15 @@
+{
+  "page": "/terms-and-conditions",
+  "section_id": "98a84af3-4c69-403e-9f91-7a78f80413c0",
+  "anchor_id": "slm-terms-content",
+  "control": "title",
+  "original_value": "1. Permitted Use & Licensing",
+  "test_tag": "QA_5021e7",
+  "mutated_value": "1. Permitted Use & Licensing [QA_5021e7]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:45Z"
+}

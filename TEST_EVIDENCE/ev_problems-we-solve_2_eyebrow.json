@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:32Z",
+  "page": "/problems-we-solve/",
+  "section_id": "6157b2c1-30a6-416f-bddf-71411530d458",
+  "section_type": "card_grid",
+  "control": "eyebrow",
+  "original_val": "SOLUTIONS BY OBJECTIVE",
+  "test_val": "SOLUTIONS BY OBJECTIVE [TEST:QA_3e3335]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

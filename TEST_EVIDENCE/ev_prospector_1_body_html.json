@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:34Z",
+  "page": "/prospector/",
+  "section_id": "37a6b5cd-bea8-4450-8faa-beed06e12433",
+  "section_type": "hero",
+  "control": "body_html",
+  "original_val": "Home / Platform and Products / Prospectors",
+  "test_val": "Home / Platform and Products / Prospectors [TEST:QA_f2861e]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

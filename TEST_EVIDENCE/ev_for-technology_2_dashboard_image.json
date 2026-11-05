@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:27Z",
+  "page": "/for-technology/",
+  "section_id": "bfe973f2-2ae3-41a6-9f4f-7c727dc950aa",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/03/image_2023_03_08T11_09_25_969Z.png",
+  "test_val": "/wp-content/uploads/2023/03/image_2023_03_08T11_09_25_969Z.png [TEST:QA_38af32]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

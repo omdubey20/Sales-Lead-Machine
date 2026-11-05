@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "3c278158-99c5-4796-b590-53429241196e",
+  "anchor_id": "f8b676a",
+  "control": "logo_0_name",
+  "original_value": "Partner Brand 1",
+  "test_tag": "QA_c34caa",
+  "mutated_value": "Partner Brand 1 [QA_c34caa]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:41Z"
+}

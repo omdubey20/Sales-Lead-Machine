@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:53Z",
+  "page": "/build-a-b2b-gtm-foundation/",
+  "section_id": "95246189-4f4d-4020-8726-006e8f831bcf",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "It's the only complete revenue team go-to-market solution for B2B companies",
+  "test_val": "It's the only complete revenue team go-to-market solution for B2B companies [TEST:QA_48d87c]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

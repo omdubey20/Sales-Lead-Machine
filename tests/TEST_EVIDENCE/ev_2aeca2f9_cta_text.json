@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "2aeca2f9-7c42-458b-9810-66faec4b80b5",
+  "anchor_id": "340f770",
+  "control": "cta_text",
+  "original_value": "Click to Know More",
+  "test_tag": "QA_8ec56c",
+  "mutated_value": "Click to Know More [QA_8ec56c]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:40Z"
+}

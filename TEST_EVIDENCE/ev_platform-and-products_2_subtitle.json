@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:29Z",
+  "page": "/platform-and-products/",
+  "section_id": "108cfbfc-761f-42eb-87a2-58f58a3a7219",
+  "section_type": "card_grid",
+  "control": "subtitle",
+  "original_val": "Comprehensive solutions designed for revenue operations, SDRs, and marketing leaders.",
+  "test_val": "Comprehensive solutions designed for revenue operations, SDRs, and marketing leaders. [TEST:QA_516a0a]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:15Z",
+  "page": "/for-customer-success/",
+  "section_id": "5c9192f4-384b-4dc1-81f2-18d0c92be316",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Your customers need to be renewed and you need to keep your competitors at bay. You can't see what's going on.",
+  "test_val": "Your customers need to be renewed and you need to keep your competitors at bay. You can't see what's going on. [TEST:QA_358c9f]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

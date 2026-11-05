@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:27Z",
+  "page": "/for-technology/",
+  "section_id": "e3cb0038-5fd5-4077-b7eb-541a172a2a05",
+  "section_type": "card_grid",
+  "control": "card_1_description",
+  "original_val": "Decode intent signals across tech categories and competitive comparisons.",
+  "test_val": "Decode intent signals across tech categories and competitive comparisons. [TEST:QA_6b8691]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

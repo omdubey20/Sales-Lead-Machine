@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:15Z",
+  "page": "/for-customer-success/",
+  "section_id": "37d39b6b-3dd9-4de5-b6c8-2ca619d9c1f1",
+  "section_type": "cta_banner",
+  "control": "body_html",
+  "original_val": "When your customers begin expressing interest in new items or rivals, Sales Lead Account Intelligence goes into overdrive. Get more business and shorten your sales cycle with the industry leader and innovator in account-based experience.",
+  "test_val": "When your customers begin expressing interest in new items or rivals, Sales Lead Account Intelligence goes into overdrive. Get more business and shorten your sales cycle with the industry leader and innovator in account-based experience. [TEST:QA_d7283c]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

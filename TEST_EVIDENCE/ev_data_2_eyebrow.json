@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:02Z",
+  "page": "/data/",
+  "section_id": "ee7883f5-ea2b-43d6-a9e5-89bd2be7df52",
+  "section_type": "card_grid",
+  "control": "eyebrow",
+  "original_val": "VERIFICATION PROCESS",
+  "test_val": "VERIFICATION PROCESS [TEST:QA_74e152]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

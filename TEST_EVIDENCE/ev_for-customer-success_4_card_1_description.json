@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:16Z",
+  "page": "/for-customer-success/",
+  "section_id": "23157dd7-14cd-4373-9821-2c191cc5c68a",
+  "section_type": "card_grid",
+  "control": "card_1_description",
+  "original_val": "Equip account executives with direct dials and pipeline intelligence.",
+  "test_val": "Equip account executives with direct dials and pipeline intelligence. [TEST:QA_8513b3]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

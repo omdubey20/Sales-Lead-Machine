@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:25Z",
+  "page": "/for-sales/",
+  "section_id": "ad8fb744-9b9d-4ba8-8065-ccfc1c277f80",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "Stop spending time cold phoning people you know aren't interested in hearing from you. Utilize our intent data to prioritise individuals who are ready to buy. You'll find lucrative possibilities early and outperform your rivals!",
+  "test_val": "Stop spending time cold phoning people you know aren't interested in hearing from you. Utilize our intent data to prioritise individuals who are ready to buy. You'll find lucrative possibilities early and outperform your rivals! [TEST:QA_745e59]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

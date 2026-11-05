@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:35Z",
+  "page": "/service-categories/technographics/",
+  "section_id": "e49660c4-7dcb-4540-898d-05ed4b93453a",
+  "section_type": "hero",
+  "control": "btn1_url",
+  "original_val": "",
+  "test_val": "Test Value QA_94fe1e",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

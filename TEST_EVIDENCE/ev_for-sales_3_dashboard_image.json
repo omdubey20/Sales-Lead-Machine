@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:25Z",
+  "page": "/for-sales/",
+  "section_id": "ad8fb744-9b9d-4ba8-8065-ccfc1c277f80",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/03/Find-accounts-when-theyre-looking-to-buy.png",
+  "test_val": "/wp-content/uploads/2023/03/Find-accounts-when-theyre-looking-to-buy.png [TEST:QA_a19277]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

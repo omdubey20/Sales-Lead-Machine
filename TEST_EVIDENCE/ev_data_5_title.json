@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:03Z",
+  "page": "/data/",
+  "section_id": "86513b1a-b519-4dce-977b-30004765a40d",
+  "section_type": "cta_banner",
+  "control": "title",
+  "original_val": "Contact us for a free review of your needs",
+  "test_val": "Contact us for a free review of your needs [TEST:QA_7f9053]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

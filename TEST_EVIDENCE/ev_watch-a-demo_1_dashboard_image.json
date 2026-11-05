@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:39Z",
+  "page": "/watch-a-demo/",
+  "section_id": "341a72d7-9c1f-46f2-9d1b-fb4fbf6a2014",
+  "section_type": "hero",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg",
+  "test_val": "/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg [TEST:QA_be3999]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

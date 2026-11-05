@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:20Z",
+  "page": "/for-manufacturing/",
+  "section_id": "1143946a-51d1-4662-964e-e0e2a20f94e0",
+  "section_type": "hero",
+  "control": "eyebrow",
+  "original_val": "Problems We Solve for Manufacturers",
+  "test_val": "Problems We Solve for Manufacturers [TEST:QA_312e42]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

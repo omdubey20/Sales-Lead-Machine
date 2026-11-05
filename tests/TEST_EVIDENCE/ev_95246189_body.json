@@ -1,0 +1,15 @@
+{
+  "page": "/build-a-b2b-gtm-foundation",
+  "section_id": "95246189-4f4d-4020-8726-006e8f831bcf",
+  "anchor_id": "686210c",
+  "control": "body",
+  "original_value": "There's no need to guess. Sales Lead Machine makes it easy to connect the dots",
+  "test_tag": "QA_5c8c07",
+  "mutated_value": "There's no need to guess. Sales Lead Machine makes it easy to connect the dots [QA_5c8c07]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:41Z"
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:44Z",
+  "page": "/",
+  "section_id": "2e05ee57-a162-45b6-b11b-bdc186c93290",
+  "section_type": "card_grid",
+  "control": "card_1_description",
+  "original_val": "Modern marketers are obsessed with converting leads into pipelines with ABM and conversion tools.",
+  "test_val": "Modern marketers are obsessed with converting leads into pipelines with ABM and conversion tools. [TEST:QA_f58aa3]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

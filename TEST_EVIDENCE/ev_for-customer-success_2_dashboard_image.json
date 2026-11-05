@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:15Z",
+  "page": "/for-customer-success/",
+  "section_id": "5c9192f4-384b-4dc1-81f2-18d0c92be316",
+  "section_type": "split",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/uploads/2023/03/image_2023_03_06T10_07_50_507Z.png",
+  "test_val": "/wp-content/uploads/2023/03/image_2023_03_06T10_07_50_507Z.png [TEST:QA_684251]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

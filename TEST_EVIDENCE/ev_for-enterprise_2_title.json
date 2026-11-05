@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:17Z",
+  "page": "/for-enterprise/",
+  "section_id": "a1bdedd6-3010-41e0-b0be-085ba4f523da",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "There is no time to waste for enterprises. Let's get straight to the point and focus on what matters.",
+  "test_val": "There is no time to waste for enterprises. Let's get straight to the point and focus on what matters. [TEST:QA_92d499]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

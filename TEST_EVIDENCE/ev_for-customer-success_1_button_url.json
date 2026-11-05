@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:15Z",
+  "page": "/for-customer-success/",
+  "section_id": "f30c1a38-02be-4d05-a777-0ba8d336dd8b",
+  "section_type": "hero",
+  "control": "button_url",
+  "original_val": "",
+  "test_val": "Test Value QA_230a2a",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

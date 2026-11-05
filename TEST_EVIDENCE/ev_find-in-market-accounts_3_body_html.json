@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:12Z",
+  "page": "/find-in-market-accounts/",
+  "section_id": "cb2d49a5-b5c4-423c-b073-1b3c4385f85a",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "See your accounts in hi-def so you can shift your strategy from spray-and-pray to focus on the juiciest opportunities.",
+  "test_val": "See your accounts in hi-def so you can shift your strategy from spray-and-pray to focus on the juiciest opportunities. [TEST:QA_824f51]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

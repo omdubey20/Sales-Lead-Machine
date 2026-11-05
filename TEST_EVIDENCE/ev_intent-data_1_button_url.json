@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:28Z",
+  "page": "/intent-data/",
+  "section_id": "817d8265-fbab-46f6-a0da-bdb3373e421e",
+  "section_type": "hero",
+  "control": "button_url",
+  "original_val": "",
+  "test_val": "Test Value QA_94d404",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:04Z",
+  "page": "/email-verification/",
+  "section_id": "41dc22c3-5dfe-4f20-9508-9fde0f6dcc73",
+  "section_type": "cta_banner",
+  "control": "btn1_url",
+  "original_val": "",
+  "test_val": "Test Value QA_d7dc81",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

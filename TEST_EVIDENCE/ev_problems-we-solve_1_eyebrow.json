@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:31Z",
+  "page": "/problems-we-solve/",
+  "section_id": "b0ba9a38-905a-4033-aa24-8c4e74795670",
+  "section_type": "hero",
+  "control": "eyebrow",
+  "original_val": "Problems We Solve",
+  "test_val": "Problems We Solve [TEST:QA_19dfd2]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,15 @@
+{
+  "page": "/",
+  "section_id": "15ca8616-9d59-42c1-8e0f-df6754e6c6ed",
+  "anchor_id": "ea20ca3",
+  "control": "cta_url",
+  "original_value": "https://salesleadmachine.uk/login",
+  "test_tag": "QA_fccb8c",
+  "mutated_value": "https://salesleadmachine.uk/login [QA_fccb8c]",
+  "draft_save_status": 200,
+  "persistence_isolated": true,
+  "publish_status": 200,
+  "frontend_updated": true,
+  "restoration_verified": true,
+  "timestamp": "2026-11-05T05:42:40Z"
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:24Z",
+  "page": "/for-marketer/",
+  "section_id": "a83b0ed0-edad-4134-a0de-3f92a143777c",
+  "section_type": "cta_banner",
+  "control": "button_url",
+  "original_val": "/start-your-free-trial/",
+  "test_val": "/start-your-free-trial/ [TEST:QA_ada743]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

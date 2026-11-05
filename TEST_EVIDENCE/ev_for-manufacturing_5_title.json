@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:22Z",
+  "page": "/for-manufacturing/",
+  "section_id": "2bc3622f-00b6-4a00-9565-10a80efaf485",
+  "section_type": "cta_banner",
+  "control": "title",
+  "original_val": "Where you are is the perfect place to start",
+  "test_val": "Where you are is the perfect place to start [TEST:QA_2bfa4d]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

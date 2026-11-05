@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:14Z",
+  "page": "/for-business-services/",
+  "section_id": "cef28fb4-de11-4341-8272-44eef3270d7a",
+  "section_type": "split",
+  "control": "body_html",
+  "original_val": "You wish to expand your company. It is required by your stakeholders. Yet, your potential customers hide their identities by looking up service providers online in an anonymous manner. You must as soon as possible learn who they are and what they want if you want to stay ahead of the curve and the competition. Sales Lead Machine One, powered by Account Intelligence, makes the work simple.",
+  "test_val": "You wish to expand your company. It is required by your stakeholders. Yet, your potential customers hide their identities by looking up service providers online in an anonymous manner. You must as soon as possible learn who they are and what they want if you want to stay ahead of the curve and the competition. Sales Lead Machine One, powered by Account Intelligence, makes the work simple. [TEST:QA_92f611]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

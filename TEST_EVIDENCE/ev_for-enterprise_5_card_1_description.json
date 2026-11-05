@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:18Z",
+  "page": "/for-enterprise/",
+  "section_id": "e10f9c3e-6b74-4619-b9af-a96b7b04cb1b",
+  "section_type": "card_grid",
+  "control": "card_1_description",
+  "original_val": "",
+  "test_val": "Test Value QA_3b6521",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

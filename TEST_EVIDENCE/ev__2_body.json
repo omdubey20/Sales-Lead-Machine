@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:41Z",
+  "page": "/",
+  "section_id": "3c278158-99c5-4796-b590-53429241196e",
+  "section_type": "logo_wall",
+  "control": "body",
+  "original_val": "",
+  "test_val": "Test Value QA_674b56",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

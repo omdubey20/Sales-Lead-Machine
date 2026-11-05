@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:13Z",
+  "page": "/find-in-market-accounts/",
+  "section_id": "0efa60bb-35da-4d09-b00b-e43b6f96b1b1",
+  "section_type": "cta_banner",
+  "control": "eyebrow",
+  "original_val": "GET STARTED",
+  "test_val": "GET STARTED [TEST:QA_a3d452]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

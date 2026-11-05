@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:59Z",
+  "page": "/contact-sales/",
+  "section_id": "6f3e883e-8930-4cc9-925c-43e4b40df777",
+  "section_type": "hero",
+  "control": "dashboard_image",
+  "original_val": "/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg",
+  "test_val": "/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg [TEST:QA_ef4881]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

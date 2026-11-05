@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:28Z",
+  "page": "/intent-data/",
+  "section_id": "fd3071e6-53dc-45d8-9cc4-38fe3ebacd56",
+  "section_type": "split",
+  "control": "title",
+  "original_val": "Identify the right prospects at the right time",
+  "test_val": "Identify the right prospects at the right time [TEST:QA_9a94ee]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:11Z",
+  "page": "/expand-retain-customers/",
+  "section_id": "cfa49411-d7ad-46ff-a52a-81c4578619b3",
+  "section_type": "cta_banner",
+  "control": "cta_primary_text",
+  "original_val": "Contact Us",
+  "test_val": "Contact Us [TEST:QA_67d9b9]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

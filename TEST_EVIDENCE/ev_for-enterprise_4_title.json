@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:17Z",
+  "page": "/for-enterprise/",
+  "section_id": "7acc2dcd-a038-430d-b28d-6ae530d7ac79",
+  "section_type": "cta_banner",
+  "control": "title",
+  "original_val": "Let's get started",
+  "test_val": "Let's get started [TEST:QA_fcc5e8]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

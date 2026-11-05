@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:16Z",
+  "page": "/for-enterprise/",
+  "section_id": "a1bdedd6-3010-41e0-b0be-085ba4f523da",
+  "section_type": "split",
+  "control": "eyebrow",
+  "original_val": "Revenue Efficiency",
+  "test_val": "Revenue Efficiency [TEST:QA_b7c1d3]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

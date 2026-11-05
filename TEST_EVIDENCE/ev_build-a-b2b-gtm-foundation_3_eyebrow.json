@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:53Z",
+  "page": "/build-a-b2b-gtm-foundation/",
+  "section_id": "95246189-4f4d-4020-8726-006e8f831bcf",
+  "section_type": "split",
+  "control": "eyebrow",
+  "original_val": "UNIFIED REVENUE INTELLIGENCE",
+  "test_val": "UNIFIED REVENUE INTELLIGENCE [TEST:QA_fca917]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

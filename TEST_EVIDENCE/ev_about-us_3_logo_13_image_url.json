@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:41:51Z",
+  "page": "/about-us/",
+  "section_id": "f9a128bc-5812-4d22-b5ef-89a1c900e123",
+  "section_type": "logo_wall",
+  "control": "logo_13_image_url",
+  "original_val": "/wp-content/uploads/2023/03/2837.png",
+  "test_val": "/wp-content/uploads/2023/03/2837.png [TEST:QA_42a33d]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

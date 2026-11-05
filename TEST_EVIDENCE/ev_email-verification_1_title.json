@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-04T14:42:03Z",
+  "page": "/email-verification/",
+  "section_id": "cf6d11d5-8da0-4a21-b27f-9db133ee0010",
+  "section_type": "hero",
+  "control": "title",
+  "original_val": "Email Verification",
+  "test_val": "Email Verification [TEST:QA_81bcb6]",
+  "draft_http_status": 200,
+  "published_http_status": 200,
+  "restoration_http_status": 200,
+  "isolation_verified": true,
+  "persistence_verified": true,
+  "frontend_verified": true,
+  "restoration_verified": true
+}

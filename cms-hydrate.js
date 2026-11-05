@@ -537,9 +537,18 @@ function sanitizeHtml(dirty) {
                 img.srcset = '';
                 if (logo.name) img.alt = logo.name;
               }
-              const link = item.querySelector('a');
-              if (link && logo.url) {
-                link.href = safeCmsUrl(logo.url) || '#';
+              let link = item.querySelector('a');
+              if (logo.url) {
+                if (!link && img) {
+                  link = document.createElement('a');
+                  link.href = safeCmsUrl(logo.url) || '#';
+                  link.target = '_blank';
+                  link.rel = 'noopener noreferrer';
+                  img.parentNode.insertBefore(link, img);
+                  link.appendChild(img);
+                } else if (link) {
+                  link.href = safeCmsUrl(logo.url) || '#';
+                }
               }
             });
           }
@@ -599,6 +608,12 @@ function sanitizeHtml(dirty) {
               if (d.btn1_url || d.cta_url) btn.href = safeCmsUrl(d.btn1_url || d.cta_url) || '#';
             }
           }
+
+          const splitImg = container.querySelector('.elementor-widget-image img, img[src*="image-3"], img[src*="undraw"]');
+          const splitImgUrl = d.dashboard_image || d.image_url;
+          if (splitImg && splitImgUrl) {
+            splitImg.src = safeCmsUrl(splitImgUrl, 'src') || '';
+          }
         }
 
         // 4. CTA Banner Hydration
@@ -618,12 +633,14 @@ function sanitizeHtml(dirty) {
               }
             }
           }
-          if (d.button_text || d.cta_text || d.cta_label) {
+          if (d.button_text || d.cta_text || d.cta_label || d.button_url || d.cta_url || d.cta_primary_url) {
             const btn = container.querySelector('.elementor-button, .elementskit-btn, .btn, a');
             if (btn) {
               const icon = btn.querySelector('i');
-              btn.textContent = (d.button_text || d.cta_text || d.cta_label) + ' ';
-              if (icon) btn.appendChild(icon);
+              if (d.button_text || d.cta_text || d.cta_label) {
+                btn.textContent = (d.button_text || d.cta_text || d.cta_label) + ' ';
+                if (icon) btn.appendChild(icon);
+              }
               if (d.button_url || d.cta_url || d.cta_primary_url) {
                 btn.href = safeCmsUrl(d.button_url || d.cta_url || d.cta_primary_url) || '#';
               }

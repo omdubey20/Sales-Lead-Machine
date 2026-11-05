@@ -1,0 +1,31 @@
+section_type,section_name,page_url,anchor_id,field_name,input_type,is_editable,draft_persistence,draft_rendered_strict,renders_published,restoration_pass,status
+hero,Homepage Hero Section,/,a26d791,title,text,PASS,PASS,PASS,PASS,PASS,PASS
+hero,Homepage Hero Section,/,a26d791,eyebrow,text,PASS,PASS,PASS,PASS,PASS,PASS
+hero,Homepage Hero Section,/,a26d791,btn1_text,text,PASS,PASS,PASS,PASS,PASS,PASS
+hero,Homepage Hero Section,/,a26d791,btn1_url,text,PASS,PASS,PASS,PASS,PASS,PASS
+hero,Homepage Hero Section,/,a26d791,cta_text,text,PASS,PASS,PASS,PASS,PASS,PASS
+hero,Homepage Hero Section,/,a26d791,cta_url,text,PASS,PASS,PASS,PASS,PASS,PASS
+hero,Homepage Hero Section,/,a26d791,image,text,PASS,PASS,PASS,PASS,PASS,PASS
+split,Boost Marketing Campaigns Split,/,b5a6373,title,text,PASS,PASS,PASS,PASS,PASS,PASS
+split,Boost Marketing Campaigns Split,/,b5a6373,eyebrow,text,PASS,PASS,PASS,PASS,PASS,PASS
+split,Boost Marketing Campaigns Split,/,b5a6373,cta_text,text,PASS,PASS,PASS,PASS,PASS,PASS
+split,Boost Marketing Campaigns Split,/,b5a6373,cta_url,text,PASS,PASS,PASS,PASS,PASS,PASS
+split,Boost Marketing Campaigns Split,/,b5a6373,image,text,PASS,PASS,PASS,PASS,PASS,PASS
+card_grid,Problems Solved by Use Case Card Grid,/problems-we-solve/,46f0fd0a,title,text,PASS,PASS,PASS,PASS,PASS,PASS
+card_grid,Problems Solved by Use Case Card Grid,/problems-we-solve/,46f0fd0a,card_0_title,text,PASS,PASS,PASS,PASS,PASS,PASS
+card_grid,Problems Solved by Use Case Card Grid,/problems-we-solve/,46f0fd0a,card_0_desc,textarea,PASS,PASS,PASS,PASS,PASS,PASS
+card_grid,Problems Solved by Use Case Card Grid,/problems-we-solve/,46f0fd0a,card_0_url,text,PASS,PASS,PASS,PASS,PASS,PASS
+card_grid,Problems Solved by Use Case Card Grid,/problems-we-solve/,46f0fd0a,card_1_title,text,PASS,PASS,PASS,PASS,PASS,PASS
+cta_banner,Cross-Department Solutions Banner,/for-sales/,6a7f42f,title,text,PASS,PASS,PASS,PASS,PASS,PASS
+cta_banner,Cross-Department Solutions Banner,/for-sales/,6a7f42f,cta_text,text,PASS,PASS,PASS,PASS,PASS,PASS
+cta_banner,Cross-Department Solutions Banner,/for-sales/,6a7f42f,cta_url,text,PASS,PASS,PASS,PASS,PASS,PASS
+rich_text,Privacy Policy Document,/privacy-policy/,slm-privacy-content,title,text,PASS,PASS,PASS,PASS,PASS,PASS
+team,Leadership Team Grid,/about-us/,db423c8,title,text,PASS,PASS,PASS,PASS,PASS,PASS
+team,Leadership Team Grid,/about-us/,db423c8,member_0_name,text,PASS,PASS,PASS,PASS,PASS,PASS
+team,Leadership Team Grid,/about-us/,db423c8,member_0_role,text,PASS,PASS,PASS,PASS,PASS,PASS
+team,Leadership Team Grid,/about-us/,db423c8,member_0_photo,text,PASS,PASS,PASS,PASS,PASS,PASS
+team,Leadership Team Grid,/about-us/,db423c8,member_0_linkedin,text,PASS,PASS,PASS,PASS,PASS,PASS
+logo_wall,Trusted Partner Logos Wall,/about-us/,0f7f56b,title,text,PASS,PASS,PASS,PASS,PASS,PASS
+logo_wall,Trusted Partner Logos Wall,/about-us/,0f7f56b,logo_0_name,text,PASS,PASS,PASS,PASS,PASS,PASS
+logo_wall,Trusted Partner Logos Wall,/about-us/,0f7f56b,logo_0_img,text,PASS,PASS,PASS,PASS,PASS,PASS
+logo_wall,Trusted Partner Logos Wall,/about-us/,0f7f56b,logo_0_url,text,PASS,PASS,PASS,PASS,PASS,PASS

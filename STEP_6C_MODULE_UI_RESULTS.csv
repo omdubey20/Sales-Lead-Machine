@@ -1,0 +1,6 @@
+module,operation,ui_verification,api_db_verification,overall_status
+Media Asset Library,Upload via #media-upload-input & DB Persistence,PASS (Rendered in #media-grid),PASS (Row in PostgreSQL media table),PASS
+Team Members Management,"Create, Edit & Delete via #team-modal & #team-cards-grid",PASS (Rendered and removed in UI grid),PASS (PostgreSQL team_members CRUD verified),PASS
+Partner Logos Management,"Create, Edit & Delete via #logo-modal & #logos-grid",PASS (Rendered and removed in UI grid),PASS (PostgreSQL client_logos CRUD verified),PASS
+Global Company Settings,Form Save (#company-form) & Frontend Footer Propagation,PASS (Live footer updated & reverted in browser),PASS (PostgreSQL site_settings synchronized),PASS
+Public Lead Form Submission,Submit /contact-us/ form & capture in form_submissions,PASS (Form interacted & submitted via Playwright),PASS (Lead persisted in PostgreSQL form_submissions),PASS

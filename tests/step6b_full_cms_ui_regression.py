@@ -240,8 +240,8 @@ async def run_full_cms_ui_regression():
                     await draft_page.goto(f"{BASE_URL}{page_url}?mode=draft", wait_until="networkidle")
                     await draft_page.wait_for_timeout(800)
                     draft_content = await draft_page.content()
-                    assert test_val in draft_content or test_val in persisted_draft_val, f"Draft preview failed to show draft value"
-                    print(f"  ✓ Authenticated Draft Preview verified: shows draft change.")
+                    assert test_val in draft_content, f"Draft preview failed to show draft value '{test_val}' in rendered DOM for {field_name}"
+                    print(f"  ✓ Authenticated Draft Preview verified: shows draft change in rendered DOM.")
                     await draft_ctx.close()
 
                     # 8. Publish Through Actual UI

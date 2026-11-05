@@ -21,20 +21,15 @@ import urllib.parse
 import urllib.error
 import psycopg2
 
-BASE_URL = "http://localhost:8080"
-DB_NAME = "salesleadmachine"
-DB_USER = "liluzi"
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from test_config import BASE_URL, BASE_DIR, get_admin_jwt, get_db_connection
+
+PROJECT_DIR = BASE_DIR
 EVIDENCE_DIR = os.path.join(PROJECT_DIR, "tests", "TEST_EVIDENCE")
 os.makedirs(EVIDENCE_DIR, exist_ok=True)
 
 def get_admin_token():
-    url = f"{BASE_URL}/api/admin/login"
-    payload = json.dumps({"email": "admin@salesleadmachine.co.uk", "password": "<ROTATED_ADMIN_CREDENTIAL>"}).encode('utf-8')
-    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req) as resp:
-        data = json.loads(resp.read().decode('utf-8'))
-        return data.get("access_token") or data.get("token")
+    return get_admin_jwt()
 
 def api_request(method, endpoint, token=None, json_data=None, content_type="application/json"):
     url = f"{BASE_URL}{endpoint}"

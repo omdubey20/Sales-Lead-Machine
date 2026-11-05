@@ -1,0 +1,5 @@
+test_case,scope,action,observed_isolation,status
+Section-to-Section Isolation,Homepage (Section A vs Section B),Mutated Section A draft_data,Section B data & draft remained strictly identical to baseline,PASS
+Page-to-Page Isolation,/for-technology/ vs /for-sales/,Mutated /for-technology/ section draft,/for-sales/ sections remained completely untouched,PASS
+Publish Scope Isolation,/for-technology/ publish vs /for-sales/ draft,Published /for-technology/ with pending draft on /for-sales/,/for-sales/ live data remained untouched; draft stayed pending,PASS
+Save/Refresh Idempotency,Split Section 0b9f330,Executed 3 consecutive save & browser reload cycles,Paragraph count remained constant (6); zero duplication,PASS

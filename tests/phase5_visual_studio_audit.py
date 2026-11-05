@@ -17,22 +17,15 @@ import json
 import urllib.request
 from playwright.sync_api import sync_playwright
 
-BASE_URL = "http://localhost:8080"
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from test_config import BASE_URL, BASE_DIR, get_admin_jwt
+
+PROJECT_DIR = BASE_DIR
 EVIDENCE_DIR = os.path.join(PROJECT_DIR, "tests", "TEST_EVIDENCE")
 os.makedirs(EVIDENCE_DIR, exist_ok=True)
 
 def get_admin_token():
-    url = f"{BASE_URL}/api/admin/login"
-    payload = json.dumps({"email": "admin@salesleadmachine.co.uk", "password": "<ROTATED_ADMIN_CREDENTIAL>"}).encode('utf-8')
-    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            return data.get("access_token") or data.get("token")
-    except Exception as e:
-        print(f"Failed to login: {e}")
-        return None
+    return get_admin_jwt()
 
 def run_studio_audit():
     token = get_admin_token()

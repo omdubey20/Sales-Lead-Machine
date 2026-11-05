@@ -2,19 +2,17 @@ import os, sys, json, csv, time, urllib.request
 from playwright.sync_api import sync_playwright
 import psycopg2
 
-BASE_URL = "http://localhost:8080"
-EVIDENCE_DIR = "/Users/liluzi/Desktop/python/salesleadmachine-revamp/tests/TEST_EVIDENCE"
-CSV_PATH = "/Users/liluzi/Desktop/python/salesleadmachine-revamp/SECTION_MAPPING_AUDIT.csv"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from test_config import BASE_URL, BASE_DIR, get_admin_jwt, get_db_connection
+
+EVIDENCE_DIR = os.path.join(BASE_DIR, "tests", "TEST_EVIDENCE")
+CSV_PATH = os.path.join(BASE_DIR, "SECTION_MAPPING_AUDIT.csv")
 
 # 1. Authenticate to get valid Admin JWT
-login_url = f"{BASE_URL}/api/admin/login"
-login_payload = json.dumps({"email": "admin@salesleadmachine.co.uk", "password": "<ROTATED_ADMIN_CREDENTIAL>"}).encode("utf-8")
-req = urllib.request.Request(login_url, data=login_payload, headers={"Content-Type": "application/json"})
-with urllib.request.urlopen(req) as resp:
-    token = json.loads(resp.read().decode())["token"]
+token = get_admin_jwt()
 
 # 2. Connect to PostgreSQL
-conn = psycopg2.connect(dbname="salesleadmachine", user="liluzi", host="127.0.0.1", port=5432)
+conn = get_db_connection()
 cur = conn.cursor()
 
 cur.execute("SELECT id, slug, full_path, title FROM pages ORDER BY sort_order ASC, title ASC;")

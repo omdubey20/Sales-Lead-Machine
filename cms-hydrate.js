@@ -638,16 +638,16 @@ function sanitizeHtml(dirty) {
             if (h) h.textContent = d.title;
           }
           if (d.body_html || d.content || d.body) {
-            const contentBox = container.querySelector('.elementor-widget-text-editor, .elementor-widget-container') || container;
+            const contentBox = container.querySelector('.elementor-widget-text-editor, .elementor-widget-container, .container > div:not(.ekit-wid-con), .rich-content, .privacy-body');
             if (contentBox) contentBox.innerHTML = sanitizeHtml(d.body_html || d.content || d.body);
           }
         }
         // 6. Card Grid / Products / Problems Hydration (Strict Heading Isolation)
         if (sec.section_type === 'card_grid') {
-          const headingWraper = container.querySelector('.ekit-heading, .elementskit-section-title-wraper, .elementor-widget-elementskit-heading');
+          const headingWraper = container.querySelector('.ekit-heading, .elementskit-section-title-wraper, .elementor-widget-elementskit-heading, .elementor-widget-heading');
           if (headingWraper) {
             if (d.title) {
-              const h = headingWraper.querySelector('.ekit-heading--title, .elementskit-section-title');
+              const h = headingWraper.querySelector('.ekit-heading--title, .elementskit-section-title, .elementor-heading-title, h1, h2, h3');
               if (h) h.textContent = d.title;
             }
             if (d.subtitle || d.description) {

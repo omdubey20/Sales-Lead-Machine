@@ -72,19 +72,17 @@ def record_defect(defect_id, severity, category, file_path, component, root_caus
 # ==============================================================================
 # 0. AUTHENTICATION HELPER FOR TEST SUITE
 # ==============================================================================
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from test_config import BASE_URL, BASE_DIR, get_admin_jwt, get_db_connection
+
 ADMIN_TOKEN = None
 
 def get_auth_token():
     global ADMIN_TOKEN
     if ADMIN_TOKEN:
         return ADMIN_TOKEN
-    login_url = f"{BASE_URL}/api/admin/login"
-    payload = json.dumps({"email": "admin@salesleadmachine.co.uk", "password": "<ROTATED_ADMIN_CREDENTIAL>"}).encode()
-    req = urllib.request.Request(login_url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
-    with urllib.request.urlopen(req) as res:
-        data = json.loads(res.read().decode())
-        ADMIN_TOKEN = data.get("token")
-        return ADMIN_TOKEN
+    ADMIN_TOKEN = get_admin_jwt()
+    return ADMIN_TOKEN
 
 # ==============================================================================
 # 1. PUBLIC VS DRAFT DATA ISOLATION TESTS (SEC-001)

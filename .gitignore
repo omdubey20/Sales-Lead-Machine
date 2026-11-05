@@ -18,7 +18,12 @@ legacy/
 *.bak
 
 
-# Database
+# Database & Backups
 *.db
 *.sqlite*
+*.dump
+*.sql
+*.dump.gz
+tests/backup/*.json
+
 

@@ -16,29 +16,17 @@ import urllib.error
 import psycopg2
 from bs4 import BeautifulSoup
 
-BASE_URL = "http://localhost:8080"
-DB_NAME = "salesleadmachine"
-DB_USER = "liluzi"
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from test_config import BASE_URL, BASE_DIR, get_admin_jwt, get_db_connection
+
+PROJECT_DIR = BASE_DIR
 EVIDENCE_DIR = os.path.join(PROJECT_DIR, "tests", "TEST_EVIDENCE")
 CSV_PATH = os.path.join(PROJECT_DIR, "FIELD_LEVEL_TEST_RESULTS.csv")
 
 os.makedirs(EVIDENCE_DIR, exist_ok=True)
 
-def get_db_connection():
-    return psycopg2.connect(dbname=DB_NAME, user=DB_USER)
-
 def get_admin_token():
-    url = f"{BASE_URL}/api/admin/login"
-    payload = json.dumps({"email": "admin@salesleadmachine.co.uk", "password": "<ROTATED_ADMIN_CREDENTIAL>"}).encode('utf-8')
-    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            return data.get("access_token") or data.get("token")
-    except Exception as e:
-        print(f"Failed to login: {e}")
-        return None
+    return get_admin_jwt()
 
 def fetch_public_content(path, token=None):
     clean_path = path if path.startswith("/") else f"/{path}"

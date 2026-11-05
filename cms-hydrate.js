@@ -689,8 +689,9 @@ function sanitizeHtml(dirty) {
                 if (desc) desc.innerHTML = sanitizeHtml(c.description);
               }
               if (c.url) {
-                const a = cardEl.querySelector('a');
-                if (a) a.href = safeCmsUrl(c.url) || '#';
+                cardEl.querySelectorAll('a').forEach(a => {
+                  a.href = safeCmsUrl(c.url) || '#';
+                });
               }
               if (c.image) {
                 const img = cardEl.querySelector('img');
